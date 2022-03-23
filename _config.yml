@@ -18,13 +18,9 @@ github_username: "cherryleafroad"
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
 #########################################################################################
-theme: jekyll-theme-modernist
+theme: "jekyll-theme-modernist"
 
 rss: rss
-
-kramdown:
-  syntax_highlighter_opts:
-    disable: true
     
 plugins:
   - jekyll-feed
