@@ -24,16 +24,16 @@ layout: default
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
     {% include navlinks.html %}
-    
-    <script src="https://utteranc.es/client.js"
-        repo="cherryleafroad/cherryleafroad.github.io"
-        issue-term="pathname"
-        label="comments"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
   </div>
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
+
+<script src="https://utteranc.es/client.js"
+    repo="cherryleafroad/cherryleafroad.github.io"
+    issue-term="pathname"
+    label="comments"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
