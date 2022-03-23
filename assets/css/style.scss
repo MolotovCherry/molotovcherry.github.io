@@ -30,6 +30,10 @@ hr {
   top: 20px;
   position: absolute;
   text-align: right;
+  
+  font-weight: 700;
+  text-shadow: rgb(255 255 255 / 90%) 0 1px 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Post navigation links */
