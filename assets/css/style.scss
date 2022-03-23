@@ -29,10 +29,21 @@ hr {
 
   .nav_prev {
     text-align: left;
-    
-    .post_navi-arrow {
-      left: 0;
-    }
+    left: 0;
+  }
+  
+  .nav_next {
+    text-align: right;
+    right: 0;
+  }
+  
+  .post_navi-arrow {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    font-size: 2.5em;
+    opacity: .8;
+    font-weight: 600;
   }
 }
 
