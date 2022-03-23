@@ -18,7 +18,7 @@ github_username: "cherryleafroad"
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
 #########################################################################################
-theme: "jekyll-theme-modernist"
+theme: "minima"
 
 rss: rss
     
