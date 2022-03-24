@@ -2,6 +2,9 @@ title: "Cherryleafroad's blog"
 author: "Cherryleafroad"
 description: "Cherryleafroad's projects and blog" # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
 
+baseurl: /
+url: http://cherryleafroad.github.io
+
 # place all your links here
 modernist:
   social_links:
