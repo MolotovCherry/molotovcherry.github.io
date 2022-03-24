@@ -15,3 +15,4 @@ The main hobby projects I've been working on these days
 * * KMagick docs can be found [here](https://cherryleafroad.github.io/kmagick/kmagick/com.cherryleafroad.kmagick/index.html)
 * [IntelliJ Rust Playground](https://github.com/cherryleafroad/IntelliJ-Rust-Playground) - An intellij plugin to crate a Rust local Rust playground, using scratch files. (much quicker than having to go to the official [playground site](https://play.rust-lang.org/))
 
+## Latest Posts
