@@ -57,8 +57,11 @@ div.highlighter-rouge {
   content: '\02795'; /* Unicode character for "plus" sign (+) */
   font-size: 13px;
   color: white;
-  float: right;
-  margin-left: 5px;
+  
+  top: 32%;
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
 }
 
 .active:after {
