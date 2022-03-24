@@ -14,39 +14,33 @@ layout: html_minifier
     <!--<link rel="stylesheet" href="{{ '/assets/devicon/devicon.min.css' | relative_url }}">-->
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
     
-    <!-- inlined css -->
-    {% capture inline_css %}
-      {% include /assets/css/style.scss %}
+    <!-- inline css -->
+    {% capture inline_scss %}
+      {% include assets/css/style.scss %}
     {% endcapture %}
-    <style>{{ inline_css | scssify }}</style>
-    
-    <!-- inlined css -->
     {% capture inline_css %}
-      {% include /assets/css/style.scss %}
-    {% endcapture %}
-    {% capture devicon_css %}
-      {% include /assets/devicon/devicon.min.css %}
+      {% include assets/devicon/devicon.min.css %}
     {% endcapture %}
     
     <style>
-      {{ inline_css | scssify }}
-      {{ devicon_css }}
+      {{ inline_scss | scssify }}
+      {{ inline_css }}
     </style>
     
     <!-- Fix the code blocks for noscript -->
     <noscript>
-      <!-- inlined css -->
-      {% capture inline_noscript_css %}
-        {% include /assets/css/noscript.scss %}
+      <!-- inlined scss -->
+      {% capture inline_noscript_scss %}
+        {% include assets/css/noscript.scss %}
       {% endcapture %}
-      <style>{{ inline_noscript_css | scssify }}</style>
+      <style>{{ inline_noscript_scss | scssify }}</style>
       <!--<link rel="stylesheet" href="{{ '/assets/css/noscript.css?v=' | append: site.github.build_revision | relative_url }}">-->
     </noscript>
     
     <!-- inline javascript -->
     <!--<script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>-->
     {% capture inline_javascript %}
-      {% include /assets/js/scale.fix.js %}
+      {% include assets/js/scale.fix.js %}
     {% endcapture %}
     <script>{{ inline_javascript }}</script>
     
