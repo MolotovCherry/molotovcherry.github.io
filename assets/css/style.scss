@@ -4,8 +4,10 @@
 @import "{{ site.theme }}";
 
 // override bottom margin to make hr look nicer
-#latest-posts h1 {
-  margin-bottom: 5px;
+.home {
+  h1#latest-posts {
+    margin-bottom: 5px;
+  }
 }
 
 .blog-title,
