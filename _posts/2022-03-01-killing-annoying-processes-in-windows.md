@@ -266,36 +266,35 @@ let mut arrs = VecDeque::new();
 
 unsafe {
     let _safearray = self.obj.GetNames(
-    PCWSTR::default(),
-    WBEM_FLAG_ALWAYS.0,// | WBEM_FLAG_NONSYSTEM_ONLY.0,
-    &VARIANT::default() as *const _ as *const _
+        PCWSTR::default(),
+        WBEM_FLAG_ALWAYS.0,// | WBEM_FLAG_NONSYSTEM_ONLY.0,
+        &VARIANT::default() as *const _ as *const _
     )?;
 
     let mut ptr: *mut c_void = std::mem::zeroed();
 
     SafeArrayAccessData(
-    _safearray as *const _,
-    &mut ptr as *mut _
+        _safearray as *const _,
+        &mut ptr as *mut _
     )?;
 
     let safearray = *_safearray;
 
     for i in 0..safearray.cDims as usize {
-    let slice = std::slice::from_raw_parts(
-        ptr as *mut BSTR,
-        safearray.rgsabound[i].cElements as usize
-    );
-    arrs.push_back(slice.into_iter().map(|f| f.to_string()).collect::<Vec<String>>());
+        let slice = std::slice::from_raw_parts(
+            ptr as *mut BSTR,
+            safearray.rgsabound[i].cElements as usize
+        );
+        arrs.push_back(slice.into_iter().map(|f| f.to_string()).collect::<Vec<String>>());
     }
 
     SafeArrayUnaccessData(
-    _safearray
+        _safearray
     )?;
 }
 ```
-Then we can get the `VARIANT` after knowing the property names, and handle every single type of property by checking what data the `VARIANT` union holds at `variant.Anonymous.Anonymous.vt` using this [nice list[(https://docs.microsoft.com/en-us/windows/win32/api/wtypes/ne-wtypes-varenum) of types from Microsoft SDK.
+Then we can get the `VARIANT` after knowing the property names, and handle every single type of property by checking what data the `VARIANT` union holds at `variant.Anonymous.Anonymous.vt` using this [nice list](https://docs.microsoft.com/en-us/windows/win32/api/wtypes/ne-wtypes-varenum) of types from Microsoft SDK.
 ```rust
-
 let mut variant = VARIANT::default();
 let property = BSTR::from(name);
 let property = property.as_wide();
@@ -303,38 +302,38 @@ let mut var_type = 0i32;
 
 unsafe {
     self.obj.Get(
-    PCWSTR(property.as_ptr()),
-    0,
-    &mut variant as *mut _,
-    &mut var_type as *mut _,
-    std::ptr::null_mut()
+        PCWSTR(property.as_ptr()),
+        0,
+        &mut variant as *mut _,
+        &mut var_type as *mut _,
+        std::ptr::null_mut()
     )?;
 
     match VARENUM(variant.Anonymous.Anonymous.vt as i32) {
-    VT_UNKNOWN => {
-        // this unknown type is generally an embedded object
-        if var_type != CIM_OBJECT.0 {
-        return Err(Box::new(WMIError::NotCimObject))
+        VT_UNKNOWN => {
+            // this unknown type is generally an embedded object
+            if var_type != CIM_OBJECT.0 {
+                return Err(Box::new(WMIError::NotCimObject))
+            }
+
+            // convert embedded object to IUnknown, then cast to IWbemClassObject
+            let pVal = variant.Anonymous.Anonymous.Anonymous.punkVal.as_ref().unwrap();
+            let embeddedObject = pVal.cast::<IWbemClassObject>()?;
+            ValueType::CIM_OBJECT(Self::new(embeddedObject))
         }
 
-        // convert embedded object to IUnknown, then cast to IWbemClassObject
-        let pVal = variant.Anonymous.Anonymous.Anonymous.punkVal.as_ref().unwrap();
-        let embeddedObject = pVal.cast::<IWbemClassObject>()?;
-        ValueType::CIM_OBJECT(Self::new(embeddedObject))
-    }
+        VT_BSTR => {
+            let bstring = &*variant.Anonymous.Anonymous.Anonymous.bstrVal;
+            let string = bstring.to_string();
+            ValueType::BSTR(string)
+        }
 
-    VT_BSTR => {
-        let bstring = &*variant.Anonymous.Anonymous.Anonymous.bstrVal;
-        let string = bstring.to_string();
-        ValueType::BSTR(string)
-    }
-
-    // float 32
-    VT_R4 => {
-        ValueType::R4(variant.Anonymous.Anonymous.Anonymous.fltVal)
-    }
+        // float 32
+        VT_R4 => {
+            ValueType::R4(variant.Anonymous.Anonymous.Anonymous.fltVal)
+        }
     
-    // etc
+        // etc
     }
 }
 ```
