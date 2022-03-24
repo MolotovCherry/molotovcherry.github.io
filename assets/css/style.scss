@@ -33,7 +33,7 @@ li ul {
   top: 32%;
   position: absolute;
   left: 0;
-  margin-left: 41px;
+  margin-left: 43px;
 }
 
 // remove padding at top of code block
@@ -215,3 +215,13 @@ div.highlighter-rouge {
   padding-top: 15px;
   margin-bottom: 30px;
 }
+
+//
+// Add additional snytax languages as to not break the code highlighter
+//
+// map html5 to html
+.devicon-html-plain:before{content:""}
+// map css3 to css
+.devicon-css-plain:before{content:""}
+// cplusplus and csharp need to be specified as is, because # and ++ are special chars in css
+
