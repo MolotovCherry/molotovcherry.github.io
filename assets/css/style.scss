@@ -8,6 +8,17 @@ li ul {
   margin: 0;
 }
 
+.clearfix {
+  clear: both;
+  
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+    visibility: hidden;
+  }
+}
+
 // override bottom margin to make hr look nicer
 .home {
   h1#latest-posts {
