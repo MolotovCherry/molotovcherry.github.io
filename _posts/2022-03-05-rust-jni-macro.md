@@ -60,3 +60,101 @@ impl Foo {
 All in all, this allowed me to auto generate 1.7mb of JNI binding code while keeping all my Rust idiomatic! Lovely!
 
 The macro is actually generalized and can be used by anyone. Check [here](https://github.com/cherryleafroad/kmagick/tree/main/rust) if you'd like to know more.
+
+(If you're curious what a generated function looks like...)
+<details><summary><strong>Generated code</strong></summary>
+<p>
+
+```rust
+#[no_mangle]
+pub extern "system" fn Java_com_cherryleafroad_kmagick_Magick_magickQueryFonts(
+    env: JNIEnv,
+    GCNAyNEouE: JObject,
+    pattern: JString,
+) -> jobjectArray {
+    let p_res = std::panic::catch_unwind(|| {
+        let c_res = Magick::magickQueryFonts(env, GCNAyNEouE, pattern);
+        match c_res {
+            Ok(v) => v,
+            Err(e) => {
+                {
+                    let lvl = ::log::Level::Error;
+                    if lvl <= ::log::STATIC_MAX_LEVEL && lvl <= ::log::max_level() {
+                        ::log::__private_api_log(
+                            ::core::fmt::Arguments::new_v1(
+                                &["`", "` threw an exception: "],
+                                &[
+                                    ::core::fmt::ArgumentV1::new_display(
+                                        &"Magick::magickQueryFonts()",
+                                    ),
+                                    ::core::fmt::ArgumentV1::new_debug(&e),
+                                ],
+                            ),
+                            lvl,
+                            &("kmagick", "kmagick", "kmagick\\src\\lib.rs", 93u32),
+                        );
+                    }
+                };
+                let _ = env.throw_new("com/cherryleafroad/kmagick/MagickException", {
+                    let res = ::alloc::fmt::format(::core::fmt::Arguments::new_v1(
+                        &["`", "`: "],
+                        &[
+                            ::core::fmt::ArgumentV1::new_display(&"Magick::magickQueryFonts()"),
+                            ::core::fmt::ArgumentV1::new_display(&e.to_string()),
+                        ],
+                    ));
+                    res
+                });
+                std::ptr::null_mut()
+            }
+        }
+    });
+    match p_res {
+        Ok(v) => v,
+        Err(e) => {
+            let msg;
+            let e = e.downcast_ref::<&'static str>();
+            if let Some(r) = e {
+                msg = {
+                    let res = ::alloc::fmt::format(::core::fmt::Arguments::new_v1(
+                        &["`", "` panicked: "],
+                        &[
+                            ::core::fmt::ArgumentV1::new_display(&"Magick::magickQueryFonts()"),
+                            ::core::fmt::ArgumentV1::new_display(&r),
+                        ],
+                    ));
+                    res
+                };
+            } else {
+                msg = {
+                    let res = ::alloc::fmt::format(::core::fmt::Arguments::new_v1(
+                        &["`", "` panicked"],
+                        &[::core::fmt::ArgumentV1::new_display(
+                            &"Magick::magickQueryFonts()",
+                        )],
+                    ));
+                    res
+                };
+            }
+            {
+                let lvl = ::log::Level::Error;
+                if lvl <= ::log::STATIC_MAX_LEVEL && lvl <= ::log::max_level() {
+                    ::log::__private_api_log(
+                        ::core::fmt::Arguments::new_v1(
+                            &[""],
+                            &[::core::fmt::ArgumentV1::new_display(&msg)],
+                        ),
+                        lvl,
+                        &("kmagick", "kmagick", "kmagick\\src\\lib.rs", 93u32),
+                    );
+                }
+            };
+            let _ = env.throw_new("java/lang/RuntimeException", msg);
+            std::ptr::null_mut()
+        }
+    }
+}
+```
+  
+</p>
+</details>
