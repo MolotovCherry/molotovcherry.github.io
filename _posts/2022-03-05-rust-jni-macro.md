@@ -59,12 +59,7 @@ impl Foo {
 
 All in all, this allowed me to auto generate 1.7mb of JNI binding code while keeping all my Rust idiomatic! Lovely!
 
-The macro is actually generalized and can be used by anyone. Check [here](https://github.com/cherryleafroad/kmagick/tree/main/rust) if you'd like to know more.
-
-(If you're curious what a generated function looks like...)
-<details><summary><strong>Generated code</strong></summary>
-<p>
-
+(If you're curious what a generated function looks like... It's similar to this)
 ```rust
 #[no_mangle]
 pub extern "system" fn Java_com_cherryleafroad_kmagick_Magick_magickQueryFonts(
@@ -99,6 +94,5 @@ pub extern "system" fn Java_com_cherryleafroad_kmagick_Magick_magickQueryFonts(
     }
 }
 ```
-  
-</p>
-</details>
+
+The macro is actually generalized and can be used by anyone. Check [here](https://github.com/cherryleafroad/kmagick/tree/main/rust) if you'd like to know more.
