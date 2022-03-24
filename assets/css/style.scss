@@ -46,6 +46,8 @@ pre.highlight {
 div.highlighter-rouge {
   // js changes this to -20 upon expansion
   margin-top: 0px;
+  margin: 0 -20px 0;
+  padding: 0 20px 0;
   // important, otherwise the -20 margin will show when it's not visible because of the overflow
   //display: none;
   
