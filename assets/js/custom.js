@@ -52,8 +52,8 @@ function collapse_code_blocks() {
             content.style.marginTop = "0";
           }, 200);
         } else {
-          content.style.marginTop = "-20px";
           content.style.maxHeight = content.scrollHeight + "px";
+          content.style.marginTop = "-20px";
         }
       });
     }
