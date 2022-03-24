@@ -46,6 +46,11 @@ pre.highlight {
 div.highlighter-rouge {
   margin-top: -20px;
   display: none;
+  
+  // for transitioning
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 
 .collapsible:after {
