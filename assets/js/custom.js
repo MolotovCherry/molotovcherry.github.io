@@ -38,8 +38,13 @@ function collapse_code_blocks() {
         var container = document.createElement("div");
         container.classList.add("collapse-container");
         
+        var parent = block.parentNode;
+        var newB = block;
+        
         container.appendChild(elem);
         container.appendChild(block);
+        
+        parent.insertBefore(container, newB);
         
         buttons.push(elem);
     }
