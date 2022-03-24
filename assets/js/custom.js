@@ -49,10 +49,10 @@ function collapse_code_blocks() {
           
           // wait until animation is finished before going none
           setTimeout(() => {
-            content.style.display = "none";
+            content.style.marginTop = "0";
           }, 200);
         } else {
-          content.style.display = "block";
+          content.style.marginTop = "-20px";
           content.style.maxHeight = content.scrollHeight + "px";
         }
       });
