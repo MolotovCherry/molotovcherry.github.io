@@ -20,7 +20,22 @@ li ul {
 }
 
 .devicon-devicon-plain {
-  max-width: 2em;
+  font-size: 2em;
+  vertical-align: middle;
+}
+
+.collapsible {
+  background-color: #3A3C42;
+  color: #f8f8f2;
+  cursor: pointer;
+  padding: 10px 10px 0;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  width: 160vmin;
+  position: relative;
+  margin: 0 -20px 0;
 }
 
 /* if you want to change the original color
