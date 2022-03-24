@@ -36,10 +36,17 @@ li ul {
   margin-left: 41px;
 }
 
+// remove padding at top of code block
 pre.highlight {
   padding-top: 0;
 }
 
+// need to bypass the 20px margin at top of collapsible
+div.highlighter-rouge {
+  margin-top: -20px;
+}
+
+// padding added to bottom to make it look nice
 .collapsible {
   background-color: #3A3C42;
   color: #f8f8f2;
