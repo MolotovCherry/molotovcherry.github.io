@@ -20,8 +20,10 @@ li ul {
 }
 
 #share-buttons {
-  width: 58%;
-  float: right;
+  transform: translate(-16%);
+  top: 50%;
+  position: absolute;
+  left: 50%;
 }
 
 // override bottom margin to make hr look nicer
