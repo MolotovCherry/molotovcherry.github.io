@@ -45,7 +45,8 @@ pre.highlight {
 // by default it's hidden
 div.highlighter-rouge {
   margin-top: -20px;
-  //display: none;
+  // important, otherwise the -20 margin will show when it's not visible because of the overflow
+  display: none;
   
   // for transitioning
   max-height: 0;
