@@ -77,34 +77,7 @@ pub extern "system" fn Java_com_cherryleafroad_kmagick_Magick_magickQueryFonts(
         match c_res {
             Ok(v) => v,
             Err(e) => {
-                {
-                    let lvl = ::log::Level::Error;
-                    if lvl <= ::log::STATIC_MAX_LEVEL && lvl <= ::log::max_level() {
-                        ::log::__private_api_log(
-                            ::core::fmt::Arguments::new_v1(
-                                &["`", "` threw an exception: "],
-                                &[
-                                    ::core::fmt::ArgumentV1::new_display(
-                                        &"Magick::magickQueryFonts()",
-                                    ),
-                                    ::core::fmt::ArgumentV1::new_debug(&e),
-                                ],
-                            ),
-                            lvl,
-                            &("kmagick", "kmagick", "kmagick\\src\\lib.rs", 93u32),
-                        );
-                    }
-                };
-                let _ = env.throw_new("com/cherryleafroad/kmagick/MagickException", {
-                    let res = ::alloc::fmt::format(::core::fmt::Arguments::new_v1(
-                        &["`", "`: "],
-                        &[
-                            ::core::fmt::ArgumentV1::new_display(&"Magick::magickQueryFonts()"),
-                            ::core::fmt::ArgumentV1::new_display(&e.to_string()),
-                        ],
-                    ));
-                    res
-                });
+                let _ = env.throw_new("com/cherryleafroad/kmagick/MagickException", "");
                 std::ptr::null_mut()
             }
         }
@@ -115,40 +88,11 @@ pub extern "system" fn Java_com_cherryleafroad_kmagick_Magick_magickQueryFonts(
             let msg;
             let e = e.downcast_ref::<&'static str>();
             if let Some(r) = e {
-                msg = {
-                    let res = ::alloc::fmt::format(::core::fmt::Arguments::new_v1(
-                        &["`", "` panicked: "],
-                        &[
-                            ::core::fmt::ArgumentV1::new_display(&"Magick::magickQueryFonts()"),
-                            ::core::fmt::ArgumentV1::new_display(&r),
-                        ],
-                    ));
-                    res
-                };
+                msg = "";
             } else {
-                msg = {
-                    let res = ::alloc::fmt::format(::core::fmt::Arguments::new_v1(
-                        &["`", "` panicked"],
-                        &[::core::fmt::ArgumentV1::new_display(
-                            &"Magick::magickQueryFonts()",
-                        )],
-                    ));
-                    res
-                };
+                msg = "";
             }
-            {
-                let lvl = ::log::Level::Error;
-                if lvl <= ::log::STATIC_MAX_LEVEL && lvl <= ::log::max_level() {
-                    ::log::__private_api_log(
-                        ::core::fmt::Arguments::new_v1(
-                            &[""],
-                            &[::core::fmt::ArgumentV1::new_display(&msg)],
-                        ),
-                        lvl,
-                        &("kmagick", "kmagick", "kmagick\\src\\lib.rs", 93u32),
-                    );
-                }
-            };
+            
             let _ = env.throw_new("java/lang/RuntimeException", msg);
             std::ptr::null_mut()
         }
