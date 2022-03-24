@@ -1,6 +1,10 @@
-function init() {
-    collapse_code_blocks();
-}
+---
+layout: js_minifier
+---
+
+(function (){
+  collapse_code_blocks();
+})();
 
 function collapse_code_blocks() {
     // top element

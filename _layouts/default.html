@@ -1,3 +1,7 @@
+---
+layout: html_minifier
+---
+
 <!doctype html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
@@ -6,26 +10,56 @@
 
 {% seo %}
 
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <!--<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">-->
+    <!--<link rel="stylesheet" href="{{ '/assets/devicon/devicon.min.css' | relative_url }}">-->
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
-    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <!-- inlined css -->
+    {% capture inline_css %}
+      {% include /assets/css/style.scss %}
+    {% endcapture %}
+    <style>{{ inline_css | scssify }}</style>
+    
+    <!-- inlined css -->
+    {% capture inline_css %}
+      {% include /assets/css/style.scss %}
+    {% endcapture %}
+    {% capture devicon_css %}
+      {% include /assets/devicon/devicon.min.css %}
+    {% endcapture %}
+    
+    <style>
+      {{ inline_css | scssify }}
+      {{ devicon_css }}
+    </style>
     
     <!-- Fix the code blocks for noscript -->
     <noscript>
-      <link rel="stylesheet" href="{{ '/assets/css/noscript.css?v=' | append: site.github.build_revision | relative_url }}">
+      <!-- inlined css -->
+      {% capture inline_noscript_css %}
+        {% include /assets/css/noscript.scss %}
+      {% endcapture %}
+      <style>{{ inline_noscript_css | scssify }}</style>
+      <!--<link rel="stylesheet" href="{{ '/assets/css/noscript.css?v=' | append: site.github.build_revision | relative_url }}">-->
     </noscript>
+    
+    <!-- inline javascript -->
+    <!--<script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>-->
+    {% capture inline_javascript %}
+      {% include /assets/js/scale.fix.js %}
+    {% endcapture %}
+    <script>{{ inline_javascript }}</script>
+    
+    <script src="{{ '/assets/js/custom.js' | relative_url }}" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" href="{{ '/assets/devicon/devicon.min.css' | relative_url }}">
-
     {% include head-custom.html %}
   </head>
-  <body onload="init();">
+  <body>
     <div class="wrapper">
       <header {% unless site.description or site.github.project_tagline %} class="without-description" {% endunless %}>
         <h1><a href="{{ site.url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
