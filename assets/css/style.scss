@@ -8,6 +8,11 @@
   h1#latest-posts {
     margin-bottom: 5px;
   }
+  
+  // fix weird margins in .home
+  ul {
+    margin: 0;
+  }
 }
 
 .blog-title,
