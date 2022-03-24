@@ -41,8 +41,8 @@ function collapse_code_blocks() {
 
     for (button of buttons) {
       button.addEventListener("click", event => {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
+        event.currentTarget.classList.toggle("active");
+        var content = event.currentTarget.nextElementSibling;
         if (content.style.display === "block") {
           content.style.display = "none";
         } else {
