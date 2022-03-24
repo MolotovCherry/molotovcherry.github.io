@@ -39,17 +39,19 @@ li ul {
 // remove padding at top of code block
 pre.highlight {
   padding-top: 0;
+  margin-bottom: 0;
+}
+
+// use a container to handle the bottom margin instead of pre.highlight
+div.collapse-container {
+  margin-bottom: 20px;
 }
 
 // need to bypass the 20px margin at top of collapsible
 // by default it's hidden
 div.highlighter-rouge {
-  // js changes this to -20 upon expansion
-  margin-top: 0px;
   margin: 0 -20px 0;
   padding: 0 20px 0;
-  // important, otherwise the -20 margin will show when it's not visible because of the overflow
-  //display: none;
   
   // for transitioning
   max-height: 0;

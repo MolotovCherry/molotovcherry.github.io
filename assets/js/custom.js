@@ -35,7 +35,12 @@ function collapse_code_blocks() {
         div.appendChild(text);
         elem.appendChild(div);
         
-        block.parentNode.insertBefore(elem, block);
+        var container = document.createElement("div");
+        container.classList.add("collapse-container");
+        
+        container.appendChild(elem);
+        container.appendChild(block);
+        
         buttons.push(elem);
     }
 
@@ -46,14 +51,8 @@ function collapse_code_blocks() {
         
         if (content.style.maxHeight) {
           content.style.maxHeight = null;
-          
-          // wait until animation is finished before going none
-          setTimeout(() => {
-            content.style.marginTop = "0";
-          }, 200);
         } else {
           content.style.maxHeight = content.scrollHeight + "px";
-          content.style.marginTop = "-20px";
         }
       });
     }
