@@ -44,7 +44,7 @@ function collapse_code_blocks() {
         container.appendChild(elem);
         container.appendChild(block);
         
-        referenceNode.insertBefore(container, newB);
+        referenceNode.insertBefore(container, referenceNode);
         
         buttons.push(elem);
     }
