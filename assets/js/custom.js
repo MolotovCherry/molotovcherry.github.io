@@ -39,12 +39,12 @@ function collapse_code_blocks() {
         container.classList.add("collapse-container");
         
         var parent = block.parentNode;
-        var newB = block;
+        var referenceNode = block.nextElementSibling;
         
         container.appendChild(elem);
         container.appendChild(block);
         
-        parent.insertBefore(container, newB);
+        referenceNode.insertBefore(container, newB);
         
         buttons.push(elem);
     }
