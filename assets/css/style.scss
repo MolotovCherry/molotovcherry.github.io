@@ -44,7 +44,8 @@ pre.highlight {
 // need to bypass the 20px margin at top of collapsible
 // by default it's hidden
 div.highlighter-rouge {
-  margin-top: -20px;
+  // js changes this to -20 upon expansion
+  margin-top: 0px;
   // important, otherwise the -20 margin will show when it's not visible because of the overflow
   //display: none;
   
