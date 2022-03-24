@@ -43,11 +43,11 @@ function collapse_code_blocks() {
       button.addEventListener("click", event => {
         event.currentTarget.classList.toggle("active");
         var content = event.currentTarget.nextElementSibling;
-        if (content.style.display === "block") {
+        /*if (content.style.display === "block") {
           content.style.display = "none";
         } else {
           content.style.display = "block";
-        }
+        }*/
         
         if (content.style.maxHeight) {
           content.style.maxHeight = null;
