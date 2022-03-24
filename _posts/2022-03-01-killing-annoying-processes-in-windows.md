@@ -12,7 +12,7 @@ Really, none of these worked at all! I've begun to think these are a serious vir
 
 So, I decided to finally turn to Rust to solve my problem, by making something that watches processes and kills them right away. A Process Killer!
 
-I decided to turn to the [sys-info](https://crates.io/crates/sysinfo) crate, considering its ease of use for scanning processes and PID's. After writing a quick loop to scan every x seconds, and kill the process, all good! .. That is, until I hit a snag. It seems that system processes can't be killed, even if you're running as admin, unless you use [`SeDebugPrivilege`](https://docs.microsoft.com/en-us/windows/win32/secauthz/enabling-and-disabling-privileges-in-c--). Came with a nice snippet of C++ too.
+I decided to turn to the [sys-info](https://crates.io/crates/sysinfo) crate, considering its ease of use for scanning processes and PID's. After writing a quick loop to scan every x seconds, and kill the process, all good! .. That is, until I hit a snag. It seems that system processes can't be killed, even if you're running as admin, unless you use [SeDebugPrivilege](https://docs.microsoft.com/en-us/windows/win32/secauthz/enabling-and-disabling-privileges-in-c--). Came with a nice snippet of C++ too.
 
 So I turned to [windows-rs](https://github.com/microsoft/windows-rs) crate to translate it over since I couldn't find a crate for this. After a little bit, I came up with this unsafe code to grant any privilege to a process in Rust.
 
@@ -118,7 +118,7 @@ After a bit of researching, I found that WMI can do this with a query such as
 `SELECT * FROM __InstanceCreationEvent WITHIN 2 WHERE TargetInstance ISA 'Win32_Process'`  
 but this requires `IWbemServices::ExecNotificationQueryAsync` which is not implemented in the Rust WMI crate. Sad.
 
-I came across [this](https://docs.microsoft.com/en-us/windows/win32/wmisdk/example--receiving-event-notifications-through-wmi-) Microsoft SDK code example to receive async event notifications from WMI. Looks like that's what I need. The Rust Windows API seemed clunky at best however, and I got stuck as I needed to make a custom COM interface with implemented [`IWbemObjectSink`](https://docs.microsoft.com/en-us/windows/win32/wmisdk/iwbemobjectsink), and there wasn't really any way to do it with windows-rs. So I turned to [`com-rs`](https://github.com/microsoft/com-rs) which seemed to solve this, but unfortunately this is mostly for [`winapi`](https://crates.io/crates/winapi), and I didn't want to use winapi compared to the official Microsoft bindings.
+I came across [this](https://docs.microsoft.com/en-us/windows/win32/wmisdk/example--receiving-event-notifications-through-wmi-) Microsoft SDK code example to receive async event notifications from WMI. Looks like that's what I need. The Rust Windows API seemed clunky at best however, and I got stuck as I needed to make a custom COM interface with implemented [IWbemObjectSink](https://docs.microsoft.com/en-us/windows/win32/wmisdk/iwbemobjectsink), and there wasn't really any way to do it with windows-rs. So I turned to [com-rs](https://github.com/microsoft/com-rs) which seemed to solve this, but unfortunately this is mostly for [`winapi`](https://crates.io/crates/winapi), and I didn't want to use winapi compared to the official Microsoft bindings.
 
 I ended up [making an issue report](https://github.com/microsoft/com-rs/issues/237) in the `com-rs` repo, and thankfully, Kenny - the MS employee working on windows-rs - was already planning to work on the COM interface in windows-rs. I just needed to wait a little longer. So I waited about a week or 2, and sure enough, a bunch of PR's got pulled in and we got a new release!
 
@@ -225,37 +225,146 @@ impl IEventSink_Impl for EventSink {
 
 Took a bit to figure out the unsafe code that windows was expecting, especially the `*mut *mut`, but after a bit in the Rust discord, it's all good now! Now I was able to make a WMI connection AND receive async `IWbemClassObject`'s from WMI! But trouble soon popped up again as I wasn't sure how to access a `Win32_Process` instance. After using the built-in `wbemtest` windows program, I soon discovered that `TargetInstance` was returned by the WMI query and was in fact a `Win32_Process` instance!
 
-But after messing a bit with [`SAFEARRAY`](https://docs.microsoft.com/en-us/archive/msdn-magazine/2017/march/introducing-the-safearray-data-structure) and [`VARIANT`](https://docs.microsoft.com/en-us/windows/win32/api/oaidl/ns-oaidl-variant), it seemed very difficult to extract the raw instance data. But I finally found hope after Googling a lot, and what needed to happen was it needs to be cast to an `IUnknown` interface, after which it can be casted back to `IWbemClassObject`
+But after messing a bit with [SAFEARRAY](https://docs.microsoft.com/en-us/archive/msdn-magazine/2017/march/introducing-the-safearray-data-structure) and [VARIANT](https://docs.microsoft.com/en-us/windows/win32/api/oaidl/ns-oaidl-variant), it seemed very difficult to extract the raw instance data. But I finally found hope after Googling a lot, and what needed to happen was it needs to be cast to an `IUnknown` interface, after which it can be casted back to `IWbemClassObject`
 
 ```rust
 pub fn get_embedded_object(&self, name: &str) -> Result<IWbemClassObjectWrapper, Box<dyn Error>> {
-	let mut variant = VARIANT::default();
-	let property = BSTR::from(name);
-	let property = property.as_wide();
-	let mut cim_type = 0i32;
+    let mut variant = VARIANT::default();
+    let property = BSTR::from(name);
+    let property = property.as_wide();
+    let mut cim_type = 0i32;
 
-	let processObject = unsafe {
-		self.obj.Get(
-			PCWSTR(property.as_ptr()),
-			0,
-			&mut variant as *mut _,
-			&mut cim_type as *mut _,
-			std::ptr::null_mut()
-		)?;
+    let processObject = unsafe {
+        self.obj.Get(
+            PCWSTR(property.as_ptr()),
+            0,
+            &mut variant as *mut _,
+            &mut cim_type as *mut _,
+            std::ptr::null_mut()
+        )?;
 
-		if cim_type != CIM_OBJECT.0 {
-			return Err(Box::new(WMIError::NotCimObject))
-		}
+        if cim_type != CIM_OBJECT.0 {
+            return Err(Box::new(WMIError::NotCimObject))
+        }
 
-		// convert embedded object to IUnknown, then cast to IWbemClassObject
-		let pVal = variant.Anonymous.Anonymous.Anonymous.punkVal.as_ref().unwrap();
-		let processObject = pVal.cast::<IWbemClassObject>()?;
+        // convert embedded object to IUnknown, then cast to IWbemClassObject
+        let pVal = variant.Anonymous.Anonymous.Anonymous.punkVal.as_ref().unwrap();
+        let processObject = pVal.cast::<IWbemClassObject>()?;
 
-		Self::new(processObject)
-	};
+        Self::new(processObject)
+    };
 
-	Ok(processObject)
+    Ok(processObject)
 }
 ```
 
-It works! Great!! Now I have an instance of `Win32_Process`.
+It works! Great!! Now I have an instance of `Win32_Process`. Of course, for every property that the WMI query returns we need to access the data contained.
+
+So first we get all the property names
+```rust
+let mut arrs = VecDeque::new();
+
+unsafe {
+    let _safearray = self.obj.GetNames(
+    PCWSTR::default(),
+    WBEM_FLAG_ALWAYS.0,// | WBEM_FLAG_NONSYSTEM_ONLY.0,
+    &VARIANT::default() as *const _ as *const _
+    )?;
+
+    let mut ptr: *mut c_void = std::mem::zeroed();
+
+    SafeArrayAccessData(
+    _safearray as *const _,
+    &mut ptr as *mut _
+    )?;
+
+    let safearray = *_safearray;
+
+    for i in 0..safearray.cDims as usize {
+    let slice = std::slice::from_raw_parts(
+        ptr as *mut BSTR,
+        safearray.rgsabound[i].cElements as usize
+    );
+    arrs.push_back(slice.into_iter().map(|f| f.to_string()).collect::<Vec<String>>());
+    }
+
+    SafeArrayUnaccessData(
+    _safearray
+    )?;
+}
+```
+Then we can get the `VARIANT` after knowing the property names, and handle every single type of property by checking what data the `VARIANT` union holds at `variant.Anonymous.Anonymous.vt` using this [nice list[(https://docs.microsoft.com/en-us/windows/win32/api/wtypes/ne-wtypes-varenum) of types from Microsoft SDK.
+```rust
+
+let mut variant = VARIANT::default();
+let property = BSTR::from(name);
+let property = property.as_wide();
+let mut var_type = 0i32;
+
+unsafe {
+    self.obj.Get(
+    PCWSTR(property.as_ptr()),
+    0,
+    &mut variant as *mut _,
+    &mut var_type as *mut _,
+    std::ptr::null_mut()
+    )?;
+
+    match VARENUM(variant.Anonymous.Anonymous.vt as i32) {
+    VT_UNKNOWN => {
+        // this unknown type is generally an embedded object
+        if var_type != CIM_OBJECT.0 {
+        return Err(Box::new(WMIError::NotCimObject))
+        }
+
+        // convert embedded object to IUnknown, then cast to IWbemClassObject
+        let pVal = variant.Anonymous.Anonymous.Anonymous.punkVal.as_ref().unwrap();
+        let embeddedObject = pVal.cast::<IWbemClassObject>()?;
+        ValueType::CIM_OBJECT(Self::new(embeddedObject))
+    }
+
+    VT_BSTR => {
+        let bstring = &*variant.Anonymous.Anonymous.Anonymous.bstrVal;
+        let string = bstring.to_string();
+        ValueType::BSTR(string)
+    }
+
+    // float 32
+    VT_R4 => {
+        ValueType::R4(variant.Anonymous.Anonymous.Anonymous.fltVal)
+    }
+    
+    // etc
+    }
+}
+```
+After parsing all this into an enum, we have safely parsed all the typed data from the union and know what data all the properties hold! Sweet!
+
+In the end I ended up using [tokio](https://crates.io/crates/tokio) so I could get some nice async with a [ctrl+c handler](https://crates.io/crates/ctrlc), and I ended up with this beauty!
+
+```rust
+loop {
+    select! {
+        // ctrl c break
+        _ = rx.recv() => break,
+
+        Ok(Ok(process)) = rx2.recv() => {
+            let inst = process.get_embedded_object("TargetInstance")?;
+
+            let res = Win32_Process::from(inst);
+            println!("Started {}, {}", res.Name, res.ProcessId);
+            if data.processes.contains(&res.Name.to_lowercase()) {
+                println!("{} is disallowed! Killed!", res.Name);
+                utils::kill_process(&res.Name, res.ProcessId as u32)?;
+            } else {
+                println!("{} is allowed", res.Name);
+            }
+            println!();
+        }
+    }
+}
+```
+
+And now, I never need to check for processes again, since Windows itself will notify my process when a new one starts, otherwise we'll just let async let our thread sleep and do no work!
+
+The full code for the project can be found [here](https://github.com/cherryleafroad/AnnoyingProcessKiller/).
