@@ -42,8 +42,22 @@ pre.highlight {
 }
 
 // need to bypass the 20px margin at top of collapsible
+// by default it's hidden
 div.highlighter-rouge {
   margin-top: -20px;
+  display: none;
+}
+
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
 // padding added to bottom to make it look nice

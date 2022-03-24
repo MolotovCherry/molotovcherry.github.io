@@ -6,6 +6,7 @@ function collapse_code_blocks() {
     // top element
     var code_blocks = [...document.querySelectorAll("pre.highlight")].map(x => x.parentElement.parentElement);
     
+    var buttons = [];
     for (block of code_blocks) {
         var elem = document.createElement("button");
         elem.classList.add("collapsible");
@@ -35,12 +36,11 @@ function collapse_code_blocks() {
         elem.appendChild(div);
         
         block.parentNode.insertBefore(elem, block);
+        buttons.push(elem);
     }
-    
-    /*var i;
 
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
+    for (button of buttons) {
+      button.addEventListener("click", () => {
         this.classList.toggle("active");
         var content = this.nextElementSibling;
         if (content.style.display === "block") {
@@ -49,5 +49,5 @@ function collapse_code_blocks() {
           content.style.display = "block";
         }
       });
-    }*/
+    }
 }
