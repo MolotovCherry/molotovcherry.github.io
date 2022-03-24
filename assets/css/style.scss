@@ -30,17 +30,21 @@ li ul {
 
 .lang-label {
   vertical-align: middle;
-  top: 40%;
+  top: 32%;
   position: absolute;
   left: 0;
   margin-left: 41px;
+}
+
+pre.highlight {
+  padding-top: 0;
 }
 
 .collapsible {
   background-color: #3A3C42;
   color: #f8f8f2;
   cursor: pointer;
-  padding: 10px 10px 0;
+  padding: 10px;
   border: none;
   text-align: left;
   outline: none;
