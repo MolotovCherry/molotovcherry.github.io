@@ -40,7 +40,7 @@ function collapse_code_blocks() {
     }
 
     for (button of buttons) {
-      button.addEventListener("click", () => {
+      button.addEventListener("click", event => {
         this.classList.toggle("active");
         var content = this.nextElementSibling;
         if (content.style.display === "block") {
