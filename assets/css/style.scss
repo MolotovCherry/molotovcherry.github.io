@@ -83,9 +83,16 @@ div.highlighter-rouge {
 
 #share-buttons {
   transform: translate(-50%);
-  top: 50%;
+  top: 48%;
   position: absolute;
   left: 50%;
+}
+
+// display on right in mobile browser
+@media print, screen and (max-width: 740px) {
+  left: auto;
+  right: 0;
+  transform: none;
 }
 
 // override bottom margin to make hr look nicer
