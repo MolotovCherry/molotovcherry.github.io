@@ -115,7 +115,7 @@ div.highlighter-rouge {
   
   #theme-switcher {
     right: 0px !important;
-    top: 44px !important;
+    top: 85px !important;
     margin-right: 20px;
   }
 }
@@ -220,13 +220,6 @@ div.highlighter-rouge {
   margin-bottom: 30px;
 }
 
-#theme-switcher {
-  position: absolute;
-  right: -12px;
-  top: -10px;
-  cursor: pointer;
-}
-
 //
 // Add additional snytax languages as to not break the code highlighter
 //
@@ -236,7 +229,15 @@ div.highlighter-rouge {
 .devicon-css-plain:before{content:""}
 // cplusplus and csharp need to be specified as is, because # and ++ are special chars in css
 
-.toggle {
+
+#theme-switcher {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  cursor: pointer;
+}
+
+.theme-switcher {
   --size: 2rem;
   
   appearance: none;
@@ -273,7 +274,7 @@ div.highlighter-rouge {
 }
 
 // magic
-.toggle {
+.theme-switcher {
   --size: 2rem;
   
   appearance: none;
@@ -309,8 +310,9 @@ div.highlighter-rouge {
   }
 }
 
-.toggle {
+.theme-switcher {
   z-index: 1;
+  
   &:checked {
     & ~ .background {
       --bg: white;
