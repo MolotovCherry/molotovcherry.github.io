@@ -24,7 +24,7 @@ layout: js_minifier
   tag.appendChild(link);
 })();
 
-var setCookie = function(cname, cvalue, exdays) 
+var setCookie = function(cname, cvalue, exdays) {
   if (exdays !== null) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
