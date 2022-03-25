@@ -31,6 +31,18 @@ cherryblog.getCookie = function(cname) {
   return "";
 };
 
+cherryblog.changeCommentsTheme = function() {
+  let mode = cherryblog.getCookie("theme");
+  let theme = mode == dark ? "photon-dark" : "github-light";
+  
+  let msg = {
+    type: "set-theme",
+    theme: theme
+  };
+  
+  document.querySelector("iframe").contentWindow.postMessage(msg, "https://utteranc.es");
+}
+
 (function (){
   let mode = cherryblog.getCookie("theme");
   
