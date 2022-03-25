@@ -99,8 +99,6 @@ function collapseCodeBlocks() {
   let theme = cherryblog.getCookie("theme");
   if (theme === "") {
     theme = "dark";
-  } else {
-    theme = theme == "dark" ? "light" : "dark";
   }
   
   dayNight.checked = theme == "light" ? true : false;
