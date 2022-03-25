@@ -47,7 +47,7 @@ theme: jekyll-theme-modernist
 rss: rss
     
 plugins:
-  - jekyll-feed
+  - jekyll-sitemap
 
 titles_from_headings:
   strip_title: true
