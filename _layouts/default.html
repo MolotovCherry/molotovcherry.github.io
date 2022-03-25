@@ -1,4 +1,5 @@
 ---
+layout: html_minifier
 ---
 
 <!doctype html>
@@ -9,20 +10,20 @@
 
 {% seo %}
 
-    <!--<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">-->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <!--<link rel="stylesheet" href="{{ '/assets/devicon/devicon.min.css' | relative_url }}">-->
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
     
     <!-- inline css -->
-    {% capture inline_scss %}
+    <!--{% capture inline_scss %}
       {% include_relative assets/css/style.scss %}
-    {% endcapture %}
+    {% endcapture %}-->
     {% capture inline_css %}
       {% include_relative assets/devicon/devicon.min.css %}
     {% endcapture %}
     
     <style>
-      {{ inline_scss | scssify }}
+      <!--{{ inline_scss | scssify }}-->
       {{ inline_css }}
     </style>
     
