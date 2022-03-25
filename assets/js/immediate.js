@@ -71,7 +71,7 @@ cherryblog.changeCommentsTheme = function() {
     let script = document.createElement('script');
     script.src = "https://utteranc.es/client.js";
     script.repo = "cherryleafroad/cherryleafroad.github.io";
-    script.issue-term="pathname";
+    script.setAttrribute("issue-term", "pathname");
     script.label = "comments";
     script.theme = mode == "dark" ? "photon-dark" : "github-light";
     script.crossorigin = "anonymous";
