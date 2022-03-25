@@ -112,8 +112,7 @@ div.highlighter-rouge {
   
   // arrows move incorrectly, so just place them next to "next" and "previous"
   .post_navi-arrow {
-    transform: none;
-    top: 41%;
+    top: 15% !important;
   }
 }
 
