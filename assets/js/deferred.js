@@ -79,11 +79,11 @@ function collapseCodeBlocks() {
   if (post.length != 0) {
     let script = document.createElement('script');
     script.src = "https://utteranc.es/client.js";
-    script.repo = "cherryleafroad/cherryleafroad.github.io";
+    script.setAttribute("repo", "cherryleafroad/cherryleafroad.github.io");
     script.setAttribute("issue-term", "pathname");
-    script.label = "comments";
-    script.theme = cherryblog.getCookie("theme") == "dark" ? "photon-dark" : "github-light";
-    script.crossorigin = "anonymous";
+    script.setAttribute("label", "comments");
+    script.setAttribute("theme", cherryblog.getCookie("theme") == "dark" ? "photon-dark" : "github-light");
+    script.setAttribute("crossorigin", "anonymous");
     script.async = true;
     
     post[0].appendChild(script);
