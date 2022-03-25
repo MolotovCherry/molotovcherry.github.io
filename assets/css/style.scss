@@ -3,6 +3,15 @@
 
 @import "{{ site.theme }}";
 
+// code blocks in text
+p > code {
+    background-color: #4f525a;
+    color: #fdfdfd;
+    padding: 0.3em 0.4em 0.3em;
+    border-radius: 6px;
+    vertical-align: middle;
+}
+
 // weird issues with multiple layers and gaps
 li ul {
   margin: 0;
