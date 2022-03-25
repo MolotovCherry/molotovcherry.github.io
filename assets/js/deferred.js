@@ -75,8 +75,12 @@ function collapseCodeBlocks() {
   collapseCodeBlocks();
   
   // dynamically add the themed comments
+  // this detects if it's a post, BUT this MAY be used on other template pages, soo..
   let post = document.getElementsByClassName("post");
-  if (post.length != 0) {
+  // we need to check the path is at least 4, e.g. /2022/3/04/title.
+  // this prevents it from loading on e.g. archive.html
+  let is_post = window.location.pathname.split('/').slice(1).length == 4 && post.length != 0;
+  if (is_post) {
     let script = document.createElement('script');
     script.src = "https://utteranc.es/client.js";
     script.setAttribute("repo", "cherryleafroad/cherryleafroad.github.io");
