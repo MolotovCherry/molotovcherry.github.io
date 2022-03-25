@@ -16,10 +16,10 @@ layout: html_minifier
     
     <!-- inline css -->
     {% capture inline_scss %}
-      {% include assets/css/style.scss %}
+      {% include_absolute assets/css/style.scss %}
     {% endcapture %}
     {% capture inline_css %}
-      {% include assets/devicon/devicon.min.css %}
+      {% include_absolute assets/devicon/devicon.min.css %}
     {% endcapture %}
     
     <style>
@@ -31,7 +31,7 @@ layout: html_minifier
     <noscript>
       <!-- inlined scss -->
       {% capture inline_noscript_scss %}
-        {% include assets/css/noscript.scss %}
+        {% include_absolute assets/css/noscript.scss %}
       {% endcapture %}
       <style>{{ inline_noscript_scss | scssify }}</style>
       <!--<link rel="stylesheet" href="{{ '/assets/css/noscript.css?v=' | append: site.github.build_revision | relative_url }}">-->
@@ -40,7 +40,7 @@ layout: html_minifier
     <!-- inline javascript -->
     <!--<script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>-->
     {% capture inline_javascript %}
-      {% include assets/js/scale.fix.js %}
+      {% include_absolute assets/js/scale.fix.js %}
     {% endcapture %}
     <script>{{ inline_javascript }}</script>
     
