@@ -18,17 +18,6 @@ li ul {
   margin: 0;
 }
 
-.clearfix {
-  clear: both;
-  
-  &:after {
-    content: "";
-    clear: both;
-    display: block;
-    visibility: hidden;
-  }
-}
-
 .devicon-devicon-plain {
   max-width: 2em;
 }
@@ -119,6 +108,12 @@ div.highlighter-rouge {
     left: auto;
     right: 0;
     transform: none;
+  }
+  
+  // arrows move incorrectly, so just place them next to "next" and "previous"
+  .post_navi-arrow {
+    transform: none;
+    top: 41%;
   }
 }
 
