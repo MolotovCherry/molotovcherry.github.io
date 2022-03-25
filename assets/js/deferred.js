@@ -93,8 +93,20 @@ function collapseCodeBlocks() {
     post[0].appendChild(script);
   }
 
+  // set state of day/night icon
+  // checked == day
+  let dayNight = document.getElementById("theme-switcher");
+  let theme = cherryblog.getCookie("theme");
+  if (theme === "") {
+    theme = "dark";
+  } else {
+    theme = theme == "dark" ? "light" : "dark";
+  }
+  
+  dayNight.checked = theme == "light" ? true : false;
+
   // set click handler for switcher
-  document.getElementById("theme-switcher").addEventListener('click', event => {
+  dayNight.addEventListener('click', event => {
     let theme = cherryblog.getCookie("theme");
     if (theme === "") {
       theme = "dark";
