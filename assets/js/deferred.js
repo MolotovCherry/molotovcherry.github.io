@@ -3,10 +3,38 @@ layout: js_minifier
 ---
 
 (function (){
-  collapse_code_blocks();
+  collapseCodeBlocks();
+  
+  // set theme
+  setTheme();
+  
+  // set click handler for switcher
+  document.getElementById("theme-switcher").addEventListener('click', event => {
+    let theme = getCookie("theme");
+    if (!!theme) {
+      theme = "dark";
+    } else {
+      if (theme == "dark") {
+        theme = "light";
+      } else {
+        theme = "dark";
+      }
+    }
+    
+    setCookie("theme", theme, null);
+    setTheme();
+  });
 })();
 
-function collapse_code_blocks() {
+var setTheme = function() {
+  // set up click handler for theme switching
+  let mode = getCookie("theme");
+
+  let link = document.getElementById("theme");
+  link.href = "/assets/css/" + mode + "-mode.css";
+}
+
+function collapseCodeBlocks() {
     // top element
     var code_blocks = document.getElementsByTagName("pre");
     

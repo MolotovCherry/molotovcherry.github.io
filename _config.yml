@@ -47,7 +47,10 @@ modernist:
 theme: jekyll-theme-modernist
 
 rss: rss
-    
+
+sass:
+  style: compressed
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap

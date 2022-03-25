@@ -1,0 +1,39 @@
+---
+---
+
+html {
+  background-color: #3d434b;
+  background: #3d434b linear-gradient(#3d434b, #1e2125) fixed;
+}
+
+body {
+  color: #fafafa;
+}
+
+section {
+  background: linear-gradient(#313036, #232326 700px);
+}
+
+.wrapper {
+  background: #313036;
+  box-shadow: rgba(#000, 0.2) 0 0 0 1px, rgba(#000, 0.45) 0 3px 10px;
+}
+
+a {
+  color: #63ff8c;
+}
+
+header {
+  background:#313036;
+  background: linear-gradient(#313036, #232326);
+  border-bottom:1px solid #1b1b1d;
+  
+  h1 {
+    color: #fafafa;
+  }
+  
+  p {
+    color:#fafafa;
+  }
+}
+

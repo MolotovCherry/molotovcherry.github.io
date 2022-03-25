@@ -10,16 +10,21 @@ layout: html_minifier
 
 {% seo %}
 
-    <script src="{{ '/assets/js/custom.js' | relative_url }}" defer></script>
+    <!-- will dynamically load users theme -->
+    <script src="{{ '/assets/js/immediate.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/deferred.js' | relative_url }}" defer></script>
+
+    <!-- Fix the code blocks for noscript -->
+    <noscript>
+      <!-- switching requires javascript, so default is dark -->
+      <link rel="stylesheet" href="{{ '/assets/css/dark-mode.css?v=' | append: site.github.build_revision | relative_url }}">
+      <!-- noscript support -->
+      <link rel="stylesheet" href="{{ '/assets/css/noscript.css?v=' | append: site.github.build_revision | relative_url }}">
+    </noscript>
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/devicon/devicon.min.css' | relative_url }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
-    
-    <!-- Fix the code blocks for noscript -->
-    <noscript>
-      <link rel="stylesheet" href="{{ '/assets/css/noscript.css?v=' | append: site.github.build_revision | relative_url }}">
-    </noscript>
     
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -50,6 +55,8 @@ layout: html_minifier
         <p class="header-links">
           <a href="{{ site.url }}/archive.html">Blog Archive</a>
         </p>
+        <!-- https://www.flaticon.com/free-icons/day-and-night Day and night icons created by Freepik -->
+        <img id="theme-switcher" src="/assets/theme-switcher.png">
       </header>
       <section>
 
