@@ -80,7 +80,7 @@ function collapseCodeBlocks() {
     let script = document.createElement('script');
     script.src = "https://utteranc.es/client.js";
     script.repo = "cherryleafroad/cherryleafroad.github.io";
-    script.setAttrribute("issue-term", "pathname");
+    script.setAttribute("issue-term", "pathname");
     script.label = "comments";
     script.theme = mode == "dark" ? "photon-dark" : "github-light";
     script.crossorigin = "anonymous";
