@@ -10,39 +10,45 @@ layout: html_minifier
 
 {% seo %}
 
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <!--<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">-->
     <!--<link rel="stylesheet" href="{{ '/assets/devicon/devicon.min.css' | relative_url }}">-->
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
     
-    <!-- inline css -->
-    <!--{% capture inline_scss %}
-      {% include_relative assets/css/style.scss %}
-    {% endcapture %}-->
-    {% capture inline_css %}
-      {% include_relative assets/devicon/devicon.min.css %}
-    {% endcapture %}
+    <style type="text/css">
+      <!-- inline css -->
+      {% capture inline_scss %}
+        {% include_relative assets/css/style.scss %}
+      {% endcapture %}
+      {% capture inline_css %}
+        {% include_relative assets/devicon/devicon.min.css %}
+      {% endcapture %}
     
-    <style>
-      <!--{{ inline_scss | scssify }}-->
+      {{ inline_scss | scssify }}
       {{ inline_css }}
     </style>
     
     <!-- Fix the code blocks for noscript -->
     <noscript>
-      <!-- inlined scss -->
-      {% capture inline_noscript_scss %}
-        {% include_relative assets/css/noscript.scss %}
-      {% endcapture %}
-      <style>{{ inline_noscript_scss | scssify }}</style>
+      <style type="text/css">
+        <!-- inlined scss -->
+        {% capture inline_noscript_scss %}
+          {% include_relative assets/css/noscript.scss %}
+        {% endcapture %}
+        
+        {{ inline_noscript_scss | scssify }}
+      </style>
       <!--<link rel="stylesheet" href="{{ '/assets/css/noscript.css?v=' | append: site.github.build_revision | relative_url }}">-->
     </noscript>
     
     <!-- inline javascript -->
     <!--<script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>-->
-    {% capture inline_javascript %}
-      {% include_relative assets/js/scale.fix.js %}
-    {% endcapture %}
-    <script>{{ inline_javascript }}</script>
+    <script>
+      {% capture inline_javascript %}
+        {% include_relative assets/js/scale.fix.js %}
+      {% endcapture %}
+      
+      {{ inline_javascript }}
+    </script>
     
     <script src="{{ '/assets/js/custom.js' | relative_url }}" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
