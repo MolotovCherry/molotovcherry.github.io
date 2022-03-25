@@ -70,9 +70,9 @@ div.highlighter-rouge {
 }
 
 .collapsible:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  content: "\2795\fe0e"; /* Unicode character for "plus" sign (+) */
   font-size: 13px;
-  color: white;
+  color: "#f8f8f2";
   
   top: 32%;
   position: absolute;
@@ -81,7 +81,8 @@ div.highlighter-rouge {
 }
 
 .active:after {
-  content: "\2796"; /* Unicode character for "minus" sign (-) */
+  content: "\2796\fe0e"; /* Unicode character for "minus" sign (-) */
+  color: "#f8f8f2";
 }
 
 // padding added to bottom to make it look nice
