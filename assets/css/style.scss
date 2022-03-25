@@ -4,7 +4,7 @@
 @import "{{ site.theme }}";
 
 // code blocks in text
-p > code {
+p > code, kbd {
     padding: 0.3em 0.4em 0.3em;
     border-radius: 6px;
     vertical-align: middle;

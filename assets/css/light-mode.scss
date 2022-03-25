@@ -135,15 +135,6 @@ hr {
   background:#aaa;
 }
 
-kbd {
-  background-color: #fafbfc;
-  border: 1px solid #c6cbd1;
-  border-bottom-color: #959da5;
-  box-shadow: inset 0 -1px 0 #959da5;
-  
-  color: #444d56;
-}
-
 footer {
   color:#ccc;
   
@@ -152,7 +143,12 @@ footer {
   }
 }
 
-p > code {
+p > code, kbd {
   background-color: #4f525a;
   color: #fdfdfd;
+}
+
+// change svg icons to white
+.svg-icon {
+  fill: #ffffff;
 }

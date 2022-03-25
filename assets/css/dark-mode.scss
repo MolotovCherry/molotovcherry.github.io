@@ -29,20 +29,20 @@ header {
   background: linear-gradient(#313036, #232326);
   border-bottom:1px solid #1b1b1d;
   
-  h1 {
-    color: #fafafa;
-  }
-  
   p {
     color:#fafafa;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fafafa;
 }
 
 div.highlighter-rouge {
   background: #3A3C42;
 }
 
-p > code {
+p > code, kbd {
   background-color: #3d4046;
   color: #fdfdfd;
 }
@@ -52,3 +52,31 @@ p > code {
   fill: #ffffff;
 }
 
+blockquote {
+  background:#3A3C42;
+  color:#fafafa;
+}
+
+th, td {
+  border-bottom:1px solid #313036;
+}
+
+dt {
+  color:#fafafa;
+}
+
+th {
+  color:#fafafa;
+}
+
+hr {
+  background: #313036;
+}
+
+footer {
+  color:#fafafa;
+  
+  a {
+    color:#fafafa;
+  }
+}
