@@ -18,13 +18,10 @@ layout: html_minifier
     {% capture inline_scss %}
       {% include_relative assets/css/style.scss %}
     {% endcapture %}
-    {% capture inline_css %}
-      {% include_relative assets/devicon/devicon.min.css %}
-    {% endcapture %}
+
     
     <style>
       {{ inline_scss | scssify }}
-      {{ inline_css }}
     </style>
     
     <!-- Fix the code blocks for noscript -->
