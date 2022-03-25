@@ -2,30 +2,6 @@
 layout: js_minifier
 ---
 
-(function (){
-  collapseCodeBlocks();
-  
-  // set theme
-  setTheme();
-  
-  // set click handler for switcher
-  document.getElementById("theme-switcher").addEventListener('click', event => {
-    let theme = getCookie("theme");
-    if (!!theme) {
-      theme = "dark";
-    } else {
-      if (theme == "dark") {
-        theme = "light";
-      } else {
-        theme = "dark";
-      }
-    }
-    
-    setCookie("theme", theme, null);
-    setTheme();
-  });
-})();
-
 var setTheme = function() {
   // set up click handler for theme switching
   let mode = getCookie("theme");
@@ -94,3 +70,27 @@ function collapseCodeBlocks() {
         });
     }
 }
+
+(function (){
+  collapseCodeBlocks();
+  
+  // set theme
+  setTheme();
+  
+  // set click handler for switcher
+  document.getElementById("theme-switcher").addEventListener('click', event => {
+    let theme = getCookie("theme");
+    if (!!theme) {
+      theme = "dark";
+    } else {
+      if (theme == "dark") {
+        theme = "light";
+      } else {
+        theme = "dark";
+      }
+    }
+    
+    setCookie("theme", theme, null);
+    setTheme();
+  });
+})();
