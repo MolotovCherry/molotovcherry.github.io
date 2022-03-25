@@ -8,7 +8,7 @@ var setTheme = function() {
 
   let link = document.getElementById("theme");
   link.href = "/assets/css/" + mode + "-mode.css";
-}
+};
 
 function collapseCodeBlocks() {
     // top element
