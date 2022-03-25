@@ -39,7 +39,7 @@ var getCookie = function(cname) {
   link.id = "theme";
   
   // no cookie, use dark mode by default
-  if (!!mode) {
+  if (mode === "") {
     // set users preferred style
     link.href = "/assets/css/dark-mode.css";
     setCookie("theme", "dark", null);

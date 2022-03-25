@@ -80,7 +80,7 @@ function collapseCodeBlocks() {
   // set click handler for switcher
   document.getElementById("theme-switcher").addEventListener('click', event => {
     let theme = getCookie("theme");
-    if (!!theme) {
+    if (theme === "") {
       theme = "dark";
     } else {
       if (theme == "dark") {
