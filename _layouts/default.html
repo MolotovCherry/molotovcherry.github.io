@@ -17,6 +17,7 @@ layout: html_minifier
     <style type="text/css">
       <!-- inline css -->
       {% capture inline_scss %}
+        {% include_relative assets/css/jekyll-theme-modernist.scss %}
         {% include_relative assets/css/style.scss %}
       {% endcapture %}
       {% capture inline_css %}
