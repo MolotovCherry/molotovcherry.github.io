@@ -41,7 +41,7 @@ cherryblog.changeCommentsTheme = function() {
   };
   
   document.querySelector("iframe").contentWindow.postMessage(msg, "https://utteranc.es");
-}
+};
 
 (function (){
   let mode = cherryblog.getCookie("theme");
