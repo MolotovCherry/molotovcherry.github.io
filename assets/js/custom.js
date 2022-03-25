@@ -8,10 +8,13 @@ layout: js_minifier
 
 function collapse_code_blocks() {
     // top element
-    var code_blocks = [...document.querySelectorAll("pre.highlight")].map(x => x.parentElement.parentElement);
+    var code_blocks = document.getElementsByTagName("pre");
     
-    var buttons = [];
-    for (block of code_blocks) {
+    var len = code_blocks.length;
+    for (var x = 0; x < len; x++) {
+        // need the top level parent
+        var block = code_blocks[x].parentElement.parentElement;
+        
         var elem = document.createElement("button");
         elem.classList.add("collapsible");
         
@@ -50,19 +53,16 @@ function collapse_code_blocks() {
         
         parent.insertBefore(container, referenceNode);
         
-        buttons.push(elem);
-    }
-
-    for (button of buttons) {
-      button.addEventListener("click", event => {
-        event.currentTarget.classList.toggle("active");
-        var content = event.currentTarget.nextElementSibling;
-        
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-      });
+        // now add event listener to button
+        elem.addEventListener("click", event => {
+          event.currentTarget.classList.toggle("active");
+          var content = event.currentTarget.nextElementSibling;
+          
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
     }
 }
