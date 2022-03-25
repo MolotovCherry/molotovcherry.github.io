@@ -74,6 +74,21 @@ function collapseCodeBlocks() {
 (function (){
   collapseCodeBlocks();
   
+  // dynamically add the themed comments
+  let post = document.getElementsByClassName("post");
+  if (post.length != 0) {
+    let script = document.createElement('script');
+    script.src = "https://utteranc.es/client.js";
+    script.repo = "cherryleafroad/cherryleafroad.github.io";
+    script.setAttrribute("issue-term", "pathname");
+    script.label = "comments";
+    script.theme = mode == "dark" ? "photon-dark" : "github-light";
+    script.crossorigin = "anonymous";
+    script.async = true;
+    
+    post[0].appendChild(script);
+  }
+
   // set click handler for switcher
   document.getElementById("theme-switcher").addEventListener('click', event => {
     let theme = cherryblog.getCookie("theme");
