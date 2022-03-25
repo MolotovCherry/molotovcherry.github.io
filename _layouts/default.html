@@ -10,35 +10,13 @@ layout: html_minifier
 
 {% seo %}
 
-    <!--<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">-->
-    <!--<link rel="stylesheet" href="{{ '/assets/devicon/devicon.min.css' | relative_url }}">-->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/devicon/devicon.min.css' | relative_url }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
-    
-    <style type="text/css">
-      <!-- inline css -->
-      {% capture inline_scss %}
-        {% include_relative assets/css/jekyll-theme-modernist.scss %}
-        {% include_relative assets/css/style.scss %}
-      {% endcapture %}
-      {% capture inline_css %}
-        {% include_relative assets/devicon/devicon.min.css %}
-      {% endcapture %}
-    
-      {{ inline_scss | scssify }}
-      {{ inline_css }}
-    </style>
     
     <!-- Fix the code blocks for noscript -->
     <noscript>
-      <style type="text/css">
-        <!-- inlined scss -->
-        {% capture inline_noscript_scss %}
-          {% include_relative assets/css/noscript.scss %}
-        {% endcapture %}
-        
-        {{ inline_noscript_scss | scssify }}
-      </style>
-      <!--<link rel="stylesheet" href="{{ '/assets/css/noscript.css?v=' | append: site.github.build_revision | relative_url }}">-->
+      <link rel="stylesheet" href="{{ '/assets/css/noscript.css?v=' | append: site.github.build_revision | relative_url }}">
     </noscript>
     
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
