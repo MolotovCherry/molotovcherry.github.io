@@ -74,10 +74,6 @@ function collapseCodeBlocks() {
 (function (){
   collapseCodeBlocks();
   
-  // set theme
-  cherryblog.setTheme();
-  cherryblog.changeCommentsTheme();
-  
   // set click handler for switcher
   document.getElementById("theme-switcher").addEventListener('click', event => {
     let theme = cherryblog.getCookie("theme");

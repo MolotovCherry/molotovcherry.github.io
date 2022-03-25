@@ -57,10 +57,26 @@ cherryblog.changeCommentsTheme = function() {
     // set users preferred style
     link.href = "/assets/css/dark-mode.css";
     cherryblog.setCookie("theme", "dark", null);
+    mode = "dark";
   } else {
     // set users preferred style
     link.href = "/assets/css/" + mode + "-mode.css";
   }
   
   tag.appendChild(link);
+  
+  // dynamically add the themed comments
+  let post = document.getElementsByClassName("post");
+  if (post.length != 0) {
+    let script = document.createElement('script');
+    script.src = "https://utteranc.es/client.js";
+    script.repo = "cherryleafroad/cherryleafroad.github.io";
+    script.issue-term="pathname";
+    script.label = "comments";
+    script.theme = mode == "dark" ? "photon-dark" : "github-light";
+    script.crossorigin = "anonymous";
+    script.async = true;
+    
+    post.appendChild(script);
+  }
 })();
