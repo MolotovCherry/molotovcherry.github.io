@@ -10,6 +10,8 @@ layout: html_minifier
 
 {% seo %}
 
+    <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
+
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/devicon/devicon.min.css' | relative_url }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
@@ -20,7 +22,6 @@ layout: html_minifier
     </noscript>
     
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/custom.js' | relative_url }}" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <!--[if lt IE 9]>
