@@ -82,7 +82,7 @@ function collapseCodeBlocks() {
     script.repo = "cherryleafroad/cherryleafroad.github.io";
     script.setAttribute("issue-term", "pathname");
     script.label = "comments";
-    script.theme = mode == "dark" ? "photon-dark" : "github-light";
+    script.theme = cherryblog.getCookie("theme") == "dark" ? "photon-dark" : "github-light";
     script.crossorigin = "anonymous";
     script.async = true;
     
