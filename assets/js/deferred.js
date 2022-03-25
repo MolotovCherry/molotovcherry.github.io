@@ -2,9 +2,9 @@
 layout: js_minifier
 ---
 
-var setTheme = function() {
+cherryblog.setTheme = function() {
   // set up click handler for theme switching
-  let mode = getCookie("theme");
+  let mode = cherryblog.getCookie("theme");
 
   let link = document.getElementById("theme");
   link.href = "/assets/css/" + mode + "-mode.css";
@@ -75,22 +75,18 @@ function collapseCodeBlocks() {
   collapseCodeBlocks();
   
   // set theme
-  setTheme();
+  cherryblog.setTheme();
   
   // set click handler for switcher
   document.getElementById("theme-switcher").addEventListener('click', event => {
-    let theme = getCookie("theme");
+    let theme = cherryblog.getCookie("theme");
     if (theme === "") {
       theme = "dark";
     } else {
-      if (theme == "dark") {
-        theme = "light";
-      } else {
-        theme = "dark";
-      }
+      theme = theme == "dark" ? "light" : "dark";
     }
     
-    setCookie("theme", theme, null);
-    setTheme();
+    cherryblog.setCookie("theme", theme, null);
+    cherryblog.setTheme();
   });
 })();

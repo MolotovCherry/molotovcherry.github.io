@@ -2,7 +2,9 @@
 layout: js_minifier
 ---
 
-var setCookie = function(cname, cvalue, exdays) {
+window.cherryblog = window.cherryblog || {};
+
+cherryblog.setCookie = function(cname, cvalue, exdays) {
   if (exdays !== null) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -13,7 +15,7 @@ var setCookie = function(cname, cvalue, exdays) {
   }
 };
 
-var getCookie = function(cname) {
+cherryblog.getCookie = function(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
@@ -30,7 +32,7 @@ var getCookie = function(cname) {
 };
 
 (function (){
-  let mode = getCookie("theme");
+  let mode = cherryblog.getCookie("theme");
   
   let tag = document.currentScript;
   let link = document.createElement('link');
@@ -42,7 +44,7 @@ var getCookie = function(cname) {
   if (mode === "") {
     // set users preferred style
     link.href = "/assets/css/dark-mode.css";
-    setCookie("theme", "dark", null);
+    cherryblog.setCookie("theme", "dark", null);
   } else {
     // set users preferred style
     link.href = "/assets/css/" + mode + "-mode.css";
