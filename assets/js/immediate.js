@@ -33,7 +33,7 @@ cherryblog.getCookie = function(cname) {
 
 cherryblog.changeCommentsTheme = function() {
   let mode = cherryblog.getCookie("theme");
-  let theme = mode == dark ? "photon-dark" : "github-light";
+  let theme = mode == "dark" ? "photon-dark" : "github-light";
   
   let msg = {
     type: "set-theme",
