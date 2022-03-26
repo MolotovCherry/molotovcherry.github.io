@@ -35,7 +35,7 @@ html {
       var(--html-background-color-from),
       var(--html-background-color-to)
     ) fixed;*/
-  @include gradiant-animation(
+  @include gradient-animation(
     var(--html-background-color-from),
     var(--html-background-color-to),
     var(--html-background-color-transition-to-from),
@@ -56,7 +56,7 @@ section {
       var(--section-background-from),
       var(--section-background-to) 700px
     );*/
-  @include gradiant-animation(
+  @include gradient-animation(
     var(--section-background-from),
     var(--section-background-to),
     var(--section-background-transition-to-from),
@@ -85,7 +85,7 @@ header {
       var(--header-background-from),
       var(--header-background-to)
     );*/
-  @include gradiant-animation(
+  @include gradient-animation(
     var(--header-background-from),
     var(--header-background-to),
     var(--header-background-transition-to-from),
