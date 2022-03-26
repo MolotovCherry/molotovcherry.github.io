@@ -78,7 +78,7 @@ function collapseCodeBlocks() {
     script.setAttribute("repo", "cherryleafroad/cherryleafroad.github.io");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("label", "comments");
-    script.setAttribute("theme", cherryblog.getCommentTheme());
+    script.setAttribute("theme", cherryblog.getCommentsTheme());
     script.setAttribute("crossorigin", "anonymous");
     script.async = true;
     

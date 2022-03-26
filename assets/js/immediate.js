@@ -40,7 +40,7 @@ cherryblog.getTheme = function() {
   return mode;
 };
 
-cherryblog.getCommentTheme = function() {
+cherryblog.getCommentsTheme = function() {
   return cherryblog.getTheme() == "dark" ? "photon-dark" : "github-light";
 };
 
