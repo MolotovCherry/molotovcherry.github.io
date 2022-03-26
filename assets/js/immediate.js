@@ -4,6 +4,9 @@ layout: js_minifier
 
 window.cherryblog = window.cherryblog || {};
 
+// defaults to dark if undefined, otherwise gets preferred theme
+cherryblog.prefersDark = ((window.matchMedia === undefined) ? true : window.matchMedia('(prefers-color-scheme: dark)').matches);
+
 cherryblog.changeTheme = function(theme) {
   let link = document.getElementById("theme");
   link.href = "/assets/css/" + theme + "-mode.css";
@@ -24,8 +27,11 @@ cherryblog.getTheme() {
   let mode = localStorage.getItem("theme");
   // dark is default
   if (mode === null) {
-    mode = "dark";
-    localStorage.setItem("theme", "dark");
+    if (cherryblog.prefersDark) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
   }
   
   return mode;
