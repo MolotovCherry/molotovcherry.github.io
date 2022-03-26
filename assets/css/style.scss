@@ -2,10 +2,6 @@
 ---
 
 @import "{{ site.theme }}";
-@import "dark-theme";
-@import "light-theme";
-@import "theme-default";
-@import "devicon.min";
 
 // code blocks in text
 p > code, kbd {
