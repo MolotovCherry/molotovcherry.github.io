@@ -35,7 +35,7 @@ cherryblog.getTheme = function() {
   }
   
   return mode;
-}
+};
 
 (function (){
   let mode = cherryblog.getTheme();
