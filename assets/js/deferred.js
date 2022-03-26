@@ -78,7 +78,7 @@ function collapseCodeBlocks() {
     script.setAttribute("repo", "cherryleafroad/cherryleafroad.github.io");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("label", "comments");
-    script.setAttribute("theme", cherryblog.getCookie("theme") == "dark" ? "photon-dark" : "github-light");
+    script.setAttribute("theme", cherryblog.getCommentTheme());
     script.setAttribute("crossorigin", "anonymous");
     script.async = true;
     
@@ -93,14 +93,8 @@ function collapseCodeBlocks() {
   dayNight.checked = theme == "light" ? true : false;
 
   // set click handler for switcher
-  dayNight.addEventListener('click', event => {
-    let theme = cherryblog.getTheme();;
-    
-    // flip it around
-    theme = theme == "dark" ? "light" : "dark";
-    localStorage.setItem("theme", theme);
-    
-    cherryblog.changeTheme(theme);
-    cherryblog.changeCommentsTheme(theme);
+  dayNight.addEventListener('click', event => {    
+    cherryblog.toggleTheme();
+    cherryblog.toggleCommentsTheme();
   });
 })();

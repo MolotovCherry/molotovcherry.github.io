@@ -7,17 +7,20 @@ window.cherryblog = window.cherryblog || {};
 // defaults to dark if undefined, otherwise gets preferred theme
 cherryblog.prefersDark = ((window.matchMedia === undefined) ? true : window.matchMedia('(prefers-color-scheme: dark)').matches);
 
-cherryblog.changeTheme = function(theme) {
+cherryblog.toggleTheme = function() {
+  let theme = cherryblog.getTheme() == "dark" ? "light" : "dark";
+  localStorage.setItem("theme", theme);
+
   let link = document.getElementById("theme");
   link.href = "/assets/css/" + theme + "-mode.css";
 };
 
-cherryblog.changeCommentsTheme = function(theme) {
-  let commentTheme = theme == "dark" ? "photon-dark" : "github-light";
-  
+cherryblog.toggleCommentsTheme = function() {
+  let theme = cherryblog.getTheme() == "dark" ? "github-light" : "photon-dark";
+
   let msg = {
     type: "set-theme",
-    theme: commentTheme
+    theme: theme
   };
   
   document.querySelector("iframe").contentWindow.postMessage(msg, "https://utteranc.es");
@@ -35,6 +38,10 @@ cherryblog.getTheme = function() {
   }
   
   return mode;
+};
+
+cherryblog.getCommentTheme = function() {
+  return cherryblog.getTheme() == "dark" ? "photon-dark" : "github-light";
 };
 
 (function (){
