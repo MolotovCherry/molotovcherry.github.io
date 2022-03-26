@@ -52,6 +52,12 @@ p > code, kbd {
   fill: #ffffff;
 }
 
+@media print, screen and (max-width: 740px) {
+  html {
+    background: #232326;
+  }
+}
+
 blockquote {
   background:#3A3C42;
   color:#fafafa;
