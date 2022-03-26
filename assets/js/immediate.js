@@ -23,7 +23,7 @@ cherryblog.changeCommentsTheme = function(theme) {
   document.querySelector("iframe").contentWindow.postMessage(msg, "https://utteranc.es");
 };
 
-cherryblog.getTheme() {
+cherryblog.getTheme = function() {
   let mode = localStorage.getItem("theme");
   // dark is default
   if (mode === null) {
