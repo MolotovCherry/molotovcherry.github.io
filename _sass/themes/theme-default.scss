@@ -106,6 +106,12 @@ strong {
   fill: var(--svg-footer-color);
 }
 
+.post_navi {
+  .post_navi-item {
+    color: var(--body-color);
+  }
+}
+
 // change the background color for mobile devices
 @media print, screen and (max-width: 740px) {
   html {
