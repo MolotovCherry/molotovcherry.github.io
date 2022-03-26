@@ -32,8 +32,10 @@ cherryblog.getTheme = function() {
   if (mode === null) {
     if (cherryblog.prefersDark) {
       localStorage.setItem("theme", "dark");
+      mode = "dark";
     } else {
       localStorage.setItem("theme", "light");
+      mode = "light";
     }
   }
   
