@@ -54,5 +54,7 @@ cherryblog.setTheme = function(theme) {
 };
 
 (function () {
-  cherryblog.setTheme();
+  let theme = cherryblog.getTheme();
+  let html = document.documentElement;
+  html.dataset.theme = theme;
 })();
