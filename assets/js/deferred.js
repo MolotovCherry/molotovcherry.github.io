@@ -2,14 +2,6 @@
 layout: js_minifier
 ---
 
-cherryblog.setTheme = function() {
-  // set up click handler for theme switching
-  let mode = cherryblog.getCookie("theme");
-
-  let link = document.getElementById("theme");
-  link.href = "/assets/css/" + mode + "-mode.css";
-};
-
 function collapseCodeBlocks() {
     // top element
     var code_blocks = document.getElementsByTagName("pre");
@@ -96,24 +88,19 @@ function collapseCodeBlocks() {
   // set state of day/night icon
   // checked == day
   let dayNight = document.getElementById("theme-switcher");
-  let theme = cherryblog.getCookie("theme");
-  if (theme === "") {
-    theme = "dark";
-  }
+  let theme = cherryblog.getTheme();
   
   dayNight.checked = theme == "light" ? true : false;
 
   // set click handler for switcher
   dayNight.addEventListener('click', event => {
-    let theme = cherryblog.getCookie("theme");
-    if (theme === "") {
-      theme = "dark";
-    } else {
-      theme = theme == "dark" ? "light" : "dark";
-    }
+    let theme = cherryblog.getTheme();;
     
-    cherryblog.setCookie("theme", theme, null);
-    cherryblog.setTheme();
-    cherryblog.changeCommentsTheme();
+    // flip it around
+    theme = theme == "dark" ? "light" : "dark";
+    localStorage.setItem("theme", theme);
+    
+    cherryblog.changeTheme(theme);
+    cherryblog.changeCommentsTheme(theme);
   });
 })();
