@@ -48,6 +48,10 @@ header {
   h1 {
     color: var(--header-h1-color);
     text-shadow: var(--header-h1-textshadow);
+    
+    a {
+      color: color: var(--header-h1-color);
+    }
   }
 }
 
