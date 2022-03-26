@@ -36,7 +36,7 @@ cherryblog.getCommentsTheme = function(theme) {
   return theme == "dark" ? "photon-dark" : "github-light";
 };
 
-cherryblog.setTheme(theme) {
+cherryblog.setTheme = function(theme) {
   if (theme === undefined) {
     theme = cherryblog.getTheme();
   }
