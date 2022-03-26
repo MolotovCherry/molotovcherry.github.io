@@ -2,7 +2,7 @@
   background: linear-gradient($startFrom, $endFrom) $fixed;
   z-index: 100;
   &:before {
-    background: linear-gradient($startTo, $endTo) $fixed
+    background: linear-gradient($startTo, $endTo) $fixed;
     content: '';
     height: 100%;
     position: absolute;
