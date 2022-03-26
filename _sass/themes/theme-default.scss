@@ -1,10 +1,10 @@
 @mixin gradient-animation( $startFrom, $endFrom, $startTo, $endTo, $transTime ) {
   background-size: 100%;
-  background-image: linear-gradient($startFrom, $endFrom);
+  background-image: linear-gradient($startFrom, $endFrom) fixed;
   position: relative;
   z-index: 100;
   &:before {
-    background-image: linear-gradient($startTo, $endTo);
+    background-image: linear-gradient($startTo, $endTo) fixed;
     content: '';    
     display: block;
     height: 100%;
@@ -14,11 +14,6 @@
     width: 100%;
     z-index: -100;
     transition: opacity $transTime;
-  }
-  &:hover {
-     &:before {
-       opacity: 1; 
-     }
   }
 }
 
