@@ -65,7 +65,18 @@ function collapseCodeBlocks() {
 
 (function (){
   collapseCodeBlocks();
-  
+
+  // set state of day/night icon
+  // checked == day
+  let dayNight = document.getElementById("theme-switcher");
+  let theme = cherryblog.getTheme();
+  dayNight.checked = theme == "light" ? true : false;
+
+  // set click handler for switcher
+  dayNight.addEventListener('click', event => {    
+    cherryblog.toggleTheme();
+  });
+
   // dynamically add the themed comments
   // this detects if it's a post, BUT this MAY be used on other template pages, soo..
   let post = document.getElementsByClassName("post");
@@ -78,23 +89,10 @@ function collapseCodeBlocks() {
     script.setAttribute("repo", "cherryleafroad/cherryleafroad.github.io");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("label", "comments");
-    script.setAttribute("theme", cherryblog.getCommentsTheme());
+    script.setAttribute("theme", cherryblog.getCommentsTheme(theme));
     script.setAttribute("crossorigin", "anonymous");
     script.async = true;
     
     post[0].appendChild(script);
   }
-
-  // set state of day/night icon
-  // checked == day
-  let dayNight = document.getElementById("theme-switcher");
-  let theme = cherryblog.getTheme();
-  
-  dayNight.checked = theme == "light" ? true : false;
-
-  // set click handler for switcher
-  dayNight.addEventListener('click', event => {    
-    cherryblog.toggleTheme();
-    cherryblog.setCommentsTheme();
-  });
 })();

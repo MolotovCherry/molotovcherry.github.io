@@ -1,0 +1,142 @@
+---
+---
+
+html { 
+  background-color: var(--html-background-color-from);
+  background: var(--html-background-color-from)
+    linear-gradient(
+      var(--html-background-color-from),
+      var(--html-background-color-to)
+    ) fixed;
+}
+
+body {
+  color: var(--body-color);
+}
+
+section {
+  background:
+    linear-gradient(
+      var(--section-background-from),
+      var(--section-background-to) 700px
+    );
+  border-top: 1px solid var(--section-border-top);
+}
+
+.wrapper {
+  background: var(--wrapper-background);
+  box-shadow: rgba(#000, 0.2) 0 0 0 1px, rgba(#000, 0.45) 0 3px 10px;
+}
+
+a {
+  color: var(--link-color);
+}
+
+header {
+  background: var(--header-background);
+  background: linear-gradient(
+      var(--header-background-from),
+      var(--header-background-to)
+    );
+  border-bottom: 1px solid var(--header-border-bottom);
+  
+  p {
+    color: var(--header-p);
+    
+    &.view {
+      text-shadow: var(--header-p-view-text-shadow);
+    }
+  }
+  
+  h1 {
+    color: var(--header-h1-color);
+    text-shadow: var(--header-h1-textshadow);
+  }
+}
+
+h1 {
+  color: var(--h1);
+}
+h2 {
+  color: var(--h2);
+}
+h3{
+  color: var(--h3);
+}
+h4 {
+  color: var(--h4);
+}
+h5 {
+  color: var(--h5);
+}
+h6 {
+  color: var(--h6);
+}
+
+//
+// code blocks section
+//
+div.highlighter-rouge {
+  background: var(--highlighter-background);
+}
+
+pre {
+  background: var(--highlighter-background);
+  color: var(--pre-color);
+  
+  code {
+    color: var(--pre-color);
+  }
+}
+// end code blocks section
+
+// inline `code`
+p > code, kbd {
+  background-color: var(--code-background-color);
+  color: var(--code-color);
+}
+
+strong {
+  color: var(--strong-color);
+}
+
+// change svg icons to white
+.svg-icon {
+  fill: var(--svg-footer-color);
+}
+
+// change the background color for mobile devices
+@media print, screen and (max-width: 740px) {
+  html {
+    background: var(--media-html-background);
+  }
+}
+
+blockquote {
+  background: var(--blockquote-background);
+  color: var(--blockquote-color);
+}
+
+th, td {
+  border-bottom: 1px solid var(--th-td-border-bottom);
+}
+
+dt {
+  color: var(--dt-color);
+}
+
+th {
+  color: var(--th-color);
+}
+
+hr {
+  background: var(--hr-background);
+}
+
+footer {
+  color: var(--footer-color);
+  
+  a {
+    color: var(--footer-a-color);
+  }
+}

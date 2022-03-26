@@ -1,0 +1,57 @@
+---
+---
+
+html[data-theme='dark'] {
+  --html-background-color-from: #43424a;
+  --html-background-color-to: #222228;
+  
+  --media-html-background: #232326;
+  
+  --body-color: #fafafa;
+  
+  --section-background-from: #313036;
+  --section-background-to: #232326;
+  --section-border-top: #313036;
+  
+  --wrapper-background: #313036;
+  
+  --link-color: #63ff8c;
+  
+  --header-background: #313036;
+  --header-background-from: #313036;
+  --header-background-to: #232326;
+  --header-border-bottom: #1b1b1d;
+  --header-p: #fafafa;
+  --header-p-view-text-shadow: none;
+  
+  --h1: #fafafa;
+  --h2: #fafafa;
+  --h3: #fafafa;
+  --h4: #fafafa;
+  --h5: #fafafa;
+  --h6: #fafafa;
+  
+  // ``` code block background
+  --highlighter-background: #3A3C42;
+  --pre-color: #f8f8f2;
+  
+  // inline code `code`
+  --code-background-color: #3d4046;
+  --code-color: #fdfdfd;
+  
+  --svg-footer-color: #ffffff;
+  
+  --blockquote-background: #3A3C42;
+  --blockquote-color: #fafafa;
+  
+  --th-td-border-bottom: #313036;
+  --dt-color: #fafafa;
+  --th-color: #fafafa;
+  
+  -hr-background: #131314;
+  
+  --strong-color: #fafafa;
+  
+  --footer-color: #fafafa;
+  --footer-a-color: #fafafa;
+}

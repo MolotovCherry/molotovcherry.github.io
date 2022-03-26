@@ -9,52 +9,50 @@ cherryblog.prefersDark = ((window.matchMedia === undefined) ? true : window.matc
 
 cherryblog.toggleTheme = function() {
   let theme = cherryblog.getTheme() == "dark" ? "light" : "dark";
-  localStorage.setItem("theme", theme);
-
-  let link = document.getElementById("theme");
-  link.href = "/assets/css/" + theme + "-mode.css";
+  cherryblog.setTheme(theme);
 };
 
-cherryblog.setCommentsTheme = function() {
+cherryblog.getTheme = function() {
+  let theme = localStorage.getItem("theme");
+  // dark is default
+  if (theme === null) {
+    if (cherryblog.prefersDark) {
+      localStorage.setItem("theme", "dark");
+      theme = "dark";
+    } else {
+      localStorage.setItem("theme", "light");
+      theme = "light";
+    }
+  }
+  
+  return theme;
+};
+
+cherryblog.getCommentsTheme = function(theme) {
+  if (theme === undefined) {
+    theme = cherryblog.getTheme();
+  }
+  
+  return theme == "dark" ? "photon-dark" : "github-light";
+};
+
+cherryblog.setTheme(theme) {
+  if (theme === undefined) {
+    theme = cherryblog.getTheme();
+  }
+
+  localStorage.setItem("theme", theme);
+  let html = document.documentElement;
+  html.dataset.theme = theme;
+  
   let msg = {
     type: "set-theme",
-    theme: cherryblog.getCommentsTheme()
+    theme: cherryblog.getCommentsTheme(theme)
   };
   
   document.querySelector("iframe").contentWindow.postMessage(msg, "https://utteranc.es");
 };
 
-cherryblog.getTheme = function() {
-  let mode = localStorage.getItem("theme");
-  // dark is default
-  if (mode === null) {
-    if (cherryblog.prefersDark) {
-      localStorage.setItem("theme", "dark");
-      mode = "dark";
-    } else {
-      localStorage.setItem("theme", "light");
-      mode = "light";
-    }
-  }
-  
-  return mode;
-};
-
-cherryblog.getCommentsTheme = function() {
-  return cherryblog.getTheme() == "dark" ? "photon-dark" : "github-light";
-};
-
-(function (){
-  let mode = cherryblog.getTheme();
-  
-  let tag = document.currentScript;
-  let link = document.createElement('link');
-  link.rel = 'stylesheet';
-  // easy selecting later
-  link.id = "theme";
-
-  // set users preferred style
-  link.href = "/assets/css/" + mode + "-mode.css";
-  
-  tag.appendChild(link);
+(function () {
+  cherryblog.setTheme();
 })();

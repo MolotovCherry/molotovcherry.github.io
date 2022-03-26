@@ -1,0 +1,61 @@
+---
+---
+
+html[data-theme='light'] {
+  --html-background-color-from: #6C7989;
+  --html-background-color-to: #434B55;
+  
+  --media-html-background: #434B55;
+  
+  --body-color: #555;
+  
+  --section-background-from: #fafafa;
+  // originally to is #DEDEDE, but keeping the same color to match comment system theme
+  --section-background-to: #fafafa;
+  --section-border-top: #fff;
+  
+  --wrapper-background: #DEDEDE;
+  
+  --link-color: #06c;
+
+  --header-background: #C6EAFA;
+  --header-background-from: #DDFBFC;
+  --header-background-to: #C6EAFA;
+  --header-border-bottom: #B2D2E1;
+  --header-p: #61778B;
+  --header-p-view-text-shadow: rgba(#fff, 0.9) 0 1px 0;
+  
+  --header-h1-color: #069;
+  --header-h1-textshadow: rgba(#fff, 0.9) 0 1px 0;
+  
+  --h1: #222;
+  --h2: #393939;
+  --h3: #494949;
+  --h4: #494949;
+  --h5: #494949;
+  --h6: #494949;
+  
+  // ``` code block background
+  --highlighter-background: #3A3C42;
+  --pre-color: #f8f8f2;
+  
+  // inline code `code`
+  --code-background-color: #4f525a;
+  --code-color: #fdfdfd;
+  
+  --svg-footer-color: #ffffff;
+  
+  --blockquote-background: rgba(#000, 0.06);
+  --blockquote-color: #222;
+  
+  --th-td-border-bottom: #aaa;
+  --dt-color: #222;
+  --th-color: #222;
+  
+  --hr-background: #aaa;
+  
+  --strong-color: #222;
+  
+  --footer-color: #ccc;
+  --footer-a-color: #fff;
+}
