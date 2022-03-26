@@ -1,6 +1,9 @@
 html[data-theme='dark'] {
   --html-background-color-from: #43424a;
   --html-background-color-to: #222228;
+  // specify using a gradiant trick the target colors of transition
+  --html-background-color-transition-to-from: #6C7989;
+  --html-background-color-transition-to-to: #434B55;
   
   --media-html-background: #232326;
   
@@ -9,6 +12,9 @@ html[data-theme='dark'] {
   --section-background-from: #313036;
   --section-background-to: #232326;
   --section-border-top: #313036;
+  // specify using a gradiant trick the target colors of transition
+  --section-background-transition-to-from: #fafafa;
+  --section-background-transition-to-to: #fafafa;
   
   --wrapper-background: #313036;
   
@@ -17,6 +23,10 @@ html[data-theme='dark'] {
   --header-background: #313036;
   --header-background-from: #313036;
   --header-background-to: #232326;
+  // specify using a gradiant trick the target colors of transition
+  --header-background-transition-to-from: #DDFBFC;
+  --header-background-transition-to-to: #C6EAFA;
+  
   --header-border-bottom: #1b1b1d;
   --header-p: #fafafa;
   --header-p-view-text-shadow: none;
@@ -54,4 +64,6 @@ html[data-theme='dark'] {
   
   --footer-color: #fafafa;
   --footer-a-color: #fafafa;
+  
+  @include mixins.gradient-animation;
 }

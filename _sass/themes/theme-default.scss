@@ -1,96 +1,144 @@
+@mixin gradient-animation( $startFrom, $endFrom, $startTo, $endTo, $transTime ) {
+  background-size: 100%;
+  background-image: linear-gradient($startFrom, $endFrom);
+  position: relative;
+  z-index: 100;
+  &:before {
+    background-image: linear-gradient($startTo, $endTo);
+    content: '';    
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0;
+    width: 100%;
+    z-index: -100;
+    transition: opacity $transTime;
+  }
+  &:hover {
+     &:before {
+       opacity: 1; 
+     }
+  }
+}
+
 :root {
-  --transition: 1s ease;
+  --transition-time: 0.5s;
+  --transition-fn: ease;
 }
 
 html {
-  transition: background-color var(--transition), background var(--transition);
+  transition: background-color var(--transition-time) var(--transition-fn);
   background-color: var(--html-background-color-from);
-  background: var(--html-background-color-from)
+  /*background: var(--html-background-color-from)
     linear-gradient(
       var(--html-background-color-from),
       var(--html-background-color-to)
-    ) fixed;
+    ) fixed;*/
+  @include gradiant-animation(
+    var(--html-background-color-from),
+    var(--html-background-color-to),
+    var(--html-background-color-transition-to-from),
+    var(--html-background-color-transition-to-to),
+    var(--transition-time)
+  );
 }
 
 body {
-  transition: color var(--transition);
+  transition: color var(--transition-time) var(--transition-fn);
   color: var(--body-color);
 }
 
 section {
-  transition: background var(--transition), border-top var(--transition);
-  background:
+  transition: border-top var(--transition-time) var(--transition-fn);
+  /*background:
     linear-gradient(
       var(--section-background-from),
       var(--section-background-to) 700px
-    );
+    );*/
+  @include gradiant-animation(
+    var(--section-background-from),
+    var(--section-background-to),
+    var(--section-background-transition-to-from),
+    var(--section-background-transition-to-to),
+    var(--transition-time)
+  );
+  
   border-top: 1px solid var(--section-border-top);
 }
 
 .wrapper {
-  transition: background var(--transition), box-shadow var(--transition);
+  transition: background var(--transition-time) var(--transition-fn), box-shadow var(--transition-time) var(--transition-fn);
   background: var(--wrapper-background);
   box-shadow: rgba(#000, 0.2) 0 0 0 1px, rgba(#000, 0.45) 0 3px 10px;
 }
 
 a {
-  transition: color var(--transition);
+  transition: color var(--transition-time);
   color: var(--link-color);
 }
 
 header {
-  transition: background var(--transition), border-bottom var(--transition);
+  transition: border-bottom var(--transition-time) var(--transition-fn);
   background: var(--header-background);
-  background: linear-gradient(
+  /*background: linear-gradient(
       var(--header-background-from),
       var(--header-background-to)
-    );
+    );*/
+  @include gradiant-animation(
+    var(--header-background-from),
+    var(--header-background-to),
+    var(--header-background-transition-to-from),
+    var(--header-background-transition-to-to),
+    var(--transition-time)
+  );
+
   border-bottom: 1px solid var(--header-border-bottom);
   
   p {
-    transition: color var(--transition);
+    transition: color var(--transition-time) var(--transition-fn);
     color: var(--header-p);
     
     &.view {
-      transition: text-shadow var(--transition);
+      transition: text-shadow var(--transition-time) var(--transition-fn);
       text-shadow: var(--header-p-view-text-shadow);
     }
   }
   
   h1 {
-    transition: color var(--transition), text-shadow var(--transition);
+    transition: color var(--transition-time), text-shadow var(--transition-time) var(--transition-fn);
     color: var(--header-h1-color);
     text-shadow: var(--header-h1-textshadow);
     
     a {
-      transition: color var(--transition);
+      transition: color var(--transition-time) var(--transition-fn);
       color: var(--header-h1-color);
     }
   }
 }
 
 h1 {
-  transition: color var(--transition);
+  transition: color var(--transition-time) var(--transition-fn);
   color: var(--h1);
 }
 h2 {
-  transition: color var(--transition);
+  transition: color var(--transition-time) var(--transition-fn);
   color: var(--h2);
 }
 h3 {
-  transition: color var(--transition);
+  transition: color var(--transition-time) var(--transition-fn);
   color: var(--h3);
 }
 h4 {
-  transition: color var(--transition);
+  transition: color var(--transition-time) var(--transition-fn);
   color: var(--h4);
 }
 h5 {
-  transition: color var(--transition);
+  transition: color var(--transition-time) var(--transition-fn);
   color: var(--h5);
 }
 h6 {
-  transition: color var(--transition);
+  transition: color var(--transition-time) var(--transition-fn);
   color: var(--h6);
 }
 
@@ -98,17 +146,17 @@ h6 {
 // code blocks section
 //
 div.highlighter-rouge {
-  transition: background var(--transition);
+  transition: background var(--transition-time) var(--transition-fn);
   background: var(--highlighter-background);
 }
 
 pre {
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--transition-time) var(--transition-fn), color var(--transition-time) var(--transition-fn);
   background: var(--highlighter-background);
   color: var(--pre-color);
   
   code {
-    transition: color var(--transition);
+    transition: color var(--transition-time) var(--transition-fn);
     color: var(--pre-color);
   }
 }
@@ -116,25 +164,25 @@ pre {
 
 // inline `code`
 p > code, kbd {
-  transition: background-color var(--transition), color var(--transition);
+  transition: background-color var(--transition-time) var(--transition-fn), color var(--transition-time) var(--transition-fn);
   background-color: var(--code-background-color);
   color: var(--code-color);
 }
 
 strong {
-  transition: color var(--transition);
+  transition: color var(--transition-time) var(--transition-fn);
   color: var(--strong-color);
 }
 
 // change svg icons to white
 .svg-icon {
-  transition: fill var(--transition);
+  transition: fill var(--transition-time) var(--transition-fn);
   fill: var(--svg-footer-color);
 }
 
 .post_navi {
   .post_navi-item {
-    transition: color var(--transition);
+    transition: color var(--transition-time) var(--transition-fn);
     color: var(--body-color);
   }
 }
@@ -142,43 +190,43 @@ strong {
 // change the background color for mobile devices
 @media print, screen and (max-width: 740px) {
   html {
-    transition: background var(--transition);
+    transition: background var(--transition-time) var(--transition-fn);
     background: var(--media-html-background);
   }
 }
 
 blockquote {
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--transition-time) var(--transition-fn), color var(--transition-time) var(--transition-fn);
   background: var(--blockquote-background);
   color: var(--blockquote-color);
 }
 
 th, td {
-  transition: border-bottom var(--transition);
+  transition: border-bottom var(--transition-time) var(--transition-fn);
   border-bottom: 1px solid var(--th-td-border-bottom);
 }
 
 dt {
-  transition: color var(--transition);
+  transition: color var(--transition-time) var(--transition-fn);
   color: var(--dt-color);
 }
 
 th {
-  transition: color var(--transition);
+  transition: color var(--transition-time) var(--transition-fn);
   color: var(--th-color);
 }
 
 hr {
-  transition: background var(--transition);
+  transition: background var(--transition-time) var(--transition-fn);
   background: var(--hr-background);
 }
 
 footer {
-  transition: color var(--transition);
+  transition: color var(--transition-time) var(--transition-fn);
   color: var(--footer-color);
   
   a {
-    transition: color var(--transition);
+    transition: color var(--transition-time) var(--transition-fn);
     color: var(--footer-a-color);
   }
 }
