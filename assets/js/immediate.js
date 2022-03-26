@@ -13,11 +13,11 @@ cherryblog.changeTheme = function(theme) {
 };
 
 cherryblog.changeCommentsTheme = function(theme) {
-  let theme = mode == "dark" ? "photon-dark" : "github-light";
+  let commentTheme = theme == "dark" ? "photon-dark" : "github-light";
   
   let msg = {
     type: "set-theme",
-    theme: theme
+    theme: commentTheme
   };
   
   document.querySelector("iframe").contentWindow.postMessage(msg, "https://utteranc.es");
