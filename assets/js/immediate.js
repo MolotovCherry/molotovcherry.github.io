@@ -15,12 +15,10 @@ cherryblog.toggleTheme = function() {
   link.href = "/assets/css/" + theme + "-mode.css";
 };
 
-cherryblog.toggleCommentsTheme = function() {
-  let theme = cherryblog.getTheme() == "dark" ? "github-light" : "photon-dark";
-
+cherryblog.setCommentsTheme = function() {
   let msg = {
     type: "set-theme",
-    theme: theme
+    theme: cherryblog.getCommentsTheme()
   };
   
   document.querySelector("iframe").contentWindow.postMessage(msg, "https://utteranc.es");

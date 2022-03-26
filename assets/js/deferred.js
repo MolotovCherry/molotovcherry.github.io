@@ -95,6 +95,6 @@ function collapseCodeBlocks() {
   // set click handler for switcher
   dayNight.addEventListener('click', event => {    
     cherryblog.toggleTheme();
-    cherryblog.toggleCommentsTheme();
+    cherryblog.setCommentsTheme();
   });
 })();
