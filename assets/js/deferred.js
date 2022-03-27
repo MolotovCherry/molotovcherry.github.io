@@ -76,8 +76,9 @@ function postSetup() {
   section = document.getElementsByTagName('section')[0];
   header = document.getElementsByTagName('header')[0];
 
-  // remove no transitions after page load
-  delete html.dataset.noTransition;
+  setTimeout(() => {
+    delete html.dataset.noTransition;
+  }, time * 1000);
 }
 
 (function () {
