@@ -3,11 +3,14 @@
   --transition-fn: ease;
 }
 
-// to trigger the gradient animation from js
-html[data-transition]:before,
-section[data-transition]:before,
-header[data-transition]:before {
+@keyframes background-fade {
+  from {
     opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 html {
@@ -27,8 +30,8 @@ html {
   
   &:before {
     background: linear-gradient(
-        var(--html-background-color-from),
-        var(--html-background-color-to)
+        var(--html-background-color-from-transition),
+        var(--html-background-color-to-transition)
       ) fixed;
     content: '';
     height: 100%;
@@ -36,9 +39,10 @@ html {
     opacity: 0;
     width: 100%;
     z-index: -100;
-    transition: opacity var(--transition-time);
     top: 0;
     left: 0;
+    animation-duration: var(--transition-time);
+    animation-name: background-fade;
   }
 }
 
@@ -63,8 +67,8 @@ section {
   
   &:before {
     background: linear-gradient(
-        var(--section-background-from),
-        var(--section-background-to)
+        var(--section-background-from-transition),
+        var(--section-background-to-transition)
       );
     content: '';
     height: 100%;
@@ -72,10 +76,11 @@ section {
     opacity: 0;
     width: 100%;
     z-index: -100;
-    transition: opacity var(--transition-time);
     top: 0;
     left: 0;
     border-radius: 0 0 8px 8px;
+    animation-duration: var(--transition-time);
+    animation-name: background-fade;
   }
   
   border-top: 1px solid var(--section-border-top);
@@ -108,8 +113,8 @@ header {
   
   &:before {
     background: linear-gradient(
-        var(--header-background-from),
-        var(--header-background-to)
+        var(--header-background-from-transition),
+        var(--header-background-to-transition)
       );
     content: '';
     height: 100%;
@@ -117,10 +122,11 @@ header {
     opacity: 0;
     width: 100%;
     z-index: -100;
-    transition: opacity var(--transition-time);
     top: 0;
     left: 0;
     border-radius: 8px 8px 0 0;
+    animation-duration: var(--transition-time);
+    animation-name: background-fade;
   }
 
   border-bottom: 1px solid var(--header-border-bottom);

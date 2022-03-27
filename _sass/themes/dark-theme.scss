@@ -1,4 +1,12 @@
 html[data-theme='dark'] {
+  // transition colors from other theme
+  --html-background-color-from-transition: #6C7989;
+  --html-background-color-to-transition: #434B55;
+  --section-background-from-transition: #fafafa;
+  --section-background-to-transition: #fafafa;
+  --header-background-from-transition: #DDFBFC;
+  --header-background-to-transition: #C6EAFA;
+
   --html-background-color-from: #43424a;
   --html-background-color-to: #222228;
   
