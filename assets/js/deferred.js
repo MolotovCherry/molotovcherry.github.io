@@ -160,12 +160,12 @@ function calculateThemeValues() {
     // set target theme transition colors
     let style = document.documentElement.style;
     let vals = themeVals[theme];
-    style.setProperty('--html-background-color-transition-to-from', themeVals['htmlFrom']);
-    style.setProperty('--html-background-color-transition-to-to', themeVals['htmlTo']);
-    style.setProperty('--section-background-transition-to-from', themeVals['sectionFrom']);
-    style.setProperty('--section-background-transition-to-to', themeVals['sectionTo']);
-    style.setProperty('--header-background-transition-to-from', themeVals['headerFrom']);
-    style.setProperty('--header-background-transition-to-to', themeVals['headerTo']);
+    style.setProperty('--html-background-color-transition-to-from', vals['htmlFrom']);
+    style.setProperty('--html-background-color-transition-to-to', vals['htmlTo']);
+    style.setProperty('--section-background-transition-to-from', vals['sectionFrom']);
+    style.setProperty('--section-background-transition-to-to', vals['sectionTo']);
+    style.setProperty('--header-background-transition-to-from', vals['headerFrom']);
+    style.setProperty('--header-background-transition-to-to', vals['headerTo']);
   
     cherryblog.toggleTheme();
   });
