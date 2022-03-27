@@ -63,7 +63,87 @@ function collapseCodeBlocks() {
     }
 }
 
-(function (){
+var parseNum = str => +str.replace(/[^.\d]/g, '');
+
+var themeVals = {};
+function calculateThemeValues() {
+  let style = getComputedStyle(document.documentElement);
+  let time = parseNum(style.getPropertyValue('--transition-time'));
+  
+  let lightHtmlFrom;
+  let lightHtmlTo;
+  let lightSectionFrom;
+  let lightSectionTo;
+  let lightHeaderFrom;
+  let lightHeaderTo;
+  
+  let darkHtmlFrom;
+  let darkHtmlTo;
+  let darkSectionFrom;
+  let darkSectionTo;
+  let darkHeaderFrom;
+  let darkHeaderTo;
+  
+  // find style.css element
+  let style;
+  for (s of document.styleSheets) {
+      let href = s.href;
+      if (href) {
+          let a = href.split('/');
+          if (a[a.length-1].startsWith("style.css")) {
+              style = s;
+          }
+      }
+  }
+  
+  let i = 0;
+  for (r of style.cssRules) {
+    if (r.selectorText == "html[data-theme=\"dark\"]") {
+      let props = r.style;
+      darkHtmlFrom = props.getPropertyValue('--html-background-color-from');
+      darkHtmlTo = props.getPropertyValue('--html-background-color-to');
+      darkSectionFrom = props.getPropertyValue('--section-background-from');
+      darkSectionTo = props.getPropertyValue('--section-background-to');
+      darkHeaderFrom = props.getPropertyValue('--header-background-from');
+      darkHeaderTo = props.getPropertyValue('--header-background-to');
+      
+      i += 1;
+    } else if (r.selectorText == "html[data-theme=\"light\"]") {
+      lightHtmlFrom = props.getPropertyValue('--html-background-color-from');
+      lightHtmlTo = props.getPropertyValue('--html-background-color-to');
+      lightSectionFrom = props.getPropertyValue('--section-background-from');
+      lightSectionTo = props.getPropertyValue('--section-background-to');
+      lightHeaderFrom = props.getPropertyValue('--header-background-from');
+      lightHeaderTo = props.getPropertyValue('--header-background-to');
+      
+      i += 1;
+    }
+    
+    if (i == 2) {
+      break;
+    }
+  }
+  
+  themeVals['transitionTime'] = time;
+  themeVals['light'] = {
+    htmlFrom: lightHtmlFrom,
+    htmlTo: lightHtmlTo,
+    sectionFrom: lightSectionFrom,
+    sectionTo: lightSectionTo,
+    headerFrom: lightHeaderFrom,
+    headerTo: lightHeaderTo
+  };
+  themevals['dark'] = {
+    htmlFrom: darkHtmlFrom,
+    htmlTo: darkHtmlTo,
+    sectionFrom: darkSectionFrom,
+    sectionTo: darkSectionTo,
+    headerFrom: darkHeaderFrom,
+    headerTo: darkHeaderTo
+  };
+}
+
+(function () {
   collapseCodeBlocks();
 
   // set state of day/night icon
@@ -73,7 +153,20 @@ function collapseCodeBlocks() {
   dayNight.checked = theme == "light" ? true : false;
 
   // set click handler for switcher
-  dayNight.addEventListener('click', event => {    
+  dayNight.addEventListener('click', event => {
+    let theme = cherryblog.getTheme();
+    // flip the theme
+    theme = theme == 'dark' ? 'light' : 'dark';
+    // set target theme transition colors
+    let style = document.documentElement.style;
+    let vals = themeVals[theme];
+    style.setProperty('--html-background-color-transition-to-from', themeVals['htmlFrom']);
+    style.setProperty('--html-background-color-transition-to-to', themeVals['htmlTo']);
+    style.setProperty('--section-background-transition-to-from', themeVals['sectionFrom']);
+    style.setProperty('--section-background-transition-to-to', themeVals['sectionTo']);
+    style.setProperty('--header-background-transition-to-from', themeVals['headerFrom']);
+    style.setProperty('--header-background-transition-to-to', themeVals['headerTo']);
+  
     cherryblog.toggleTheme();
   });
 
@@ -95,4 +188,7 @@ function collapseCodeBlocks() {
     
     post[0].appendChild(script);
   }
+  
+  // so we don't need to do the computation later
+  calculateThemeValues();
 })();
