@@ -21,6 +21,14 @@ header[data-transition]:before {
   animation-name: fade;
 }
 
+// disable transitions entirely
+// mostly used when loading the page the first time to prevent little animations on theme switching
+html[data-no-transition] {
+  // no animation for mobile cause it's intensive
+  --transition-time: 0 !important;
+  --transition-fn: none !important;
+}
+
 html {
   transition: background-color var(--transition-time) var(--transition-fn);
   background-color: var(--html-background-color-from);
