@@ -165,13 +165,14 @@ div.highlighter-rouge {
 header {
   p {
     &.view {
-      top: -41px;
+      top: -43px;
       position: relative;
       
       font-weight: 700;
       -webkit-font-smoothing: antialiased;
       
       float: right;
+      font-size: unset;
     }
   }
 }
