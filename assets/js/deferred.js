@@ -133,7 +133,7 @@ function calculateThemeValues() {
     headerFrom: lightHeaderFrom,
     headerTo: lightHeaderTo
   };
-  themevals['dark'] = {
+  themeVals['dark'] = {
     htmlFrom: darkHtmlFrom,
     htmlTo: darkHtmlTo,
     sectionFrom: darkSectionFrom,
