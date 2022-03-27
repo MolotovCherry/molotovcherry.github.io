@@ -27,8 +27,8 @@ html {
   
   &:before {
     background: linear-gradient(
-        var(--html-background-color-transition-to-from),
-        var(--html-background-color-transition-to-to)
+        var(--html-background-color-from),
+        var(--html-background-color-to)
       ) fixed;
     content: '';
     height: 100%;
@@ -63,8 +63,8 @@ section {
   
   &:before {
     background: linear-gradient(
-        var(--section-background-transition-to-from),
-        var(--section-background-transition-to-to)
+        var(--section-background-from),
+        var(--section-background-to)
       );
     content: '';
     height: 100%;
@@ -108,8 +108,8 @@ header {
   
   &:before {
     background: linear-gradient(
-        var(--header-background-transition-to-from),
-        var(--header-background-transition-to-to)
+        var(--header-background-from),
+        var(--header-background-to)
       );
     content: '';
     height: 100%;
