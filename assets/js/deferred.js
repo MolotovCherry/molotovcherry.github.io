@@ -85,12 +85,13 @@ function getThemeVals() {
   dayNight.checked = theme == "light" ? true : false;
 
   // set click handler for switcher
-  dayNight.addEventListener('click', event => {    
-    cherryblog.toggleTheme();
+  dayNight.addEventListener('click', event => {  
     // set property on elements to let gradients transfer color
     html.dataset.transition = '';
     header.dataset.transition = '';
     section.dataset.transition = '';
+    
+    cherryblog.toggleTheme();
     
     setTimeout(
       () => {
