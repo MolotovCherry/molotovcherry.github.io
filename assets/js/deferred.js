@@ -7,33 +7,31 @@ function collapseCodeBlocks() {
     let code_blocks = document.getElementsByTagName("pre");
     
     // cached elements are faster
-    var elem = document.createElement("button");
+    let elemN = document.createElement("button");
     elem.classList.add("collapsible");
-    var icon = document.createElement("i");
+    let iconN = document.createElement("i");
     icon.classList.add("lang-icon");
-    var div = document.createElement("div");
+    let divN = document.createElement("div");
     div.classList.add("lang-label");
-    var container = div.cloneNode(false);
+    let containerN = div.cloneNode(false);
     container.classList.add("collapse-container");
     
-    var len = code_blocks.length;
-    for (var x = 0; x < len; x++) {
+    let len = code_blocks.length;
+    for (let x = 0; x < len; x++) {
         // need the top level parent
         let block = code_blocks[x].parentElement.parentElement;
         let name = block.className.split(' ')[0];
-        
-        let language, language_upper;
-        
+
         // language- (9th)
-        language = name.substring(9);
-        language_upper = language.split("");
+        let language = name.substring(9);
+        let language_upper = language.split("");
         language_upper[0] = language[0].toUpperCase();
         language_upper = language_upper.join("");
 
-        let elem = elem.cloneNode(false);
-        let icon = icon.cloneNode(false);
-        let div = div.cloneNode(false);
-        let container = container.cloneNode(false);
+        let elem = elemN.cloneNode(false);
+        let icon = iconN.cloneNode(false);
+        let div = divN.cloneNode(false);
+        let container = containerN.cloneNode(false);
 
         icon.classList.add("devicon-" + language + "-plain");
         elem.appendChild(icon);
