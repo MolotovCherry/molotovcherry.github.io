@@ -5,11 +5,14 @@
     background: linear-gradient($startTo, $endTo) $fixed;
     content: '';
     height: 100%;
-    position: absolute;
+    position: fixed;
     opacity: 0;
     width: 100%;
     z-index: -100;
     transition: opacity $transTime;
+    top: 0;
+    left: 0;
+    background-size: cover;
   }
 }
 
