@@ -235,6 +235,10 @@ strong {
     transition: background var(--transition-time) var(--transition-fn);
     background: var(--media-html-background);
   }
+  
+  // no animation for mobile cause it's intensive
+  --transition-time: 0;
+  --transition-fn: none;
 }
 
 blockquote {
