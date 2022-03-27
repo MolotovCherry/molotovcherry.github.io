@@ -108,6 +108,7 @@ div.highlighter-rouge {
     transform: none;
     position: relative;
     top: -28px;
+    float: right;
   }
   
   // arrows move incorrectly, so just place them next to "next" and "previous"
@@ -116,8 +117,9 @@ div.highlighter-rouge {
   }
   
   #theme-switcher {
-    right: 0px !important;
-    top: 82px !important;
+    top: 17px !important;
+    float: right;
+    position: relative !important;
   }
   
   section {
