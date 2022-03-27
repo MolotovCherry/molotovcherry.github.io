@@ -88,9 +88,9 @@ function getThemeVals() {
   dayNight.addEventListener('click', event => {    
     cherryblog.toggleTheme();
     // set property on elements to let gradients transfer color
-    html.setAttribute('data-transition','');
-    header.setAttribute('data-transition','');
-    section.setAttribute('data-transition','');
+    html.dataset.transition = '';
+    header.dataset.transition = '';
+    section.dataset.transition = '';
     
     setTimeout(
       () => {
@@ -122,5 +122,5 @@ function getThemeVals() {
   }
   
   // so we don't need to do the computation later
-  getThemeValues();
+  getThemeVals();
 })();
