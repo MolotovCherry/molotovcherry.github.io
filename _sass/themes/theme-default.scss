@@ -236,8 +236,8 @@ strong {
     background: var(--media-html-background);
     
     // no animation for mobile cause it's intensive
-    --transition-time: 0;
-    --transition-fn: none;
+    --transition-time: 0 !important;
+    --transition-fn: none !important;
   }
 }
 
