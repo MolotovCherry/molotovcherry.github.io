@@ -97,7 +97,7 @@ function calculateThemeValues() {
   
   let i = 0;
   for (r of style.cssRules) {
-    if (r.selectorText == "html[data-theme=\"dark\"]") {
+    if (r.selectorText == 'html[data-theme="dark"]') {
       let props = r.style;
       darkHtmlFrom = props.getPropertyValue('--html-background-color-from');
       darkHtmlTo = props.getPropertyValue('--html-background-color-to');
@@ -107,7 +107,7 @@ function calculateThemeValues() {
       darkHeaderTo = props.getPropertyValue('--header-background-to');
       
       i += 1;
-    } else if (r.selectorText == "html[data-theme=\"light\"]") {
+    } else if (r.selectorText == 'html[data-theme="light"]') {
       lightHtmlFrom = props.getPropertyValue('--html-background-color-from');
       lightHtmlTo = props.getPropertyValue('--html-background-color-to');
       lightSectionFrom = props.getPropertyValue('--section-background-from');
