@@ -1,9 +1,6 @@
 html[data-theme='light'] {
   --html-background-color-from: #6C7989;
   --html-background-color-to: #434B55;
-  // specify using a gradiant trick the target colors of transition
-  --html-background-color-transition-to-from: #43424a;
-  --html-background-color-transition-to-to: #222228;
   
   --media-html-background: #434B55;
   
@@ -13,9 +10,6 @@ html[data-theme='light'] {
   // originally to is #DEDEDE, but keeping the same color to match comment system theme
   --section-background-to: #fafafa;
   --section-border-top: #fff;
-    // specify using a gradiant trick the target colors of transition
-  --section-background-transition-to-from: #313036;
-  --section-background-transition-to-to: #232326;
   
   --wrapper-background: #DEDEDE;
   
@@ -24,9 +18,6 @@ html[data-theme='light'] {
   --header-background: #C6EAFA;
   --header-background-from: #DDFBFC;
   --header-background-to: #C6EAFA;
-  // specify using a gradiant trick the target colors of transition
-  --header-background-transition-to-from: #313036;
-  --header-background-transition-to-to: #232326;
   
   --header-border-bottom: #B2D2E1;
   --header-p: #61778B;
