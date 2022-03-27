@@ -7,13 +7,13 @@ function collapseCodeBlocks() {
     let code_blocks = document.getElementsByTagName("pre");
     
     // cached elements are faster
-    let elem = document.createElement("button");
+    var elem = document.createElement("button");
     elem.classList.add("collapsible");
-    let icon = document.createElement("i");
+    var icon = document.createElement("i");
     icon.classList.add("lang-icon");
-    let div = document.createElement("div");
+    var div = document.createElement("div");
     div.classList.add("lang-label");
-    let container = div.cloneNode(false);
+    var container = div.cloneNode(false);
     container.classList.add("collapse-container");
     
     var len = code_blocks.length;
