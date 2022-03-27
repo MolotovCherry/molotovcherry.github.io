@@ -13,7 +13,7 @@ function collapseCodeBlocks() {
     iconN.classList.add("lang-icon");
     let divN = document.createElement("div");
     divN.classList.add("lang-label");
-    let containerN = div.cloneNode(false);
+    let containerN = divN.cloneNode(false);
     containerN.classList.add("collapse-container");
     
     let len = code_blocks.length;
