@@ -115,7 +115,8 @@ header {
       var(--header-background-from),
       var(--header-background-to)
     );
-  z-index: 100;
+  // 1 higher than section z-index, so day/night indicator won't be hidden behind section which is also z-index 100
+  z-index: 101;
   
   &:before {
     background: linear-gradient(

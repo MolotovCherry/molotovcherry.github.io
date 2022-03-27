@@ -318,7 +318,7 @@ header {
 }
 
 .theme-switcher {
-  z-index: 101;
+  z-index: 1;
   
   &:checked {
     & ~ .background {
