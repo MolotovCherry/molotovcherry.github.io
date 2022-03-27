@@ -108,6 +108,7 @@ function calculateThemeValues() {
       
       i += 1;
     } else if (r.selectorText == 'html[data-theme="light"]') {
+      let props = r.style;
       lightHtmlFrom = props.getPropertyValue('--html-background-color-from');
       lightHtmlTo = props.getPropertyValue('--html-background-color-to');
       lightSectionFrom = props.getPropertyValue('--section-background-from');
