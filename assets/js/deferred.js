@@ -8,11 +8,11 @@ function collapseCodeBlocks() {
     
     // cached elements are faster
     let elemN = document.createElement("button");
-    elemN.classList.add("collapsible");
     let iconN = document.createElement("i");
-    iconN.classList.add("lang-icon");
     let divN = document.createElement("div");
     let containerN = divN.cloneNode(false);
+    iconN.classList.add("lang-icon");
+    elemN.classList.add("collapsible");
     divN.classList.add("lang-label");
     containerN.classList.add("collapse-container");
     
