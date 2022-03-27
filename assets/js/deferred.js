@@ -70,9 +70,9 @@ function getThemeVals() {
   let style = getComputedStyle(document.documentElement);
   time = parseNum(style.getPropertyValue('--transition-time'));
   
-  let html = document.documentElement;
-  let section = document.getElementsByTagName('section')[0];
-  let header = document.getElementsByTagName('header')[0];
+  html = document.documentElement;
+  section = document.getElementsByTagName('section')[0];
+  header = document.getElementsByTagName('header')[0];
 }
 
 (function () {
