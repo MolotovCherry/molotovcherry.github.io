@@ -4,43 +4,45 @@ layout: js_minifier
 
 function collapseCodeBlocks() {
     // top element
-    var code_blocks = document.getElementsByTagName("pre");
+    let code_blocks = document.getElementsByTagName("pre");
+    
+    // cached elements are faster
+    let elem = document.createElement("button");
+    elem.classList.add("collapsible");
+    let icon = document.createElement("i");
+    icon.classList.add("lang-icon");
+    let div = document.createElement("div");
+    div.classList.add("lang-label");
+    let container = div.cloneNode(false);
+    container.classList.add("collapse-container");
     
     var len = code_blocks.length;
     for (var x = 0; x < len; x++) {
         // need the top level parent
         var block = code_blocks[x].parentElement.parentElement;
-        
-        var elem = document.createElement("button");
-        elem.classList.add("collapsible");
-        
-        var classNames = block.className.split(' ');
+        var classNames = block.className.split(' ')[0];
         
         var language;
         var language_upper;
-        classNames.forEach(name => {
-            if (name.startsWith("language-")) {
-                language = name.substring(name.indexOf('-') + 1);
-                language_upper = language.split("");
-                language_upper[0] = language[0].toUpperCase();
-                language_upper = language_upper.join("");
-            }
-        });
         
-        var icon = document.createElement("i");
+        // language- (9th)
+        language = name.substring(9);
+        language_upper = language.split("");
+        language_upper[0] = language[0].toUpperCase();
+        language_upper = language_upper.join("");
+
+        let elem = elem.cloneNode(false);
+        let icon = icon.cloneNode(false);
+        let div = div.cloneNode(false);
+        let container = container.cloneNode(false);
+
         icon.classList.add("devicon-" + language + "-plain");
-        icon.classList.add("lang-icon");
         elem.appendChild(icon);
-        
-        var div = document.createElement("div");
+
         var text = document.createTextNode(" " + language_upper);
-        div.classList.add("lang-label");
         div.appendChild(text);
         elem.appendChild(div);
-        
-        var container = document.createElement("div");
-        container.classList.add("collapse-container");
-        
+
         var parent = block.parentNode;
         var referenceNode = block.nextElementSibling;
         
