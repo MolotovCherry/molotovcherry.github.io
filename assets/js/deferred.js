@@ -63,6 +63,18 @@ function collapseCodeBlocks() {
     }
 }
 
+var parseNum = str => +str.replace(/[^.\d]/g, '');
+
+var time, html, section, header;
+function postSetup() {
+  let style = getComputedStyle(document.documentElement);
+  time = parseNum(style.getPropertyValue('--transition-time'));
+  
+  html = document.documentElement;
+  section = document.getElementsByTagName('section')[0];
+  header = document.getElementsByTagName('header')[0];
+}
+
 (function () {
   collapseCodeBlocks();
 
@@ -74,7 +86,22 @@ function collapseCodeBlocks() {
 
   // set click handler for switcher
   dayNight.addEventListener('click', event => {
+    // set one-shot transition
+    html.dataset.transition = '';
+    header.dataset.transition = '';
+    section.dataset.transition = '';
+    
     cherryblog.toggleTheme();
+    
+    setTimeout(
+      () => {
+        // remove unneeded property
+        delete html.dataset.transition;
+        delete header.dataset.transition;
+        delete section.dataset.transition;
+      },
+      time * 1000
+    );
   });
 
   // dynamically add the themed comments
@@ -96,6 +123,5 @@ function collapseCodeBlocks() {
     post[0].appendChild(script);
   }
   
-  // so we don't need to do the computation later
-  getThemeVals();
+  postSetup();
 })();
