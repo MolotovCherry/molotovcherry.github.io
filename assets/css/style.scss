@@ -104,8 +104,10 @@ div.highlighter-rouge {
 @media print, screen and (max-width: 740px) {
   #share-buttons {
     left: auto;
-    right: 0;
+    right: -29px;
     transform: none;
+    position: relative;
+    top: -28px;
   }
   
   // arrows move incorrectly, so just place them next to "next" and "previous"
@@ -115,8 +117,7 @@ div.highlighter-rouge {
   
   #theme-switcher {
     right: 0px !important;
-    top: 85px !important;
-    margin-right: 20px;
+    top: 82px !important;
   }
   
   section {
