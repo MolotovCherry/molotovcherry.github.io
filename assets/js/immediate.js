@@ -58,6 +58,5 @@ cherryblog.setTheme = function(theme) {
 (function () {
   let theme = cherryblog.getTheme();
   let html = document.documentElement;
-  html.dataset.noTransition  = '';
   html.dataset.theme = theme;
 })();

@@ -75,10 +75,6 @@ function postSetup() {
   html = document.documentElement;
   section = document.getElementsByTagName('section')[0];
   header = document.getElementsByTagName('header')[0];
-
-  setTimeout(() => {
-    delete html.dataset.noTransition;
-  }, time * 1000);
 }
 
 (function () {
