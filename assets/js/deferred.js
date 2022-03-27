@@ -19,11 +19,10 @@ function collapseCodeBlocks() {
     var len = code_blocks.length;
     for (var x = 0; x < len; x++) {
         // need the top level parent
-        var block = code_blocks[x].parentElement.parentElement;
-        var classNames = block.className.split(' ')[0];
+        let block = code_blocks[x].parentElement.parentElement;
+        let name = block.className.split(' ')[0];
         
-        var language;
-        var language_upper;
+        let language, language_upper;
         
         // language- (9th)
         language = name.substring(9);
@@ -39,12 +38,12 @@ function collapseCodeBlocks() {
         icon.classList.add("devicon-" + language + "-plain");
         elem.appendChild(icon);
 
-        var text = document.createTextNode(" " + language_upper);
+        let text = document.createTextNode(" " + language_upper);
         div.appendChild(text);
         elem.appendChild(div);
 
-        var parent = block.parentNode;
-        var referenceNode = block.nextElementSibling;
+        let parent = block.parentNode;
+        let referenceNode = block.nextElementSibling;
         
         container.appendChild(elem);
         container.appendChild(block);
@@ -54,9 +53,9 @@ function collapseCodeBlocks() {
         // now add event listener to button
         elem.addEventListener("click", event => {
           event.currentTarget.classList.toggle("active");
-          var content = event.currentTarget.nextElementSibling;
+          let content = event.currentTarget.nextElementSibling;
           // fix bug in minifier which shortened this to only one var
-          var height = content.style.maxHeight;
+          let height = content.style.maxHeight;
           
           if (height) {
             content.style.maxHeight = null;
