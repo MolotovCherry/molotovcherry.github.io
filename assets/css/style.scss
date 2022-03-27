@@ -120,6 +120,7 @@ div.highlighter-rouge {
     top: 17px !important;
     float: right;
     position: relative !important;
+    right: -90px !important;
   }
   
   section {
@@ -164,13 +165,13 @@ div.highlighter-rouge {
 header {
   p {
     &.view {
-      right: 20px;
-      top: 20px;
-      position: absolute;
-      text-align: right;
+      top: -41px;
+      position: relative;
       
       font-weight: 700;
       -webkit-font-smoothing: antialiased;
+      
+      float: right;
     }
   }
 }

@@ -58,7 +58,6 @@ header {
 
   p {
     margin:0;
-    width:300px;
     font-size:13px;
 
     &.view {
@@ -261,15 +260,5 @@ footer {
 
   header p.view {
     display:block;
-  }
-
-  header p {
-    width:100%;
-  }
-}
-
-@media print {
-  header p.view a small:before {
-    content:'at https://github.com/';
   }
 }
