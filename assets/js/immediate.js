@@ -45,12 +45,14 @@ cherryblog.setTheme = function(theme) {
   let html = document.documentElement;
   html.dataset.theme = theme;
   
-  let msg = {
-    type: "set-theme",
-    theme: cherryblog.getCommentsTheme(theme)
-  };
-  
-  document.querySelector("iframe").contentWindow.postMessage(msg, "https://utteranc.es");
+  let iframe = document.querySelector("iframe");
+  if (iframe) {
+    let msg = {
+      type: "set-theme",
+      theme: cherryblog.getCommentsTheme(theme)
+    };
+    iframe.contentWindow.postMessage(msg, "https://utteranc.es");
+  }
 };
 
 (function () {
