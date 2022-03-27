@@ -85,7 +85,6 @@ function calculateThemeValues() {
   let darkHeaderTo;
   
   // find style.css element
-  let style;
   for (s of document.styleSheets) {
       let href = s.href;
       if (href) {
