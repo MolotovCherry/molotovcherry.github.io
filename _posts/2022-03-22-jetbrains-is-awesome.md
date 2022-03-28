@@ -3,7 +3,7 @@ title: JetBrains is Awesome
 author: Cherryleafroad
 layout: post
 categories:
-  - Blog
+  - Programming
 ---
 
 # JetBrains is Awesome

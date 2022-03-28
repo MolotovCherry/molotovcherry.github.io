@@ -3,7 +3,7 @@ title: Killing Annoying Processes in Windows
 author: Cherryleafroad
 layout: post
 categories:
-  - Blog
+  - Programming
 tags:
   - rust
 ---

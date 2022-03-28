@@ -3,7 +3,7 @@ title: Rust JNI Macro
 author: Cherryleafroad
 layout: post
 categories:
-  - Blog
+  - Programming
 tags:
   - rust
 ---
