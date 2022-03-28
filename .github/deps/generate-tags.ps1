@@ -38,7 +38,7 @@ function GetNewTags($path, $tagList) {
     }
     
     if ($result.Length -gt 0) {
-        Write-Host "Found new tags -> $generatedTags"
+        Write-Host "Found new tags -> $result"
     }
 
     return $result
@@ -73,4 +73,4 @@ foreach ($post in $posts) {
 
 # notify runner of status
 Set-OutputVariable -Name "new-tags" -Value "$global:newTags"
-Set-OutputVariable -Name "new-tags-added" -Value "$global:addedNewTags"
+Set-OutputVariable -Name "new-tags-added" -Value "`"$global:addedNewTags`""
