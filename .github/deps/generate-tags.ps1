@@ -1,7 +1,11 @@
-﻿$tagsDir = "tag"
+$tagsDir = "tag"
 $postsDir = "_posts"
 $global:newTags = $false
 $global:addedNewTags = @()
+
+function Set-OutputVariable($Name, $Value) {
+    Write-Host "::set-output name=$Name::$Value"
+}
 
 function GetNewTags($path, $tagList) {
     $file = Get-Content -raw $path
@@ -66,5 +70,5 @@ foreach ($post in $posts) {
 }
 
 # notify runner of status
-Write-Output "::set-output name=new-tags::${global:newTags}"
-Write-Output "::set-output name=new-tags-added::${global:addedNewTags}"
+Set-OutputVariable -Name "new-tags" -Value "$global:newTags"
+Set-OutputVariable -Name "new-tags-added" -Value "$global:addedNewTags"
