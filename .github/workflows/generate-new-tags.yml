@@ -26,6 +26,8 @@ jobs:
           signoff: false
           branch: tags-update
           delete-branch: true
+          committer: GitHub <noreply@github.com>
+          author: GitHub <noreply@github.com>
           title: 'Added new tags -> ${{ steps.gentags.NewTagsAdded }}'
           body: |
             Hey there!
