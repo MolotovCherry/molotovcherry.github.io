@@ -51,6 +51,11 @@ rss: rss
 show_excerpts: 1
 excerpt_separator: <!--more-->
 
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:title.html
+
 sass:
   style: compressed
 
