@@ -8,8 +8,6 @@ tags:
   - rust
 ---
 
-## Killing Annoying Processes in Windows
-
 Mainly 2 things have been annoying me lately while working on my computer. These being, 2 incessant processes that won't stop running and eating 90% of the CPU.
 
 Yes, I'm looking at you `CompatTelRunner.exe` and `Software_Reporter_Tool.exe`.

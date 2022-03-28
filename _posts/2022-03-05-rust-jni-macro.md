@@ -8,8 +8,6 @@ tags:
   - rust
 ---
 
-# Rust JNI Macro
-
 So, during the implementation of [KMagick](https://github.com/cherryleafroad/kmagick/), I came up against a problem: With hundreds of functions all needing to be wrapped in JNI calls, how was I ever going to manage creating so much boilerplate code?
 
 This led to me working hard to research the Rust AST and [syn](https://crates.io/crates/syn) in order to create a fully working macro which autogenerates JNI FFI calls from Rust code without any effort!
