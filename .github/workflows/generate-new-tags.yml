@@ -7,13 +7,14 @@ on:
 
 jobs:
   generate:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Generate new tags
         id: gentags
+        shell: pwsh
         run: ./.github/deps/generate-tags.ps1
 
       - name: Create Pull Request
@@ -21,7 +22,7 @@ jobs:
         if: steps.gentags.outputs.new-tags == 'True'
         uses: peter-evans/create-pull-request@v4
         with:
-          #token: ${{ secrets.REPO_SCOPE_SITE }}
+          token: ${{ secrets.REPO_SCOPED_TOKEN }}
           commit-message: Added new tags -> ${{ steps.gentags.new-tags-added }}
           signoff: false
           branch: tags-update
@@ -44,6 +45,6 @@ jobs:
         if: steps.gentags.outputs.new-tags == 'True'
         uses: peter-evans/enable-pull-request-automerge@v2
         with:
-          #token: ${{ secrets.REPO_SCOPE_SITE }}
+          token: ${{ secrets.REPO_SCOPED_TOKEN }}
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
           merge-method: rebase
