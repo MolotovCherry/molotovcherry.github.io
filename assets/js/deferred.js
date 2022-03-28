@@ -52,10 +52,8 @@ function collapseCodeBlocks() {
         elem.addEventListener("click", event => {
           event.currentTarget.classList.toggle("active");
           let content = event.currentTarget.nextElementSibling;
-          // fix bug in minifier which shortened this to only one var
-          let height = content.style.maxHeight;
-          
-          if (height) {
+
+          if (content.style.maxHeight) {
             content.style.maxHeight = null;
           } else {
             content.style.maxHeight = content.scrollHeight + "px";
