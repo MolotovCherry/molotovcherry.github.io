@@ -32,10 +32,12 @@ layout: default
           </a>
         </h3>
         {%- if site.show_excerpts -%}
-        <blockquote><p>
-          {{ post.excerpt | strip_html }}
-          <a href="{{ post.url | relative_url }}"> Read more...</a>
-        </p></blockquote>
+          <blockquote>
+            <p>
+              {{ post.excerpt | strip_html }}
+              <a href="{{ post.url | relative_url }}"> Read more...</a>
+            </p>
+          </blockquote>
         {%- endif -%}
       </li>
       {%- endfor -%}
