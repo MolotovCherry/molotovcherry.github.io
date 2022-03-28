@@ -36,6 +36,10 @@ function GetNewTags($path, $tagList) {
             }
         }
     }
+    
+    if ($result.Length -gt 0) {
+        Write-Host "Found new tags -> $generatedTags"
+    }
 
     return $result
 }
@@ -44,8 +48,6 @@ function CreateTags($post, $tagList) {
     $generatedTags = GetNewTags -path $post -tagList $tagList
 
     if ($generatedTags.Length -gt 0) {
-        Write-Output "Found new tags -> $generatedTags"
-
         foreach($tag in $generatedTags) {
             $content = @"
 ---
@@ -55,7 +57,7 @@ tag: $tag
 robots: noindex
 ---
 "@
-            Write-Output "Creating tag file -> $tagsDir\$tag.md"
+            Write-Host "Creating tag file -> $tagsDir\$tag.md"
             $content | Out-File -FilePath "$tagsDir\$tag.md"
         }
     }
