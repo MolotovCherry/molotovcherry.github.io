@@ -29,6 +29,8 @@ jobs:
           committer: GitHub <noreply@github.com>
           author: GitHub <noreply@github.com>
           title: 'Added new tags -> ${{ steps.gentags.outputs.new-tags-added }}'
+          labels: |
+            tag-update
           body: |
             Hey there!
             
