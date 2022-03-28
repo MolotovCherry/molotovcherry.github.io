@@ -164,10 +164,9 @@ div.highlighter-rouge {
 
 header {
   p {
+    display: inline;
+  
     &.view {
-      top: -43px;
-      position: relative;
-      
       font-weight: 700;
       -webkit-font-smoothing: antialiased;
       
