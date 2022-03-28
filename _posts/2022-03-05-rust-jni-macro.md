@@ -1,8 +1,20 @@
-# Rust JNI Maco
+---
+title: Rust JNI Macro
+author: Cherryleafroad
+layout: post
+categories:
+  - Blog
+tags:
+  - rust
+---
+
+# Rust JNI Macro
 
 So, during the implementation of [KMagick](https://github.com/cherryleafroad/kmagick/), I came up against a problem: With hundreds of functions all needing to be wrapped in JNI calls, how was I ever going to manage creating so much boilerplate code?
 
 This led to me working hard to research the Rust AST and [syn](https://crates.io/crates/syn) in order to create a fully working macro which autogenerates JNI FFI calls from Rust code without any effort!
+
+<!--more-->
 
 It handles idiomatic Rust code perfectly, allowing you to return `Result` types which, if they fail, will throw a native exception in Kotlin (rather than crashing). And, if for any reason the Rust code itself panics, it also will throw an exception in Kotlin rather than crashing the JVM (it achieves this using Rusts [catch_unwind](https://doc.rust-lang.org/std/panic/fn.catch_unwind.html)).
 
