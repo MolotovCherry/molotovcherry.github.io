@@ -22,7 +22,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.REPO_SCOPED_TOKEN }}
-          commit-message: Added new tags -> {{ steps.gentags.NewTagsAdded }}
+          commit-message: Added new tags -> ${{ steps.gentags.NewTagsAdded }}
           signoff: false
           branch: tags-update
           delete-branch: true
