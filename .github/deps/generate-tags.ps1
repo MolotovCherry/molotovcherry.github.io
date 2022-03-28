@@ -1,7 +1,7 @@
 ﻿$tagsDir = "tag"
 $postsDir = "_posts"
-$addedNewTags = false
-$newTags = @()
+$global:newTags = $false
+$global:addedNewTags = @()
 
 function GetNewTags($path, $tagList) {
     $file = Get-Content -raw $path
@@ -20,12 +20,14 @@ function GetNewTags($path, $tagList) {
         foreach($line in $lines) {
             $tags = [regex]::Match($line, $tagReg).Groups[1]
             if($tags.Length -gt 0) {
-                $tags = $tags -split ' '
-                $tags = $tags | Where-Object {$tagList -NotContains $_}
+                $tags = $tags -split ' ' | ForEach-Object { $_.Trim() }
 
-                $tags | foreach-object {
-                    $result += $_
-                    $newTags += $_
+                foreach ($tag in $tags) {
+                    if (-Not $tagList.Contains($tag)) {
+                        $global:newTags = $true
+                        $result += $tag
+                        $global:addedNewTags += $tag
+                    }
                 }
             }
         }
@@ -35,15 +37,13 @@ function GetNewTags($path, $tagList) {
 }
 
 function CreateTags($post, $tagList) {
-    $newTags = GetNewTags -path $post -tagList $tagList
+    $generatedTags = GetNewTags -path $post -tagList $tagList
 
-    if ($newTags.Length -gt 0) {
-        $addedNewTags = true
-        Write-Output "Found new tags -> $newTags"
-    }
+    if ($generatedTags.Length -gt 0) {
+        Write-Output "Found new tags -> $generatedTags"
 
-    foreach($tag in $newTags) {
-        $content = @"
+        foreach($tag in $generatedTags) {
+            $content = @"
 ---
 layout: tag_page
 title: "Tag: $tag"
@@ -51,19 +51,20 @@ tag: $tag
 robots: noindex
 ---
 "@
-        Write-Output "Creating tag file -> $tagsDir\$tag.md"
-        $content | Out-File -FilePath "$tagsDir\$tag.md"
+            Write-Output "Creating tag file -> $tagsDir\$tag.md"
+            $content | Out-File -FilePath "$tagsDir\$tag.md"
+        }
     }
 }
 
 
 $posts = Get-ChildItem "$postsDir"
-$tags = Get-ChildItem $tagsDir | foreach-object {$_ -replace ".md",""}
+$tags = Get-ChildItem $tagsDir | foreach-object {(Split-Path -leaf $_) -replace ".md",""}
 
 foreach ($post in $posts) {
     CreateTags -post $post.FullName -tagList $tags
 }
 
 # notify runner of status
-Write-Output "::set-output name=NewTagsAdded::$addedNewTags"
-Write-Output "::set-output name=NewTags::$newTags"
+Write-Output "::set-output name=NewTags::$global:newTags"
+Write-Output "::set-output name=NewTagsAdded::$global:addedNewTags"
