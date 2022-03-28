@@ -4,8 +4,7 @@ author: Cherryleafroad
 layout: post
 categories:
   - Programming
-tags:
-  - rust
+tags: rust
 ---
 
 So, during the implementation of [KMagick](https://github.com/cherryleafroad/kmagick/), I came up against a problem: With hundreds of functions all needing to be wrapped in JNI calls, how was I ever going to manage creating so much boilerplate code?

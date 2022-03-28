@@ -4,8 +4,7 @@ author: Cherryleafroad
 layout: post
 categories:
   - Programming
-tags:
-  - rust
+tags: rust
 ---
 
 Mainly 2 things have been annoying me lately while working on my computer. These being, 2 incessant processes that won't stop running and eating 90% of the CPU.
