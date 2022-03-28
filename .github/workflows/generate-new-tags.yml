@@ -13,24 +13,25 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Generate new tags
-        id: genTags
+        id: gentags
         run: ./.github/deps/generate-tags.ps1
 
       - name: Create Pull Request
         id: cpr
-        if: steps.genTags.outputs.NewTags == 'True'
+        if: steps.gentags.outputs.NewTags == 'True'
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: Added new tags -> {{ steps.genTags.NewTagsAdded }}
+          token: ${{ secrets.REPO_SCOPED_TOKEN }}
+          commit-message: Added new tags -> {{ steps.gentags.NewTagsAdded }}
           signoff: false
           branch: tags-update
           delete-branch: true
-          title: 'Added new tags -> ${{ steps.genTags.NewTagsAdded }}'
+          title: 'Added new tags -> ${{ steps.gentags.NewTagsAdded }}'
           body: |
             Hey there!
             
             It seems you just added some new tags to your blog post.
-            These were the new tags: ${{ steps.genTags.NewTagsAdded }}
+            These were the new tags: ${{ steps.gentags.NewTagsAdded }}
             
             I went ahead and generated your tag files for you. :wink:
             
@@ -38,9 +39,9 @@ jobs:
           draft: false
 
       - name: Enable Pull Request Automerge
-        if: steps.genTags.outputs.NewTags == 'True'
+        if: steps.gentags.outputs.NewTags == 'True'
         uses: peter-evans/enable-pull-request-automerge@v2
         with:
-          token: ${{ secrets.PULL_REQUEST_MERGE }}
+          token: ${{ secrets.REPO_SCOPED_TOKEN }}
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
           merge-method: rebase
