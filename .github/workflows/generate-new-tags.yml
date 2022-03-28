@@ -22,7 +22,6 @@ jobs:
         if: steps.gentags.outputs.new-tags == 'True'
         uses: peter-evans/create-pull-request@v4
         with:
-          token: ${{ secrets.REPO_SCOPED_TOKEN }}
           commit-message: Added new tags -> ${{ steps.gentags.new-tags-added }}
           signoff: false
           branch: tags-update
