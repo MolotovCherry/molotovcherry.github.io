@@ -23,7 +23,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           commit-message: Added new tags -> ${{ steps.gentags.new-tags-added }}
-          signoff: false
+          signoff: true
           branch: tags-update
           delete-branch: true
           committer: GitHub <noreply@github.com>
@@ -47,3 +47,10 @@ jobs:
           token: ${{ secrets.REPO_SCOPED_TOKEN }}
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
           merge-method: rebase
+
+      - name: Auto approve
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        uses: juliangruber/approve-pull-request-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ steps.cpr.outputs.pull-request-number }}
