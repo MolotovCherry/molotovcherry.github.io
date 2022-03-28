@@ -106,7 +106,8 @@ function postSetup() {
   });
 
   // dynamically add the themed comments h-entry is used only on posts
-  let is_post = document.getElementsByClassName("h-entry").length == 1;
+  let post = document.getElementsByClassName("h-entry");
+  let is_post = post.length == 1;
   if (is_post) {
     let script = document.createElement('script');
     script.src = "https://utteranc.es/client.js";
