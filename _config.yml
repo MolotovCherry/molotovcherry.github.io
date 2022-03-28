@@ -49,6 +49,7 @@ theme: jekyll-theme-modernist
 rss: rss
 
 show_excerpts: 1
+excerpt_separator: <!--more-->
 
 sass:
   style: compressed

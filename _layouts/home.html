@@ -33,7 +33,7 @@ layout: default
         </h3>
         {%- if site.show_excerpts -%}
         <blockquote><p>
-          {{ post.excerpt }}
+          {{ post.excerpt | strip_html }}
         </p></blockquote>
         {%- endif -%}
       </li>
