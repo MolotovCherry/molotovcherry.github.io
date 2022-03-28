@@ -18,22 +18,22 @@ jobs:
 
       - name: Create Pull Request
         id: cpr
-        if: steps.gentags.outputs.NewTags == 'True'
+        if: steps.gentags.outputs.new-tags == 'True'
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.REPO_SCOPED_TOKEN }}
-          commit-message: Added new tags -> ${{ steps.gentags.NewTagsAdded }}
+          commit-message: Added new tags -> ${{ steps.gentags.new-tags-added }}
           signoff: false
           branch: tags-update
           delete-branch: true
           committer: GitHub <noreply@github.com>
           author: GitHub <noreply@github.com>
-          title: 'Added new tags -> ${{ steps.gentags.NewTagsAdded }}'
+          title: 'Added new tags -> ${{ steps.gentags.new-tags-added }}'
           body: |
             Hey there!
             
             It seems you just added some new tags to your blog post.
-            These were the new tags: ${{ steps.gentags.NewTagsAdded }}
+            These were the new tags: ${{ steps.gentags.new-tags-added }}
             
             I went ahead and generated your tag files for you. :wink:
             
@@ -41,7 +41,7 @@ jobs:
           draft: false
 
       - name: Enable Pull Request Automerge
-        if: steps.gentags.outputs.NewTags == 'True'
+        if: steps.gentags.outputs.new-tags == 'True'
         uses: peter-evans/enable-pull-request-automerge@v2
         with:
           token: ${{ secrets.REPO_SCOPED_TOKEN }}

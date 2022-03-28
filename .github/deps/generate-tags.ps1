@@ -66,5 +66,5 @@ foreach ($post in $posts) {
 }
 
 # notify runner of status
-Write-Output "::set-output name=NewTags::$global:newTags"
-Write-Output "::set-output name=NewTagsAdded::$global:addedNewTags"
+Write-Output "::set-output name=new-tags::${global:newTags}"
+Write-Output "::set-output name=new-tags-added::${global:addedNewTags}"
