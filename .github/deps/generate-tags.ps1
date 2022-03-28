@@ -74,5 +74,5 @@ foreach ($post in $posts) {
 # notify runner of status
 Set-OutputVariable -Name "new-tags" -Value "$global:newTags"
 if ($global:newTags) {
-    Set-OutputVariable -Name "new-tags-added" -Value "$($global:addedNewTags -join ',')"
+    Set-OutputVariable -Name "new-tags-added" -Value "$($global:addedNewTags -join ', ')"
 }
