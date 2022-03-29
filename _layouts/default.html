@@ -20,6 +20,8 @@ layout: html_minifier
 
     <script src="{{ '/assets/js/immediate.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/deferred.js' | relative_url }}" defer></script>
+    <!-- chrome has a nasty bug which fires css transitions on page load; this hacky thing stops it -->
+    <script type="text/javascript"> </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
