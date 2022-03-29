@@ -29,13 +29,13 @@ html {
       var(--html-background-color-from),
       var(--html-background-color-to)
     ) fixed;*/
-    
+
   background: linear-gradient(
       var(--html-background-color-from),
       var(--html-background-color-to)
     ) fixed;
   z-index: 100;
-  
+
   &:before {
     background: linear-gradient(
         var(--html-background-color-from-transition),
@@ -65,13 +65,13 @@ section {
       var(--section-background-from),
       var(--section-background-to) 700px
     );*/
-    
+
   background: linear-gradient(
       var(--section-background-from),
       var(--section-background-to)
     );
   z-index: 100;
-  
+
   &:before {
     background: linear-gradient(
         var(--section-background-from-transition),
@@ -88,7 +88,7 @@ section {
     border-radius: 0 0 8px 8px;
     animation-duration: var(--transition-time);
   }
-  
+
   border-top: 1px solid var(--section-border-top);
 }
 
@@ -110,14 +110,14 @@ header {
       var(--header-background-from),
       var(--header-background-to)
     );*/
-  
+
   background: linear-gradient(
       var(--header-background-from),
       var(--header-background-to)
     );
   // 1 higher than section z-index, so day/night indicator won't be hidden behind section which is also z-index 100
   z-index: 101;
-  
+
   &:before {
     background: linear-gradient(
         var(--header-background-from-transition),
@@ -136,22 +136,22 @@ header {
   }
 
   border-bottom: 1px solid var(--header-border-bottom);
-  
+
   p {
     transition: color var(--transition-time) var(--transition-fn);
     color: var(--header-p);
-    
+
     &.view {
       transition: text-shadow var(--transition-time) var(--transition-fn);
       text-shadow: var(--header-p-view-text-shadow);
     }
   }
-  
+
   h1 {
     transition: color var(--transition-time), text-shadow var(--transition-time) var(--transition-fn);
     color: var(--header-h1-color);
     text-shadow: var(--header-h1-textshadow);
-    
+
     a {
       transition: color var(--transition-time) var(--transition-fn);
       color: var(--header-h1-color);
@@ -196,7 +196,7 @@ pre {
   transition: background var(--transition-time) var(--transition-fn), color var(--transition-time) var(--transition-fn);
   background: var(--highlighter-background);
   color: var(--pre-color);
-  
+
   code {
     transition: color var(--transition-time) var(--transition-fn);
     color: var(--pre-color);
@@ -234,7 +234,7 @@ strong {
   html {
     transition: background var(--transition-time) var(--transition-fn);
     background: var(--media-html-background);
-    
+
     // no animation for mobile cause it's intensive
     --transition-time: 0 !important;
     --transition-fn: none !important;
@@ -270,7 +270,7 @@ hr {
 footer {
   transition: color var(--transition-time) var(--transition-fn);
   color: var(--footer-color);
-  
+
   a {
     transition: color var(--transition-time) var(--transition-fn);
     color: var(--footer-a-color);
