@@ -209,6 +209,11 @@ p > code, kbd, .bubble {
   transition: background-color var(--transition-time) var(--transition-fn), color var(--transition-time) var(--transition-fn);
   background-color: var(--code-background-color);
   color: var(--code-color);
+  
+  a {
+    transition: color var(--transition-time) var(--transition-fn);
+    color: var(--code-color)
+  }
 }
 
 strong {
