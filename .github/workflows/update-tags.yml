@@ -51,7 +51,7 @@ jobs:
           merge-method: rebase
 
       - name: Auto approve
-        if: steps.cpr.outputs.pull-request-operation == 'created'
+        if: steps.gentags.outputs.changed-tags == 'True'
         uses: juliangruber/approve-pull-request-action@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
