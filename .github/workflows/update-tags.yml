@@ -13,6 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - shell: pwsh
+        env:
+          REPO_SCOPED_TOKEN: ${{ secrets.REPO_SCOPED_TOKEN }}
+        run: |
+          echo "$env:REPO_SCOPED_TOKEN"
+
       - name: Update tags
         id: gentags
         shell: pwsh
