@@ -28,7 +28,7 @@ jobs:
           delete-branch: true
           committer: GitHub <noreply@github.com>
           author: GitHub <noreply@github.com>
-          title: 'Updated tags'
+          title: 'Update tags'
           body: |
             Hey there!
             
