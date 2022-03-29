@@ -17,7 +17,7 @@ jobs:
         env:
           REPO_SCOPED_TOKEN: ${{ secrets.REPO_SCOPED_TOKEN }}
         run: |
-          echo "$env:REPO_SCOPED_TOKEN"
+          Write-Host "token $env:REPO_SCOPED_TOKEN"
 
       - name: Update tags
         id: gentags
