@@ -1,0 +1,340 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// code blocks in text
+p > code, kbd {
+    padding: 0.3em 0.4em 0.3em;
+    border-radius: 6px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+// weird issues with multiple layers and gaps
+li ul {
+  margin: 0;
+}
+
+.devicon-devicon-plain {
+  max-width: 2em;
+}
+
+.lang-icon {
+  font-size: 2em;
+  vertical-align: middle;
+}
+
+.lang-label {
+  vertical-align: middle;
+  top: 32%;
+  position: absolute;
+  left: 0;
+  margin-left: 43px;
+}
+
+// remove padding at top of code block
+pre.highlight {
+  padding-top: 0;
+  margin-bottom: 0;
+}
+
+// use a container to handle the bottom margin instead of pre.highlight
+div.collapse-container {
+  margin-bottom: 20px;
+}
+
+// need to bypass the 20px margin at top of collapsible
+// by default it's hidden
+div.highlighter-rouge {
+  margin: 0 -20px 0;
+  padding: 0 20px 0;
+  
+  // for transitioning
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.collapsible:after {
+  content: "\2795\fe0e"; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: "#f8f8f2";
+  
+  top: 32%;
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+}
+
+.active:after {
+  content: "\2796\fe0e"; /* Unicode character for "minus" sign (-) */
+  color: "#f8f8f2";
+}
+
+// padding added to bottom to make it look nice
+.collapsible {
+  background-color: #3A3C42;
+  color: #f8f8f2;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  width: calc(100% + 40px);
+  vertical-align: middle;
+  position: relative;
+  margin: 0 -20px 0;
+}
+
+/* if you want to change the original color
+.devicon-devicon-plain path {
+  fill: #4691f6;
+}*/
+
+#share-buttons {
+  transform: translate(-50%);
+  top: 48%;
+  position: absolute;
+  left: 50%;
+}
+
+// display on right in mobile browser
+@media print, screen and (max-width: 740px) {
+  #share-buttons {
+    left: auto;
+    right: -29px;
+    transform: none;
+    position: relative;
+    top: -28px;
+    float: right;
+  }
+  
+  // arrows move incorrectly, so just place them next to "next" and "previous"
+  .post_navi-arrow {
+    top: 15% !important;
+  }
+  
+  #theme-switcher {
+    top: 40px !important;
+    float: right;
+    position: relative !important;
+    right: -72px !important;
+  }
+  
+  section {
+    border-radius: 0;
+  }
+  
+  // if it's too long, it'll break horizontal layout in mobile
+  p > code, kbd {
+    white-space: normal;
+  }
+}
+
+// override bottom margin to make hr look nicer
+.home {
+  h1#latest-posts {
+    margin-bottom: 5px;
+  }
+}
+
+.blog-title,
+.post-header {
+  text-align: left;
+  background: none;
+  padding-left: 0px;
+  padding-bottom: 10px;
+}
+
+.post-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.svg-icon {
+  vertical-align: middle;
+  padding: 5px;
+}
+
+.social-label {
+  vertical-align: middle;
+}
+
+header {
+  p {
+    display: inline;
+  
+    &.view {
+      font-weight: 700;
+      -webkit-font-smoothing: antialiased;
+      
+      float: right;
+      font-size: unset;
+    }
+  }
+}
+
+/* Post navigation links */
+.post_navi-label {
+  font-size: 0.9em;
+}
+
+.post_navi {
+  display: flex;
+  
+  .post_navi-item {
+    padding: 0 2.2em;
+    width: 50%;
+    position: relative;
+  }
+
+  .nav_prev {
+    text-align: left;
+    
+    .post_navi-arrow {
+      left: 0;
+    }
+  }
+  
+  .nav_next {
+    text-align: right;
+    
+    .post_navi-arrow {
+      right: 0;
+    }
+  }
+  
+  .post_navi-arrow {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    font-size: 2.5em;
+    opacity: .8;
+    font-weight: 600;
+  }
+}
+
+.contact-list,
+.social-media-list,
+.pagination {
+  list-style:none;
+  margin-left:0;
+}
+
+.feed-subscribe .svg-icon {
+  padding: 5px 5px 2px 0
+}
+
+.grey {
+  color: #828282;
+}
+  
+.post-content {
+  padding-top: 15px;
+  margin-bottom: 30px;
+}
+
+//
+// Add additional snytax languages as to not break the code highlighter
+//
+// map html5 to html
+.devicon-html-plain:before{content:""}
+// map css3 to css
+.devicon-css-plain:before{content:""}
+// cplusplus and csharp need to be specified as is, because # and ++ are special chars in css
+
+
+#theme-switcher {
+  position: absolute;
+  right: -19px;
+  top: -19px;
+  cursor: pointer;
+}
+
+.theme-switcher {
+  --size: 2rem;
+  
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  
+  width: var(--size);
+  height: var(--size);
+  box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+  border-radius: 999px;
+  color: hsl(240, 100%, 95%);
+  
+  transition: all 500ms;
+  
+  &:checked {
+    --ray-size: calc(var(--size) * -0.4);
+    --offset-orthogonal: calc(var(--size) * 0.65);
+    --offset-diagonal: calc(var(--size) * 0.45);
+
+    transform: scale(0.75);
+    color: hsl(40, 100%, 50%);
+    box-shadow: 
+      inset 0 0 0 var(--size),
+      calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+      var(--offset-orthogonal) 0 0 var(--ray-size),
+      0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+      0 var(--offset-orthogonal) 0 var(--ray-size),
+      calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
+      var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+      calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+      var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
+    ;
+  }
+}
+
+// magic
+.theme-switcher {
+  --size: 2rem;
+  
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  
+  width: var(--size);
+  height: var(--size);
+  box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+  border-radius: 999px;
+  color: hsl(240, 100%, 95%);
+  
+  transition: all 500ms;
+  
+  &:checked {
+    --ray-size: calc(var(--size) * -0.4);
+    --offset-orthogonal: calc(var(--size) * 0.65);
+    --offset-diagonal: calc(var(--size) * 0.45);
+
+    transform: scale(0.75);
+    color: hsl(40, 100%, 50%);
+    box-shadow: 
+      inset 0 0 0 var(--size),
+      calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+      var(--offset-orthogonal) 0 0 var(--ray-size),
+      0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+      0 var(--offset-orthogonal) 0 var(--ray-size),
+      calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
+      var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+      calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+      var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
+    ;
+  }
+}
+
+.theme-switcher {
+  z-index: 1;
+  
+  &:checked {
+    & ~ .background {
+      --bg: white;
+    }
+    & ~ .title {
+      --color: hsl(40, 100%, 50%);
+    }
+  }
+}

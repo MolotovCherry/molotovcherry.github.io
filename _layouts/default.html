@@ -10,13 +10,7 @@ layout: html_minifier
 
 {% seo %}
 
-    <!-- Do not use external stylesheet, cause it causes a chrome bug with css transitions firing on page load
-      <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    -->
-    {% capture styles %}
-      {% include styles.scss %}
-    {% endcapture %}
-    <style>{{ styles | scssify }}</style>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
 
     <!-- noscript support -->
