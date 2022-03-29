@@ -1,4 +1,4 @@
-name: Generate new tags
+name: Update tags
 
 on:
   push:
@@ -12,10 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Generate new tags
+      - name: Update tags
         id: gentags
         shell: pwsh
-        run: ./.github/deps/generate-tags.ps1
+        run: ./.github/deps/update-tags.ps1
 
       - name: Create Pull Request
         id: cpr
