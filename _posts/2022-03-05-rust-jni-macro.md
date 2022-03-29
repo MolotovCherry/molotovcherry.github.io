@@ -2,9 +2,8 @@
 title: Rust JNI Macro
 author: Cherryleafroad
 layout: post
-categories:
-  - Programming
-tags: rust
+category: Programming
+tags: rust kmagick jni java kotlin proc-macro bindings
 ---
 
 So, during the implementation of [KMagick](https://github.com/cherryleafroad/kmagick/), I came up against a problem: With hundreds of functions all needing to be wrapped in JNI calls, how was I ever going to manage creating so much boilerplate code?
@@ -38,27 +37,27 @@ impl Foo {
             state: false
         }
     }
-    
+
     fn state_call(&mut self, env: JNIEnv, obj: JObject, new_state: jboolean) -> JNIResult<()> {
         // bubble up error to Kotlin
         some_rust_call(new_state)?;
-        
+
         // as you can see, we have access to the old state in-between calls and can even change it
         self.state = new_state;
         Ok(())
     }
-    
+
     #[jstatic]
     fn static_call(env: JNIEnv, obj: JObject) {
         // we can even make static calls
     }
-    
+
     #[jignore]
     fn pure_rust_fn(&self) {
         // and we can ignore a fn to stop it from being seen by JNI
         self.do_stuff();
     }
-    
+
     #[jname(name="jni_sees_this_name")]
     fn different_name(&self, env: JNIEnv, _: JObject) {
         // or we can change the function name
@@ -96,7 +95,7 @@ pub extern "system" fn Java_com_cherryleafroad_kmagick_Magick_magickQueryFonts(
             } else {
                 msg = "";
             }
-            
+
             let _ = env.throw_new("java/lang/RuntimeException", msg);
             std::ptr::null_mut()
         }

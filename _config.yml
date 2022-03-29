@@ -50,6 +50,7 @@ rss: rss
 
 show_excerpts: 1
 excerpt_separator: <!--more-->
+show_tags: 1
 
 collections:
   posts:
@@ -72,4 +73,4 @@ defaults:
       path: ""
       type: posts
     values:
-      tags: Other
+      tags:

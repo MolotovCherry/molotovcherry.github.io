@@ -2,8 +2,8 @@
 title: JetBrains is Awesome
 author: Cherryleafroad
 layout: post
-categories:
-  - Programming
+category: Programming
+tags: jetbrains kmagick
 ---
 
 <a href="https://jb.gg/OpenSourceSupport"><img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png" height="150px" width="150px"/></a>

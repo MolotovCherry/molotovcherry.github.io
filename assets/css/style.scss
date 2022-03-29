@@ -10,7 +10,19 @@ kbd, .bubble {
     border-radius: 6px;
     vertical-align: middle;
     white-space: nowrap;
-    display: inline;
+}
+
+.tag-container {
+  word-break: break-all;
+  line-height: 23px;
+}
+
+.tag-item {
+  margin: 5px 5px 0 0;
+}
+
+.tag-post {
+  margin-left: 20px;
 }
 
 // weird issues with multiple layers and gaps
@@ -51,7 +63,7 @@ div.collapse-container {
 div.highlighter-rouge {
   margin: 0 -20px 0;
   padding: 0 20px 0;
-  
+
   // for transitioning
   max-height: 0;
   overflow: hidden;
@@ -62,7 +74,7 @@ div.highlighter-rouge {
   content: "\2795\fe0e"; /* Unicode character for "plus" sign (+) */
   font-size: 13px;
   color: "#f8f8f2";
-  
+
   top: 32%;
   position: absolute;
   right: 0;
@@ -112,26 +124,30 @@ div.highlighter-rouge {
     top: -28px;
     float: right;
   }
-  
+
   // arrows move incorrectly, so just place them next to "next" and "previous"
   .post_navi-arrow {
     top: 15% !important;
   }
-  
+
   #theme-switcher {
     top: 40px !important;
     float: right;
     position: relative !important;
     right: -72px !important;
   }
-  
+
   section {
     border-radius: 0;
   }
-  
+
   // if it's too long, it'll break horizontal layout in mobile
   p > code, kbd, .bubble {
     white-space: normal;
+  }
+
+  .bubble.tag-item {
+    white-space: nowrap;
   }
 }
 
@@ -167,11 +183,11 @@ div.highlighter-rouge {
 header {
   p {
     display: inline;
-  
+
     &.view {
       font-weight: 700;
       -webkit-font-smoothing: antialiased;
-      
+
       float: right;
       font-size: unset;
     }
@@ -185,7 +201,7 @@ header {
 
 .post_navi {
   display: flex;
-  
+
   .post_navi-item {
     padding: 0 2.2em;
     width: 50%;
@@ -194,20 +210,20 @@ header {
 
   .nav_prev {
     text-align: left;
-    
+
     .post_navi-arrow {
       left: 0;
     }
   }
-  
+
   .nav_next {
     text-align: right;
-    
+
     .post_navi-arrow {
       right: 0;
     }
   }
-  
+
   .post_navi-arrow {
     position: absolute;
     transform: translateY(-50%);
@@ -232,7 +248,7 @@ header {
 .grey {
   color: #828282;
 }
-  
+
 .post-content {
   padding-top: 15px;
   margin-bottom: 30px;
@@ -257,19 +273,19 @@ header {
 
 .theme-switcher {
   --size: 2rem;
-  
+
   appearance: none;
   outline: none;
   cursor: pointer;
-  
+
   width: var(--size);
   height: var(--size);
   box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
   border-radius: 999px;
   color: hsl(240, 100%, 95%);
-  
+
   transition: all 500ms;
-  
+
   &:checked {
     --ray-size: calc(var(--size) * -0.4);
     --offset-orthogonal: calc(var(--size) * 0.65);
@@ -277,7 +293,7 @@ header {
 
     transform: scale(0.75);
     color: hsl(40, 100%, 50%);
-    box-shadow: 
+    box-shadow:
       inset 0 0 0 var(--size),
       calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
       var(--offset-orthogonal) 0 0 var(--ray-size),
@@ -294,19 +310,19 @@ header {
 // magic
 .theme-switcher {
   --size: 2rem;
-  
+
   appearance: none;
   outline: none;
   cursor: pointer;
-  
+
   width: var(--size);
   height: var(--size);
   box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
   border-radius: 999px;
   color: hsl(240, 100%, 95%);
-  
+
   transition: all 500ms;
-  
+
   &:checked {
     --ray-size: calc(var(--size) * -0.4);
     --offset-orthogonal: calc(var(--size) * 0.65);
@@ -314,7 +330,7 @@ header {
 
     transform: scale(0.75);
     color: hsl(40, 100%, 50%);
-    box-shadow: 
+    box-shadow:
       inset 0 0 0 var(--size),
       calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
       var(--offset-orthogonal) 0 0 var(--ray-size),
@@ -330,7 +346,7 @@ header {
 
 .theme-switcher {
   z-index: 1;
-  
+
   &:checked {
     & ~ .background {
       --bg: white;

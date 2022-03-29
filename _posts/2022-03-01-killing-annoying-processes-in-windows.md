@@ -2,9 +2,8 @@
 title: Killing Annoying Processes in Windows
 author: Cherryleafroad
 layout: post
-categories:
-  - Programming
-tags: rust
+category: Programming
+tags: rust windows-rs windows
 ---
 
 Mainly 2 things have been annoying me lately while working on my computer. These being, 2 incessant processes that won't stop running and eating 90% of the CPU.
@@ -17,7 +16,7 @@ Normally such things wouldn't be much of a worry as they're not often, but these
 
 I've tried various fixes over the months, ranging from [blocking it](https://www.technipages.com/prevent-users-from-running-certain-programs) using the registry/group policy, [disabling](https://windowsreport.com/compattelrunner-exe-file-issues/) the running tasks in task scheduler, [fiddling](https://docs.microsoft.com/en-us/microsoft-desktop-optimization-pack/appv-v4/how-to-deny-access-to-an-application) with file permissions to deny access to the executable, and [disabling](https://wethegeek.com/how-to-disable-telemetry-and-data-collection-in-windows-10/) as much telemetry as possible, even [Winaero Tweaker](https://winaero.com/winaero-tweaker-0-6-0-2-is-out-allows-to-disable-telemetry-in-windows-10-and-more/)'s disable telemetry feature.
 
-Really, none of these worked at all! I've begun to think these are a serious virus (might as well be with how annoying it was). No matter what I do, `CompatTelRunner.exe` runs every time a program installs or uninstalls. 
+Really, none of these worked at all! I've begun to think these are a serious virus (might as well be with how annoying it was). No matter what I do, `CompatTelRunner.exe` runs every time a program installs or uninstalls.
 
 So, I decided to finally turn to Rust to solve my problem, by making something that watches processes and kills them right away. A Process Killer!
 
@@ -341,7 +340,7 @@ unsafe {
         VT_R4 => {
             ValueType::R4(variant.Anonymous.Anonymous.Anonymous.fltVal)
         }
-    
+
         // etc
     }
 }
