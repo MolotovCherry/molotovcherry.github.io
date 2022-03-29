@@ -13,9 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Show secrets
-        run: echo ${{ secrets.REPO_SCOPED_TOKEN }}
-
       - name: Update tags
         id: gentags
         shell: pwsh
