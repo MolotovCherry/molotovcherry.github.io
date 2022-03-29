@@ -79,9 +79,9 @@ UpdateTags -Posts $posts -TagList $tags
 Set-OutputVariable -Name "changed-tags" -Value "$global:changedTags"
 if ($global:changedTags) {
     if ($global:addedTags.Length -gt 0) {
-        Set-OutputVariable -Name "new-tags" -Value "$($global:addedTags -join ', ')"
+        Set-OutputVariable -Name "new-tags" -Value "$global:addedTags"
     }
     if ($global:deletedTags.Length -gt 0) {
-        Set-OutputVariable -Name "deleted-tags" -Value "$($global:deletedTags -join ', ')"
+        Set-OutputVariable -Name "deleted-tags" -Value "$global:deletedTags"
     }
 }
