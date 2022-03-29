@@ -1,3 +1,7 @@
 {% if jekyll.environment == 'production' -%}
   {% include head-google-analytics.html %}
 {%- endif %}
+
+{% if site.tags != "" %}
+  {% include collect-tags.html %}
+{% endif %}

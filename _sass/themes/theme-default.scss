@@ -205,7 +205,7 @@ pre {
 // end code blocks section
 
 // inline `code`
-p > code, kbd {
+p > code, kbd, .bubble {
   transition: background-color var(--transition-time) var(--transition-fn), color var(--transition-time) var(--transition-fn);
   background-color: var(--code-background-color);
   color: var(--code-color);

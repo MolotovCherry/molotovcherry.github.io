@@ -4,11 +4,13 @@
 @import "{{ site.theme }}";
 
 // code blocks in text
-p > code, kbd {
-    padding: 0.3em 0.4em 0.3em;
+p > code,
+kbd, .bubble {
+    padding: 0.15em 0.4em 0.2em;
     border-radius: 6px;
     vertical-align: middle;
     white-space: nowrap;
+    display: inline;
 }
 
 // weird issues with multiple layers and gaps
@@ -128,7 +130,7 @@ div.highlighter-rouge {
   }
   
   // if it's too long, it'll break horizontal layout in mobile
-  p > code, kbd {
+  p > code, kbd, .bubble {
     white-space: normal;
   }
 }
