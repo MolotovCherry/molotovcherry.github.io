@@ -57,7 +57,7 @@ function CreateTags($generatedTags) {
         foreach($tag in $generatedTags) {
             $content = @"
 ---
-layout: tag_page
+layout: tag-page
 title: "Tag: $tag"
 tag: $tag
 robots: noindex
