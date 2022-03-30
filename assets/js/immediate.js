@@ -24,7 +24,7 @@ cherryblog.getTheme = function() {
       theme = "light";
     }
   }
-  
+
   return theme;
 };
 
@@ -32,7 +32,7 @@ cherryblog.getCommentsTheme = function(theme) {
   if (theme === undefined) {
     theme = cherryblog.getTheme();
   }
-  
+
   return theme == "dark" ? "photon-dark" : "github-light";
 };
 
@@ -44,7 +44,7 @@ cherryblog.setTheme = function(theme) {
   localStorage.setItem("theme", theme);
   let html = document.documentElement;
   html.dataset.theme = theme;
-  
+
   let iframe = document.querySelector("iframe");
   if (iframe) {
     let msg = {

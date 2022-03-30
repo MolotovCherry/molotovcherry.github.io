@@ -12,7 +12,7 @@ layout: default
 			<span class="post-meta tag-post">{{ post.date | date: date_format }}</span>
 			{% assign author = page.author | default: site.author %}
 			{%- if author -%}
-				<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name"> • by {{ author }}</span></span>
+			&nbsp;• by <div class="avatar-container">{% avatar {{ author }} size=100 %}</div> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ author }}</span></span>
 			{%- endif -%}
 			<h3 class="tag-post">
 				<a class="post-link" href="{{ post.url | relative_url }}">

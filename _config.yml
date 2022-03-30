@@ -63,6 +63,8 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jemoji
+  - jekyll-avatar
 
 titles_from_headings:
   strip_title: true

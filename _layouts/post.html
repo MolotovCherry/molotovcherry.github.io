@@ -12,7 +12,7 @@ layout: default
       </time>
       {% assign author = page.author | default: site.author %}
       {%- if author -%}
-        • by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ author }}</span></span>
+        • by <div class="avatar-container">{% avatar {{ author }} size=100 %}</div> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ author }}</span></span>
       {%- endif -%}
       {% if page.category %}
         • <span><a href="/category/{{ page.category | slugify }}">{{ page.category }}</a></span>
