@@ -3,7 +3,7 @@ title: Rust JNI Macro
 author: Cherryleafroad
 layout: post
 category: Programming
-tags: rust kmagick jni java kotlin proc-macro bindings
+tags: rust kmagick jni kotlin proc-macro bindings
 ---
 
 So, during the implementation of [KMagick](https://github.com/cherryleafroad/kmagick/), I came up against a problem: With hundreds of functions all needing to be wrapped in JNI calls, how was I ever going to manage creating so much boilerplate code?
