@@ -1,6 +1,6 @@
 :root {
-  --transition-time: 0.6s;
-  --transition-fn: ease;
+  --transition-time: 0;
+  --transition-fn: none;
 }
 
 // used to animate the background
@@ -209,7 +209,7 @@ p > code, kbd, .bubble {
   transition: background-color var(--transition-time) var(--transition-fn), color var(--transition-time) var(--transition-fn);
   background-color: var(--code-background-color);
   color: var(--code-color);
-  
+
   a {
     transition: color var(--transition-time) var(--transition-fn);
     color: var(--code-color)
