@@ -5,17 +5,16 @@ layout: html_minifier
 <!doctype html>
 <html lang="{{ site.lang | default: "en-US" }}" data-theme="dark">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
-
     <!-- noscript support -->
     <noscript>
       <link rel="stylesheet" href="{{ '/assets/css/noscript.css?v=' | append: site.github.build_revision | relative_url }}">
     </noscript>
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
     <script src="{{ '/assets/js/immediate.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/deferred.js' | relative_url }}" defer></script>
 
