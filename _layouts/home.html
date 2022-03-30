@@ -26,6 +26,13 @@ layout: default
       {%- for post in posts -%}
       <li>
         <span class="post-meta">{{ post.date | date: date_format }}</span>
+        {% assign author = page.author | default: site.author %}
+        {%- if author -%}
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name"> • by {{ author }}</span></span>
+        {%- endif -%}
+        {% if post.category %}
+          <span> • {{ post.category }}</span>
+        {% endif %}
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}

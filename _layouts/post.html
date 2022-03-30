@@ -18,12 +18,19 @@ layout: default
         • <span>{{ page.category }}</span>
       {% endif %}
     </p>
-
-    {% include sharelinks.html %}
+    {% if page.tags %}
+      <div class="tag-container">
+        {% for tag in page.tags %}
+        <a class="bubble tag-item" href="/tag/{{ tag }}">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
+    <hr>
+    {% include sharelinks.html %}
     {% include navlinks.html %}
   </div>
 

@@ -109,23 +109,12 @@ div.highlighter-rouge {
 }*/
 
 #share-buttons {
-  transform: translate(-50%);
-  top: 48%;
-  position: absolute;
-  left: 50%;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 // display on right in mobile browser
 @media print, screen and (max-width: 740px) {
-  #share-buttons {
-    left: auto;
-    right: -29px;
-    transform: none;
-    position: relative;
-    top: -28px;
-    float: right;
-  }
-
   // arrows move incorrectly, so just place them next to "next" and "previous"
   .post_navi-arrow {
     top: 15% !important;
