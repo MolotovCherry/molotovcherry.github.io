@@ -3,19 +3,17 @@ layout: default
 ---
 
 <div>
-	<h1 class="page-heading">Tag: {{ page.tag }}</h1>
+	<h1 class="page-heading">Category: {{ page.category }}</h1>
+
 	<ul class="post-list">
 		{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-		{% for post in site.tags[page.tag] %}
+		{% for post in site.categories[page.category] %}
 		<li>
 			<span class="post-meta tag-post">{{ post.date | date: date_format }}</span>
 			{% assign author = page.author | default: site.author %}
 			{%- if author -%}
 				<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name"> • by {{ author }}</span></span>
 			{%- endif -%}
-			{% if post.category %}
-				<span> • <a href="/category/{{ post.category | slugify }}">{{ post.category }}</a></span>
-			{% endif %}
 			<h3 class="tag-post">
 				<a class="post-link" href="{{ post.url | relative_url }}">
 					{{ post.title | escape }}
@@ -33,7 +31,7 @@ layout: default
 		{% endfor %}
 	</ul>
 
-	<hr>
-	<h1>Tags</h1>
-	{% include tag-list.html %}
+    <hr>
+    <h1>Categories</h1>
+    {% include category-list.html %}
 </div>

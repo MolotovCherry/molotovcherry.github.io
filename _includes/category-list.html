@@ -1,0 +1,10 @@
+<div class="bubble-container">
+    <p>
+        {% for category in site.categories %}
+        {% assign category_name = category[0] %}
+            <a class="bubble bubble-item" href="/category/{{ category_name | slugify }}">
+                {{ category_name }}
+            </a>
+        {% endfor %}
+    </p>
+</div>

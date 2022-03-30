@@ -31,7 +31,7 @@ layout: default
           <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name"> • by {{ author }}</span></span>
         {%- endif -%}
         {% if post.category %}
-          <span> • {{ post.category }}</span>
+          <span> • <a href="/category/{{ post.category | slugify }}">{{ post.category }}</a></span>
         {% endif %}
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
