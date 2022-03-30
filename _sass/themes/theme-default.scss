@@ -1,6 +1,7 @@
 :root {
   --transition-time: 0.6s;
   --transition-fn: ease;
+  --theme-switcher-transition: all 500ms;
 }
 
 // used to animate the background
@@ -24,6 +25,7 @@ header[data-transition]:before {
 html[data-preload] {
   --transition-time: 0;
   --transition-fn: none;
+  --theme-switcher-transition: none 0;
 }
 
 html {

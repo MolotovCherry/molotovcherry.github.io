@@ -278,7 +278,7 @@ header {
   border-radius: 999px;
   color: hsl(240, 100%, 95%);
 
-  transition: all 500ms;
+  transition: var(--theme-switcher-transition);
 
   &:checked {
     --ray-size: calc(var(--size) * -0.4);
@@ -315,7 +315,7 @@ header {
   border-radius: 999px;
   color: hsl(240, 100%, 95%);
 
-  transition: all 500ms;
+  transition: var(--theme-switcher-transition);
 
   &:checked {
     --ray-size: calc(var(--size) * -0.4);
