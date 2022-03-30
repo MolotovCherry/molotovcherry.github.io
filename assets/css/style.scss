@@ -26,6 +26,11 @@ kbd, .bubble {
   margin-left: 20px;
 }
 
+.tag-tags {
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
 // weird issues with multiple layers and gaps
 li ul {
   margin: 0;
@@ -135,7 +140,7 @@ div.highlighter-rouge {
     white-space: normal;
   }
 
-  .bubble.tag-item {
+  .bubble.bubble-item {
     white-space: nowrap;
   }
 }
