@@ -65,7 +65,7 @@ function collapseCodeBlocks() {
 var parseNum = str => +str.replace(/[^.\d]/g, '');
 
 var time, html, section, header;
-function postSetup() {
+cherryblog.postSetup = function () {
   html = document.documentElement;
   section = document.getElementsByTagName('section')[0];
   header = document.getElementsByTagName('header')[0];
@@ -75,7 +75,7 @@ function postSetup() {
 
   let style = getComputedStyle(document.documentElement);
   time = parseNum(style.getPropertyValue('--transition-time'));
-}
+};
 
 (function () {
   collapseCodeBlocks();
@@ -121,6 +121,4 @@ function postSetup() {
 
     post[0].appendChild(script);
   }
-
-  postSetup();
 })();
