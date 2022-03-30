@@ -56,6 +56,9 @@ collections:
   posts:
     output: true
     permalink: /:categories/:title
+  authors:
+    name: true
+    username: true
 
 sass:
   style: compressed

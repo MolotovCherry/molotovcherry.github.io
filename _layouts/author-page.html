@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div>
+	{% assign author = site.authors | where:"username",page.author | first %}
+
+	<h1 class="page-heading">Author: {{ author.username }}</h1>
+
+	{{ author.content }}
+
+	{% unless author.content == blank %}
+		<h1>Posts</h1>
+		<hr>
+	{% endunless %}
+
+    {% assign posts = site.posts | where:"author",author.username %}
+	{% assign indent = 1 %}
+	{% include post-previews.html %}
+
+	<hr>
+	<h1>Authors</h1>
+	{% include author-list.html %}
+</div>

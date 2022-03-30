@@ -8,7 +8,18 @@
         <span class="post-meta {% if indent %}{{ indent_tag }}{% endif %}">{{ post.date | date: date_format }}</span>
         {% assign author = page.author | default: site.author %}
         {%- if author -%}
-            &nbsp;• by <div class="avatar-container"><a href="https://github.com/{{ author | slugify }}" target="_blank">{% avatar {{ author }} size=100 %}</a></div> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ author }}</span></span>
+            &nbsp;• by <div class="avatar-container">
+                <a href="https://github.com/{{ author | slugify }}" target="_blank">
+                    {% avatar {{ author }} size=100 %}
+                </a>
+            </div>
+            <a href="/author/{{ author | slugify }}">
+                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <span class="p-author h-card" itemprop="name">
+                        {{ author }}
+                    </span>
+                </span>
+            </a>
         {%- endif -%}
         {% if post.category and hide_category == nil %}
             &nbsp;• <a href="/category/{{ post.category | slugify }}">{{ post.category }}</a>
