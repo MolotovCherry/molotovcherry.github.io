@@ -5,7 +5,7 @@ layout: js_minifier
 function collapseCodeBlocks() {
     // top element
     let code_blocks = document.getElementsByTagName("pre");
-    
+
     // cached elements are faster
     let elemN = document.createElement("button");
     let iconN = document.createElement("i");
@@ -15,7 +15,7 @@ function collapseCodeBlocks() {
     elemN.classList.add("collapsible");
     divN.classList.add("lang-label");
     containerN.classList.add("collapse-container");
-    
+
     let len = code_blocks.length;
     for (let x = 0; x < len; x++) {
         // need the top level parent
@@ -42,12 +42,12 @@ function collapseCodeBlocks() {
 
         let parent = block.parentNode;
         let referenceNode = block.nextElementSibling;
-        
+
         container.appendChild(elem);
         container.appendChild(block);
-        
+
         parent.insertBefore(container, referenceNode);
-        
+
         // now add event listener to button
         elem.addEventListener("click", event => {
           event.currentTarget.classList.toggle("active");
@@ -66,9 +66,12 @@ var parseNum = str => +str.replace(/[^.\d]/g, '');
 
 var time, html, section, header;
 function postSetup() {
+  // remove transition disabler
+  delete html.dataset.preload;
+
   let style = getComputedStyle(document.documentElement);
   time = parseNum(style.getPropertyValue('--transition-time'));
-  
+
   html = document.documentElement;
   section = document.getElementsByTagName('section')[0];
   header = document.getElementsByTagName('header')[0];
@@ -89,9 +92,9 @@ function postSetup() {
     html.dataset.transition = '';
     header.dataset.transition = '';
     section.dataset.transition = '';
-    
+
     cherryblog.toggleTheme();
-    
+
     setTimeout(
       () => {
         // remove unneeded property
@@ -115,9 +118,9 @@ function postSetup() {
     script.setAttribute("theme", cherryblog.getCommentsTheme(theme));
     script.setAttribute("crossorigin", "anonymous");
     script.async = true;
-    
+
     post[0].appendChild(script);
   }
-  
+
   postSetup();
 })();
