@@ -1,13 +1,13 @@
 ---
-layout: home
+layout: default
 ---
 
 <h1>Whoops! There was a glitch</h1>
 <hr>
 
-<p>Whatever it was, it seems to have disappeared into thin air 🥺</p>
+<p>It seems a big yellow pill eating monster ate the page 🥺</p>
 
-<p>... Don't worry though ... Pinky will quickly run off to fetch more posts for you</p>
+<p>... Don't worry though ... Pinky just sped off to help you find more content 👻</p>
 
 <style>
 .container {text-align:center;}.ghost {animation: float 3s ease-out infinite;}.ghost:hover {color: yellow;}@keyframes float {50% {transform: translate(0, 20px);}}
@@ -30,4 +30,8 @@ layout: home
 	c-0.007,0.007-0.015,0.014-0.021,0.02C71.666,63.771,71.892,63.307,71.916,62.782z"/>
 </div>
 <br>
-<h1>Recent Posts</h1>
+<h1>Categories</h1>
+{% include category-list.html %}
+
+<h1>Tags</h1>
+{% include tag-list.html %}
