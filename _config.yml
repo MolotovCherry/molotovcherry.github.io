@@ -98,7 +98,6 @@ plugins:
   - jekyll-paginate-v2
 
 titles_from_headings:
-  strip_title: true
   collections: true
 
 defaults:
