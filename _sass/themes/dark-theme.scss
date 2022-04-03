@@ -63,4 +63,12 @@ html[data-theme='dark'] {
 
   --footer-color: #fafafa;
   --footer-a-color: #fafafa;
+
+  --paginator-shadow: none;
+  --paginator-background: #3d4046;
+  --current-page: #65676f;
+  --current-page-color: var(--body-color);
+  --hover-page: #565962;
+  --hover-a-color: #fdfdfd;
+  --paginator-color: var(--body-color);
 }

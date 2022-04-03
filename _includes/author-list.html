@@ -1,9 +1,9 @@
 <div class="bubble-container">
     <p>
-        {% for author in site.authors %}
-        {% assign author_name = author.username %}
-            <a class="bubble bubble-item" href="/author/{{ author_name | slugify }}">
-                {{ author_name }}
+        {% assign authors = site.authors | map: "author" %}
+        {% for author in authors %}
+            <a class="bubble bubble-item" href="/author/{{ author | slugify }}/">
+                {{ author }}
             </a>
         {% endfor %}
     </p>

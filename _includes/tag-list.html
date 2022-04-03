@@ -1,17 +1,9 @@
-{% capture temptags %}
-  {% for tag in site.tags %}
-    {{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
-  {% endfor %}
-{% endcapture %}
-{% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
-
 <div class="bubble-container">
   <p>
-    {% for temptag in sortedtemptags %}
-      {% assign tagitems = temptag | split: '#' %}
-      {% capture tagname %}{{ tagitems[1] }}{% endcapture %}
-      <a class="bubble bubble-item" href="/tag/{{ tagname }}">
-        {{ tagname }}
+    {% assign tags = site.tags | map: "tag" %}
+    {% for tag in tags %}
+      <a class="bubble bubble-item" href="/tag/{{ tag }}/">
+        {{ tag }}
       </a>
     {% endfor %}
   </p>

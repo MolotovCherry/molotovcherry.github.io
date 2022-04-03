@@ -1,0 +1,67 @@
+{% if paginator.total_pages > 1 %}
+<div class="pager {% if bottom_margin %}bottom-margin{% endif %}">
+    <div class="paginator">
+        {% if paginator.total_pages > 2 %}
+            {% if paginator.first_page and paginator.previous_page %}
+                <a href="{{ paginator.first_page_path | relative_url | downcase }}" class="first-page">
+                    <div class="first-page">
+                        &lt;&lt;
+                    </div>
+                </a>
+            {% else %}
+                <div class="first-page no-hover">&lt;&lt;</div>
+            {% endif %}
+        {% endif %}
+
+        {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path | relative_url | downcase }}">
+                <div class="previous_page">
+                    &lt;
+                </div>
+            </a>
+        {% else %}
+            <div class="previous_page no-hover">&lt;</div>
+        {% endif %}
+
+        {% for trail in paginator.page_trail %}
+            {% if paginator.page != trail.num %}
+                <a href="{{ trail.path | relative_url | downcase | replace: 'index.html', '' | replace: '.html', '' }}">
+                    <div class="page">
+                        {{ trail.num }}
+                    </div>
+                </a>
+            {% else %}
+                <div class="page current-page no-hover">
+                    {{ trail.num }}
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | relative_url | downcase }}">
+                <div class="next_page">
+                    &gt;
+                </div>
+            </a>
+        {% else %}
+            <div class="next_page no-hover">
+                &gt;
+            </div>
+        {% endif %}
+
+        {% if paginator.total_pages > 2 %}
+            {% if paginator.last_page and paginator.next_page %}
+                <a href="{{ paginator.last_page_path | relative_url | downcase }}" class="last-page">
+                    <div class="last-page">
+                        &gt;&gt;
+                    </div>
+                </a>
+            {% else %}
+                <div class="last-page no-hover">
+                    &gt;&gt;
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+{% endif %}

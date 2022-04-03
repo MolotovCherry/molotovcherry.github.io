@@ -1,14 +1,18 @@
 ---
 layout: default
+pagination:
+    enabled: true
 ---
 
 <div>
-	<h1 class="page-heading">Category: {{ page.category }}</h1>
+    <h1 class="page-heading">{{ page.title }}</h1>
 
-	{% assign hide_category = 1 %}
-	{% assign indent = 1 %}
-	{% assign posts = site.categories[page.category] %}
-	{% include post-previews.html %}
+    {% assign hide_category = 1 %}
+    {% assign posts = paginator.posts %}
+    {% include post-previews.html %}
+
+    {% assign bottom_margin = 1 %}
+    {% include post-pagination.html %}
 
     <hr>
     <h1>Categories</h1>

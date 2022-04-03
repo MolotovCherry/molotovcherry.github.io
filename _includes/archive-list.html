@@ -1,0 +1,14 @@
+{% unless site.authors == blank %}
+    <h1>Authors</h1>
+    {% include author-list.html %}
+{% endunless %}
+
+{% unless site.categories == blank %}
+    <h1>Categories</h1>
+    {% include category-list.html %}
+{% endunless %}
+
+{% unless site.tags == blank %}
+    <h1>Tags</h1>
+    {% include tag-list.html %}
+{% endunless %}

@@ -14,10 +14,10 @@ layout: default
       {%- if author -%}
         • by <div class="avatar-container">
           <a href="https://github.com/{{ author | slugify }}" target="_blank">
-            {% avatar {{ author }} size=100 %}
+            {% avatar {{ author | slugify }} size=100 %}
           </a>
         </div>
-        <a href="/author/{{ author | slugify }}">
+        <a href="/author/{{ author | slugify }}/">
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">
               {{ author }}
@@ -26,13 +26,13 @@ layout: default
         </a>
       {%- endif -%}
       {% if page.category %}
-        • <span><a href="/category/{{ page.category | slugify }}">{{ page.category }}</a></span>
+        • <span><a href="/category/{{ page.category | slugify }}/">{{ page.category }}</a></span>
       {% endif %}
     </p>
     {% if page.tags %}
       <div class="bubble-container">
         {% for tag in page.tags %}
-        <a class="bubble bubble-item" href="/tag/{{ tag }}">{{ tag }}</a>
+        <a class="bubble bubble-item" href="/tag/{{ tag }}/">{{ tag }}</a>
         {% endfor %}
       </div>
     {% endif %}

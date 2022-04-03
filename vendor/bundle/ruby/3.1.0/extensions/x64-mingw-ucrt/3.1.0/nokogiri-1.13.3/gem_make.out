@@ -1,0 +1,517 @@
+current directory: D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri
+D:/Ruby31-x64/bin/ruby.exe -I D:/Ruby31-x64/lib/ruby/3.1.0 -r ./siteconf20220403-9020-ynztx3.rb extconf.rb
+checking for whether -std=c99 is accepted as CFLAGS... yes
+checking for whether -Wno-declaration-after-statement is accepted as CFLAGS... yes
+checking for whether -g is accepted as CFLAGS... yes
+checking for whether -Winline is accepted as CFLAGS... yes
+checking for whether -Wmissing-noreturn is accepted as CFLAGS... yes
+checking for whether  "-Idummypath" is accepted as CPPFLAGS... yes
+Building nokogiri using packaged libraries.
+Static linking is enabled.
+Cross build is disabled.
+Using mini_portile version 2.8.0
+---------- IMPORTANT NOTICE ----------
+Building Nokogiri with a packaged version of zlib-1.2.11.
+Configuration options: --host\=x86_64-w64-mingw32 --enable-static --disable-shared --libdir\=D:/Users/roeja/Desktop/cherryleafroad.github.io\ -\ Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/zlib/1.2.11/lib --disable-shared --enable-static CFLAGS\=-fPIC
+
+The Nokogiri maintainers intend to provide timely security updates, but if
+this is a concern for you and want to use your OS/distro system library
+instead, then abort this installation process and install nokogiri as
+instructed at:
+
+  https://nokogiri.org/tutorials/installing_nokogiri.html#installing-using-standard-system-libraries
+
+[{:url=>"https://zlib.net/fossils/zlib-1.2.11.tar.gz",
+  :sha256=>"c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1"}]
+
+Downloading zlib-1.2.11.tar.gz (  1%) 
+Downloading zlib-1.2.11.tar.gz (  2%) 
+Downloading zlib-1.2.11.tar.gz (  3%) 
+Downloading zlib-1.2.11.tar.gz (  5%) 
+Downloading zlib-1.2.11.tar.gz (  6%) 
+Downloading zlib-1.2.11.tar.gz (  7%) 
+Downloading zlib-1.2.11.tar.gz (  9%) 
+Downloading zlib-1.2.11.tar.gz ( 10%) 
+Downloading zlib-1.2.11.tar.gz ( 11%) 
+Downloading zlib-1.2.11.tar.gz ( 13%) 
+Downloading zlib-1.2.11.tar.gz ( 14%) 
+Downloading zlib-1.2.11.tar.gz ( 15%) 
+Downloading zlib-1.2.11.tar.gz ( 17%) 
+Downloading zlib-1.2.11.tar.gz ( 18%) 
+Downloading zlib-1.2.11.tar.gz ( 19%) 
+Downloading zlib-1.2.11.tar.gz ( 21%) 
+Downloading zlib-1.2.11.tar.gz ( 22%) 
+Downloading zlib-1.2.11.tar.gz ( 23%) 
+Downloading zlib-1.2.11.tar.gz ( 24%) 
+Downloading zlib-1.2.11.tar.gz ( 26%) 
+Downloading zlib-1.2.11.tar.gz ( 27%) 
+Downloading zlib-1.2.11.tar.gz ( 28%) 
+Downloading zlib-1.2.11.tar.gz ( 30%) 
+Downloading zlib-1.2.11.tar.gz ( 31%) 
+Downloading zlib-1.2.11.tar.gz ( 32%) 
+Downloading zlib-1.2.11.tar.gz ( 34%) 
+Downloading zlib-1.2.11.tar.gz ( 35%) 
+Downloading zlib-1.2.11.tar.gz ( 36%) 
+Downloading zlib-1.2.11.tar.gz ( 38%) 
+Downloading zlib-1.2.11.tar.gz ( 39%) 
+Downloading zlib-1.2.11.tar.gz ( 40%) 
+Downloading zlib-1.2.11.tar.gz ( 42%) 
+Downloading zlib-1.2.11.tar.gz ( 43%) 
+Downloading zlib-1.2.11.tar.gz ( 44%) 
+Downloading zlib-1.2.11.tar.gz ( 46%) 
+Downloading zlib-1.2.11.tar.gz ( 47%) 
+Downloading zlib-1.2.11.tar.gz ( 48%) 
+Downloading zlib-1.2.11.tar.gz ( 49%) 
+Downloading zlib-1.2.11.tar.gz ( 51%) 
+Downloading zlib-1.2.11.tar.gz ( 52%) 
+Downloading zlib-1.2.11.tar.gz ( 53%) 
+Downloading zlib-1.2.11.tar.gz ( 55%) 
+Downloading zlib-1.2.11.tar.gz ( 56%) 
+Downloading zlib-1.2.11.tar.gz ( 57%) 
+Downloading zlib-1.2.11.tar.gz ( 59%) 
+Downloading zlib-1.2.11.tar.gz ( 60%) 
+Downloading zlib-1.2.11.tar.gz ( 61%) 
+Downloading zlib-1.2.11.tar.gz ( 63%) 
+Downloading zlib-1.2.11.tar.gz ( 64%) 
+Downloading zlib-1.2.11.tar.gz ( 65%) 
+Downloading zlib-1.2.11.tar.gz ( 67%) 
+Downloading zlib-1.2.11.tar.gz ( 68%) 
+Downloading zlib-1.2.11.tar.gz ( 69%) 
+Downloading zlib-1.2.11.tar.gz ( 71%) 
+Downloading zlib-1.2.11.tar.gz ( 72%) 
+Downloading zlib-1.2.11.tar.gz ( 73%) 
+Downloading zlib-1.2.11.tar.gz ( 75%) 
+Downloading zlib-1.2.11.tar.gz ( 76%) 
+Downloading zlib-1.2.11.tar.gz ( 77%) 
+Downloading zlib-1.2.11.tar.gz ( 78%) 
+Downloading zlib-1.2.11.tar.gz ( 80%) 
+Downloading zlib-1.2.11.tar.gz ( 81%) 
+Downloading zlib-1.2.11.tar.gz ( 82%) 
+Downloading zlib-1.2.11.tar.gz ( 84%) 
+Downloading zlib-1.2.11.tar.gz ( 85%) 
+Downloading zlib-1.2.11.tar.gz ( 86%) 
+Downloading zlib-1.2.11.tar.gz ( 88%) 
+Downloading zlib-1.2.11.tar.gz ( 89%) 
+Downloading zlib-1.2.11.tar.gz ( 90%) 
+Downloading zlib-1.2.11.tar.gz ( 92%) 
+Downloading zlib-1.2.11.tar.gz ( 93%) 
+Downloading zlib-1.2.11.tar.gz ( 94%) 
+Downloading zlib-1.2.11.tar.gz ( 96%) 
+Downloading zlib-1.2.11.tar.gz ( 97%) 
+Downloading zlib-1.2.11.tar.gz ( 98%) 
+Downloading zlib-1.2.11.tar.gz (100%) 
+Extracting zlib-1.2.11.tar.gz into tmp/x86_64-w64-mingw32/ports/zlib/1.2.11... OK
+Running 'compile' for zlib 1.2.11... OK
+Running 'install' for zlib 1.2.11... OK
+Activating zlib 1.2.11 (from D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/zlib/1.2.11)...
+Using mini_portile version 2.8.0
+---------- IMPORTANT NOTICE ----------
+Building Nokogiri with a packaged version of libiconv-1.16.
+Configuration options: --host\=x86_64-w64-mingw32 --enable-static --disable-shared --libdir\=D:/Users/roeja/Desktop/cherryleafroad.github.io\ -\ Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/libiconv/1.16/lib --disable-dependency-tracking --disable-shared --enable-static CPPFLAGS\=-Wall CFLAGS\=-O2\ -U_FORTIFY_SOURCE\ -g\ -fPIC CXXFLAGS\=-O2\ -U_FORTIFY_SOURCE\ -g LDFLAGS\=
+
+The Nokogiri maintainers intend to provide timely security updates, but if
+this is a concern for you and want to use your OS/distro system library
+instead, then abort this installation process and install nokogiri as
+instructed at:
+
+  https://nokogiri.org/tutorials/installing_nokogiri.html#installing-using-standard-system-libraries
+
+[{:url=>"https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.16.tar.gz",
+  :sha256=>"e6a1b1b589654277ee790cce3734f07876ac4ccfaecbee8afa0b649cf529cc04"}]
+
+Downloading libiconv-1.16.tar.gz (  0%) 
+Downloading libiconv-1.16.tar.gz (  0%) 
+Downloading libiconv-1.16.tar.gz (  0%) 
+Downloading libiconv-1.16.tar.gz (  0%) 
+Downloading libiconv-1.16.tar.gz (  1%) 
+Downloading libiconv-1.16.tar.gz (  1%) 
+Downloading libiconv-1.16.tar.gz (  1%) 
+Downloading libiconv-1.16.tar.gz (  2%) 
+Downloading libiconv-1.16.tar.gz (  2%) 
+Downloading libiconv-1.16.tar.gz (  2%) 
+Downloading libiconv-1.16.tar.gz (  3%) 
+Downloading libiconv-1.16.tar.gz (  3%) 
+Downloading libiconv-1.16.tar.gz (  3%) 
+Downloading libiconv-1.16.tar.gz (  4%) 
+Downloading libiconv-1.16.tar.gz (  4%) 
+Downloading libiconv-1.16.tar.gz (  4%) 
+Downloading libiconv-1.16.tar.gz (  5%) 
+Downloading libiconv-1.16.tar.gz (  5%) 
+Downloading libiconv-1.16.tar.gz (  5%) 
+Downloading libiconv-1.16.tar.gz (  6%) 
+Downloading libiconv-1.16.tar.gz (  6%) 
+Downloading libiconv-1.16.tar.gz (  6%) 
+Downloading libiconv-1.16.tar.gz (  6%) 
+Downloading libiconv-1.16.tar.gz (  7%) 
+Downloading libiconv-1.16.tar.gz (  7%) 
+Downloading libiconv-1.16.tar.gz (  7%) 
+Downloading libiconv-1.16.tar.gz (  8%) 
+Downloading libiconv-1.16.tar.gz (  8%) 
+Downloading libiconv-1.16.tar.gz (  8%) 
+Downloading libiconv-1.16.tar.gz (  9%) 
+Downloading libiconv-1.16.tar.gz (  9%) 
+Downloading libiconv-1.16.tar.gz (  9%) 
+Downloading libiconv-1.16.tar.gz ( 10%) 
+Downloading libiconv-1.16.tar.gz ( 10%) 
+Downloading libiconv-1.16.tar.gz ( 10%) 
+Downloading libiconv-1.16.tar.gz ( 11%) 
+Downloading libiconv-1.16.tar.gz ( 11%) 
+Downloading libiconv-1.16.tar.gz ( 11%) 
+Downloading libiconv-1.16.tar.gz ( 12%) 
+Downloading libiconv-1.16.tar.gz ( 12%) 
+Downloading libiconv-1.16.tar.gz ( 12%) 
+Downloading libiconv-1.16.tar.gz ( 13%) 
+Downloading libiconv-1.16.tar.gz ( 13%) 
+Downloading libiconv-1.16.tar.gz ( 13%) 
+Downloading libiconv-1.16.tar.gz ( 13%) 
+Downloading libiconv-1.16.tar.gz ( 14%) 
+Downloading libiconv-1.16.tar.gz ( 14%) 
+Downloading libiconv-1.16.tar.gz ( 14%) 
+Downloading libiconv-1.16.tar.gz ( 15%) 
+Downloading libiconv-1.16.tar.gz ( 15%) 
+Downloading libiconv-1.16.tar.gz ( 15%) 
+Downloading libiconv-1.16.tar.gz ( 16%) 
+Downloading libiconv-1.16.tar.gz ( 16%) 
+Downloading libiconv-1.16.tar.gz ( 16%) 
+Downloading libiconv-1.16.tar.gz ( 17%) 
+Downloading libiconv-1.16.tar.gz ( 17%) 
+Downloading libiconv-1.16.tar.gz ( 17%) 
+Downloading libiconv-1.16.tar.gz ( 18%) 
+Downloading libiconv-1.16.tar.gz ( 18%) 
+Downloading libiconv-1.16.tar.gz ( 18%) 
+Downloading libiconv-1.16.tar.gz ( 19%) 
+Downloading libiconv-1.16.tar.gz ( 19%) 
+Downloading libiconv-1.16.tar.gz ( 19%) 
+Downloading libiconv-1.16.tar.gz ( 19%) 
+Downloading libiconv-1.16.tar.gz ( 20%) 
+Downloading libiconv-1.16.tar.gz ( 20%) 
+Downloading libiconv-1.16.tar.gz ( 20%) 
+Downloading libiconv-1.16.tar.gz ( 21%) 
+Downloading libiconv-1.16.tar.gz ( 21%) 
+Downloading libiconv-1.16.tar.gz ( 21%) 
+Downloading libiconv-1.16.tar.gz ( 22%) 
+Downloading libiconv-1.16.tar.gz ( 22%) 
+Downloading libiconv-1.16.tar.gz ( 22%) 
+Downloading libiconv-1.16.tar.gz ( 23%) 
+Downloading libiconv-1.16.tar.gz ( 23%) 
+Downloading libiconv-1.16.tar.gz ( 23%) 
+Downloading libiconv-1.16.tar.gz ( 24%) 
+Downloading libiconv-1.16.tar.gz ( 24%) 
+Downloading libiconv-1.16.tar.gz ( 24%) 
+Downloading libiconv-1.16.tar.gz ( 25%) 
+Downloading libiconv-1.16.tar.gz ( 25%) 
+Downloading libiconv-1.16.tar.gz ( 25%) 
+Downloading libiconv-1.16.tar.gz ( 26%) 
+Downloading libiconv-1.16.tar.gz ( 26%) 
+Downloading libiconv-1.16.tar.gz ( 26%) 
+Downloading libiconv-1.16.tar.gz ( 26%) 
+Downloading libiconv-1.16.tar.gz ( 27%) 
+Downloading libiconv-1.16.tar.gz ( 27%) 
+Downloading libiconv-1.16.tar.gz ( 27%) 
+Downloading libiconv-1.16.tar.gz ( 28%) 
+Downloading libiconv-1.16.tar.gz ( 28%) 
+Downloading libiconv-1.16.tar.gz ( 28%) 
+Downloading libiconv-1.16.tar.gz ( 29%) 
+Downloading libiconv-1.16.tar.gz ( 29%) 
+Downloading libiconv-1.16.tar.gz ( 29%) 
+Downloading libiconv-1.16.tar.gz ( 30%) 
+Downloading libiconv-1.16.tar.gz ( 30%) 
+Downloading libiconv-1.16.tar.gz ( 30%) 
+Downloading libiconv-1.16.tar.gz ( 31%) 
+Downloading libiconv-1.16.tar.gz ( 31%) 
+Downloading libiconv-1.16.tar.gz ( 31%) 
+Downloading libiconv-1.16.tar.gz ( 32%) 
+Downloading libiconv-1.16.tar.gz ( 32%) 
+Downloading libiconv-1.16.tar.gz ( 32%) 
+Downloading libiconv-1.16.tar.gz ( 32%) 
+Downloading libiconv-1.16.tar.gz ( 33%) 
+Downloading libiconv-1.16.tar.gz ( 33%) 
+Downloading libiconv-1.16.tar.gz ( 33%) 
+Downloading libiconv-1.16.tar.gz ( 34%) 
+Downloading libiconv-1.16.tar.gz ( 34%) 
+Downloading libiconv-1.16.tar.gz ( 34%) 
+Downloading libiconv-1.16.tar.gz ( 35%) 
+Downloading libiconv-1.16.tar.gz ( 35%) 
+Downloading libiconv-1.16.tar.gz ( 35%) 
+Downloading libiconv-1.16.tar.gz ( 36%) 
+Downloading libiconv-1.16.tar.gz ( 36%) 
+Downloading libiconv-1.16.tar.gz ( 36%) 
+Downloading libiconv-1.16.tar.gz ( 37%) 
+Downloading libiconv-1.16.tar.gz ( 37%) 
+Downloading libiconv-1.16.tar.gz ( 37%) 
+Downloading libiconv-1.16.tar.gz ( 38%) 
+Downloading libiconv-1.16.tar.gz ( 38%) 
+Downloading libiconv-1.16.tar.gz ( 38%) 
+Downloading libiconv-1.16.tar.gz ( 39%) 
+Downloading libiconv-1.16.tar.gz ( 39%) 
+Downloading libiconv-1.16.tar.gz ( 39%) 
+Downloading libiconv-1.16.tar.gz ( 39%) 
+Downloading libiconv-1.16.tar.gz ( 40%) 
+Downloading libiconv-1.16.tar.gz ( 40%) 
+Downloading libiconv-1.16.tar.gz ( 40%) 
+Downloading libiconv-1.16.tar.gz ( 41%) 
+Downloading libiconv-1.16.tar.gz ( 41%) 
+Downloading libiconv-1.16.tar.gz ( 41%) 
+Downloading libiconv-1.16.tar.gz ( 42%) 
+Downloading libiconv-1.16.tar.gz ( 42%) 
+Downloading libiconv-1.16.tar.gz ( 42%) 
+Downloading libiconv-1.16.tar.gz ( 43%) 
+Downloading libiconv-1.16.tar.gz ( 43%) 
+Downloading libiconv-1.16.tar.gz ( 43%) 
+Downloading libiconv-1.16.tar.gz ( 44%) 
+Downloading libiconv-1.16.tar.gz ( 44%) 
+Downloading libiconv-1.16.tar.gz ( 44%) 
+Downloading libiconv-1.16.tar.gz ( 45%) 
+Downloading libiconv-1.16.tar.gz ( 45%) 
+Downloading libiconv-1.16.tar.gz ( 45%) 
+Downloading libiconv-1.16.tar.gz ( 45%) 
+Downloading libiconv-1.16.tar.gz ( 46%) 
+Downloading libiconv-1.16.tar.gz ( 46%) 
+Downloading libiconv-1.16.tar.gz ( 46%) 
+Downloading libiconv-1.16.tar.gz ( 47%) 
+Downloading libiconv-1.16.tar.gz ( 47%) 
+Downloading libiconv-1.16.tar.gz ( 47%) 
+Downloading libiconv-1.16.tar.gz ( 48%) 
+Downloading libiconv-1.16.tar.gz ( 48%) 
+Downloading libiconv-1.16.tar.gz ( 48%) 
+Downloading libiconv-1.16.tar.gz ( 49%) 
+Downloading libiconv-1.16.tar.gz ( 49%) 
+Downloading libiconv-1.16.tar.gz ( 49%) 
+Downloading libiconv-1.16.tar.gz ( 50%) 
+Downloading libiconv-1.16.tar.gz ( 50%) 
+Downloading libiconv-1.16.tar.gz ( 50%) 
+Downloading libiconv-1.16.tar.gz ( 51%) 
+Downloading libiconv-1.16.tar.gz ( 51%) 
+Downloading libiconv-1.16.tar.gz ( 51%) 
+Downloading libiconv-1.16.tar.gz ( 52%) 
+Downloading libiconv-1.16.tar.gz ( 52%) 
+Downloading libiconv-1.16.tar.gz ( 52%) 
+Downloading libiconv-1.16.tar.gz ( 52%) 
+Downloading libiconv-1.16.tar.gz ( 53%) 
+Downloading libiconv-1.16.tar.gz ( 53%) 
+Downloading libiconv-1.16.tar.gz ( 53%) 
+Downloading libiconv-1.16.tar.gz ( 54%) 
+Downloading libiconv-1.16.tar.gz ( 54%) 
+Downloading libiconv-1.16.tar.gz ( 54%) 
+Downloading libiconv-1.16.tar.gz ( 55%) 
+Downloading libiconv-1.16.tar.gz ( 55%) 
+Downloading libiconv-1.16.tar.gz ( 55%) 
+Downloading libiconv-1.16.tar.gz ( 56%) 
+Downloading libiconv-1.16.tar.gz ( 56%) 
+Downloading libiconv-1.16.tar.gz ( 56%) 
+Downloading libiconv-1.16.tar.gz ( 57%) 
+Downloading libiconv-1.16.tar.gz ( 57%) 
+Downloading libiconv-1.16.tar.gz ( 57%) 
+Downloading libiconv-1.16.tar.gz ( 58%) 
+Downloading libiconv-1.16.tar.gz ( 58%) 
+Downloading libiconv-1.16.tar.gz ( 58%) 
+Downloading libiconv-1.16.tar.gz ( 58%) 
+Downloading libiconv-1.16.tar.gz ( 59%) 
+Downloading libiconv-1.16.tar.gz ( 59%) 
+Downloading libiconv-1.16.tar.gz ( 59%) 
+Downloading libiconv-1.16.tar.gz ( 60%) 
+Downloading libiconv-1.16.tar.gz ( 60%) 
+Downloading libiconv-1.16.tar.gz ( 60%) 
+Downloading libiconv-1.16.tar.gz ( 61%) 
+Downloading libiconv-1.16.tar.gz ( 61%) 
+Downloading libiconv-1.16.tar.gz ( 61%) 
+Downloading libiconv-1.16.tar.gz ( 62%) 
+Downloading libiconv-1.16.tar.gz ( 62%) 
+Downloading libiconv-1.16.tar.gz ( 62%) 
+Downloading libiconv-1.16.tar.gz ( 63%) 
+Downloading libiconv-1.16.tar.gz ( 63%) 
+Downloading libiconv-1.16.tar.gz ( 63%) 
+Downloading libiconv-1.16.tar.gz ( 64%) 
+Downloading libiconv-1.16.tar.gz ( 64%) 
+Downloading libiconv-1.16.tar.gz ( 64%) 
+Downloading libiconv-1.16.tar.gz ( 65%) 
+Downloading libiconv-1.16.tar.gz ( 65%) 
+Downloading libiconv-1.16.tar.gz ( 65%) 
+Downloading libiconv-1.16.tar.gz ( 65%) 
+Downloading libiconv-1.16.tar.gz ( 66%) 
+Downloading libiconv-1.16.tar.gz ( 66%) 
+Downloading libiconv-1.16.tar.gz ( 66%) 
+Downloading libiconv-1.16.tar.gz ( 67%) 
+Downloading libiconv-1.16.tar.gz ( 67%) 
+Downloading libiconv-1.16.tar.gz ( 67%) 
+Downloading libiconv-1.16.tar.gz ( 68%) 
+Downloading libiconv-1.16.tar.gz ( 68%) 
+Downloading libiconv-1.16.tar.gz ( 68%) 
+Downloading libiconv-1.16.tar.gz ( 69%) 
+Downloading libiconv-1.16.tar.gz ( 69%) 
+Downloading libiconv-1.16.tar.gz ( 69%) 
+Downloading libiconv-1.16.tar.gz ( 70%) 
+Downloading libiconv-1.16.tar.gz ( 70%) 
+Downloading libiconv-1.16.tar.gz ( 70%) 
+Downloading libiconv-1.16.tar.gz ( 71%) 
+Downloading libiconv-1.16.tar.gz ( 71%) 
+Downloading libiconv-1.16.tar.gz ( 71%) 
+Downloading libiconv-1.16.tar.gz ( 71%) 
+Downloading libiconv-1.16.tar.gz ( 72%) 
+Downloading libiconv-1.16.tar.gz ( 72%) 
+Downloading libiconv-1.16.tar.gz ( 72%) 
+Downloading libiconv-1.16.tar.gz ( 73%) 
+Downloading libiconv-1.16.tar.gz ( 73%) 
+Downloading libiconv-1.16.tar.gz ( 73%) 
+Downloading libiconv-1.16.tar.gz ( 74%) 
+Downloading libiconv-1.16.tar.gz ( 74%) 
+Downloading libiconv-1.16.tar.gz ( 74%) 
+Downloading libiconv-1.16.tar.gz ( 75%) 
+Downloading libiconv-1.16.tar.gz ( 75%) 
+Downloading libiconv-1.16.tar.gz ( 75%) 
+Downloading libiconv-1.16.tar.gz ( 76%) 
+Downloading libiconv-1.16.tar.gz ( 76%) 
+Downloading libiconv-1.16.tar.gz ( 76%) 
+Downloading libiconv-1.16.tar.gz ( 77%) 
+Downloading libiconv-1.16.tar.gz ( 77%) 
+Downloading libiconv-1.16.tar.gz ( 77%) 
+Downloading libiconv-1.16.tar.gz ( 78%) 
+Downloading libiconv-1.16.tar.gz ( 78%) 
+Downloading libiconv-1.16.tar.gz ( 78%) 
+Downloading libiconv-1.16.tar.gz ( 78%) 
+Downloading libiconv-1.16.tar.gz ( 79%) 
+Downloading libiconv-1.16.tar.gz ( 79%) 
+Downloading libiconv-1.16.tar.gz ( 79%) 
+Downloading libiconv-1.16.tar.gz ( 80%) 
+Downloading libiconv-1.16.tar.gz ( 80%) 
+Downloading libiconv-1.16.tar.gz ( 80%) 
+Downloading libiconv-1.16.tar.gz ( 81%) 
+Downloading libiconv-1.16.tar.gz ( 81%) 
+Downloading libiconv-1.16.tar.gz ( 81%) 
+Downloading libiconv-1.16.tar.gz ( 82%) 
+Downloading libiconv-1.16.tar.gz ( 82%) 
+Downloading libiconv-1.16.tar.gz ( 82%) 
+Downloading libiconv-1.16.tar.gz ( 83%) 
+Downloading libiconv-1.16.tar.gz ( 83%) 
+Downloading libiconv-1.16.tar.gz ( 83%) 
+Downloading libiconv-1.16.tar.gz ( 84%) 
+Downloading libiconv-1.16.tar.gz ( 84%) 
+Downloading libiconv-1.16.tar.gz ( 84%) 
+Downloading libiconv-1.16.tar.gz ( 84%) 
+Downloading libiconv-1.16.tar.gz ( 85%) 
+Downloading libiconv-1.16.tar.gz ( 85%) 
+Downloading libiconv-1.16.tar.gz ( 85%) 
+Downloading libiconv-1.16.tar.gz ( 86%) 
+Downloading libiconv-1.16.tar.gz ( 86%) 
+Downloading libiconv-1.16.tar.gz ( 86%) 
+Downloading libiconv-1.16.tar.gz ( 87%) 
+Downloading libiconv-1.16.tar.gz ( 87%) 
+Downloading libiconv-1.16.tar.gz ( 87%) 
+Downloading libiconv-1.16.tar.gz ( 88%) 
+Downloading libiconv-1.16.tar.gz ( 88%) 
+Downloading libiconv-1.16.tar.gz ( 88%) 
+Downloading libiconv-1.16.tar.gz ( 89%) 
+Downloading libiconv-1.16.tar.gz ( 89%) 
+Downloading libiconv-1.16.tar.gz ( 89%) 
+Downloading libiconv-1.16.tar.gz ( 90%) 
+Downloading libiconv-1.16.tar.gz ( 90%) 
+Downloading libiconv-1.16.tar.gz ( 90%) 
+Downloading libiconv-1.16.tar.gz ( 91%) 
+Downloading libiconv-1.16.tar.gz ( 91%) 
+Downloading libiconv-1.16.tar.gz ( 91%) 
+Downloading libiconv-1.16.tar.gz ( 91%) 
+Downloading libiconv-1.16.tar.gz ( 92%) 
+Downloading libiconv-1.16.tar.gz ( 92%) 
+Downloading libiconv-1.16.tar.gz ( 92%) 
+Downloading libiconv-1.16.tar.gz ( 93%) 
+Downloading libiconv-1.16.tar.gz ( 93%) 
+Downloading libiconv-1.16.tar.gz ( 93%) 
+Downloading libiconv-1.16.tar.gz ( 94%) 
+Downloading libiconv-1.16.tar.gz ( 94%) 
+Downloading libiconv-1.16.tar.gz ( 94%) 
+Downloading libiconv-1.16.tar.gz ( 95%) 
+Downloading libiconv-1.16.tar.gz ( 95%) 
+Downloading libiconv-1.16.tar.gz ( 95%) 
+Downloading libiconv-1.16.tar.gz ( 96%) 
+Downloading libiconv-1.16.tar.gz ( 96%) 
+Downloading libiconv-1.16.tar.gz ( 96%) 
+Downloading libiconv-1.16.tar.gz ( 97%) 
+Downloading libiconv-1.16.tar.gz ( 97%) 
+Downloading libiconv-1.16.tar.gz ( 97%) 
+Downloading libiconv-1.16.tar.gz ( 97%) 
+Downloading libiconv-1.16.tar.gz ( 98%) 
+Downloading libiconv-1.16.tar.gz ( 98%) 
+Downloading libiconv-1.16.tar.gz ( 98%) 
+Downloading libiconv-1.16.tar.gz ( 99%) 
+Downloading libiconv-1.16.tar.gz ( 99%) 
+Downloading libiconv-1.16.tar.gz ( 99%) 
+Downloading libiconv-1.16.tar.gz (100%) 
+Extracting libiconv-1.16.tar.gz into tmp/x86_64-w64-mingw32/ports/libiconv/1.16... OK
+Running 'configure' for libiconv 1.16... OK
+Running 'compile' for libiconv 1.16... ERROR, review 'D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/compile.log' to see what happened. Last lines are:
+========================================================================
+make[2]: Leaving directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset/lib'
+make[1]: Leaving directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset'
+make[1]: Entering directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset'
+cd lib && make all
+make[2]: Entering directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset/lib'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset/lib'
+cd lib && make install-lib libdir='/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/lib' includedir='/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/lib'
+make[2]: Entering directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset/lib'
+/bin/sh ../build-aux/mkinstalldirs /d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/lib
+mkdir -p -- - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/lib
+/bin/sh ../libtool --mode=install /usr/bin/install -c libcharset.la /d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/lib/libcharset.la
+Usage: /d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset/libtool [OPTION]... [MODE-ARG]...
+Try 'libtool --help' for more information.
+libtool:   error: 'Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/lib/libcharset.la' is not a directory
+make[2]: *** [Makefile:67: install-lib] Error 1
+make[2]: Leaving directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset/lib'
+make[1]: *** [Makefile:43: install-lib] Error 2
+make[1]: Leaving directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset'
+make: *** [Makefile:41: lib/localcharset.h] Error 2
+========================================================================
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=D:/Ruby31-x64/bin/$(RUBY_BASE_NAME)
+	--help
+	--clean
+	--prevent-strip
+	--enable-system-libraries
+	--disable-system-libraries
+	--use-system-libraries
+	--enable-system-libraries
+	--disable-system-libraries
+	--use-system-libraries
+	--enable-static
+	--disable-static
+	--enable-cross-build
+	--disable-cross-build
+	--with-zlib-dir
+	--without-zlib-dir
+	--with-zlib-include
+	--without-zlib-include=${zlib-dir}/include
+	--with-zlib-lib
+	--without-zlib-lib=${zlib-dir}/lib
+D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/mini_portile2-2.8.0/lib/mini_portile2/mini_portile.rb:460:in `block in execute': Failed to complete compile task (RuntimeError)
+	from D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/mini_portile2-2.8.0/lib/mini_portile2/mini_portile.rb:426:in `chdir'
+	from D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/mini_portile2-2.8.0/lib/mini_portile2/mini_portile.rb:426:in `execute'
+	from D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/mini_portile2-2.8.0/lib/mini_portile2/mini_portile.rb:144:in `compile'
+	from D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/mini_portile2-2.8.0/lib/mini_portile2/mini_portile.rb:187:in `cook'
+	from extconf.rb:528:in `block (2 levels) in process_recipe'
+	from extconf.rb:309:in `chdir'
+	from extconf.rb:309:in `chdir_for_build'
+	from extconf.rb:528:in `block in process_recipe'
+	from <internal:kernel>:90:in `tap'
+	from extconf.rb:427:in `process_recipe'
+	from extconf.rb:731:in `<main>'
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/extensions/x64-mingw-ucrt/3.1.0/nokogiri-1.13.3/mkmf.log
+
+extconf failed, exit code 1

@@ -1,24 +1,26 @@
 ---
 layout: default
+pagination:
+    enabled: true
 ---
 
 <div>
-	{% assign author = site.authors | where:"username",page.author | first %}
+    <h1 class="page-heading">{{ page.title }}</h1>
 
-	<h1 class="page-heading">Author: {{ author.username }}</h1>
+    {% assign content = page.content %}
+    {% if content and paginator.page == 1 %}
+        {{ content }}
+        <h1>Posts</h1>
+        <hr>
+    {% endif %}
 
-	{{ author.content }}
+    {% assign posts = paginator.posts %}
+    {% include post-previews.html %}
 
-	{% unless author.content == blank %}
-		<h1>Posts</h1>
-		<hr>
-	{% endunless %}
+    {% assign bottom_margin = 1 %}
+    {% include post-pagination.html %}
 
-    {% assign posts = site.posts | where:"author",author.username %}
-	{% assign indent = 1 %}
-	{% include post-previews.html %}
-
-	<hr>
-	<h1>Authors</h1>
-	{% include author-list.html %}
+    <hr>
+    <h1>Authors</h1>
+    {% include author-list.html %}
 </div>

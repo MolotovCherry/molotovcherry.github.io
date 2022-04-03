@@ -1,0 +1,139 @@
+have_library: checking for -lkernel32... -------------------- yes
+
+PATH=".;D:/Ruby31-x64/lib;D:\Ruby31-x64\bin;D:\Ruby31-x64\msys64\ucrt64\bin;D:\Ruby31-x64\msys64\usr\bin;D:\Program Files\ImageMagick-7.1.0-Q16-HDRI;C:\Python310\Scripts\;C:\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\roeja\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenSSL-Win64\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;c:\Program Files\mydocker;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\Program Files\Java\jdk-11.0.14;C:\Program Files\Git\cmd;D:\Program Files\qemu;D:\Program Files\fasm;D:\Program Files\CMake\bin;D:\Program Files\Microsoft VS Code\bin;D:\Program Files\nodejs\;C:\Users\roeja\startup2;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0;D:\Users\roeja\AppData\Local\Android\Sdk\;D:\Users\roeja\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin;D:\Users\roeja\AppData\Local\Android\Sdk\platform-tools;D:\Program Files\PowerShell\7\;D:\Ruby31-x64\bin;D:\Users\roeja\AppData\Local\Programs\Python\Python310\Scripts\;D:\Users\roeja\AppData\Local\Programs\Python\Python310\;C:\Python39\Scripts\;C:\Python39\;C:\Users\roeja\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\roeja\AppData\Local\Programs\Python\Python39\;C:\Users\roeja\.cargo\bin;C:\Users\roeja\AppData\Local\Microsoft\WindowsApps;D:\Users\roeja\AppData\Local\Android\android-sdk\cmdline-tools\latest\bin;C:\Users\roeja\spicetify-cli;C:\Users\roeja\AppData\Local\Microsoft\WindowsApps;C:\Users\roeja\AppData\Local\Powerline-Go;D:\Program Files\JetBrains\PyCharm Community Edition 2020.3.2\bin;D:\Qt\5.14.2\msvc2017_64\bin;D:\Users\roeja\AppData\Local\Android\android-sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\;C:\Users\roeja\AppData\Roaming\Google\AndroidStudio4.1\plugins\Kotlin\kotlinc\bin;C:\Program Files\Android\Android Studio\jre\bin;D:\Program Files\JetBrains\PyCharm 2021.1\bin;D:\Users\roeja\AppData\Local\Android\android-sdk\ndk-bundle;D:\Program Files\Docker Toolbox;C:\Users\roeja\Scripts\starship;C:\Program Files (x86)\GitHub CLI\;D:\Program Files\LLVM\bin;C:\Users\roeja\AppData\Roaming\npm;C:\Users\roeja\.dotnet\tools" "gcc -o conftest.exe -ID:/Ruby31-x64/include/ruby-3.1.0/x64-mingw-ucrt -ID:/Ruby31-x64/include/ruby-3.1.0/ruby/backward -ID:/Ruby31-x64/include/ruby-3.1.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong conftest.c  -L. -LD:/Ruby31-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed  -m64   -lx64-ucrt-ruby310  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return !!argv[argc];
+8: }
+/* end */
+
+PATH=".;D:/Ruby31-x64/lib;D:\Ruby31-x64\bin;D:\Ruby31-x64\msys64\ucrt64\bin;D:\Ruby31-x64\msys64\usr\bin;D:\Program Files\ImageMagick-7.1.0-Q16-HDRI;C:\Python310\Scripts\;C:\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\roeja\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenSSL-Win64\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;c:\Program Files\mydocker;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\Program Files\Java\jdk-11.0.14;C:\Program Files\Git\cmd;D:\Program Files\qemu;D:\Program Files\fasm;D:\Program Files\CMake\bin;D:\Program Files\Microsoft VS Code\bin;D:\Program Files\nodejs\;C:\Users\roeja\startup2;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0;D:\Users\roeja\AppData\Local\Android\Sdk\;D:\Users\roeja\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin;D:\Users\roeja\AppData\Local\Android\Sdk\platform-tools;D:\Program Files\PowerShell\7\;D:\Ruby31-x64\bin;D:\Users\roeja\AppData\Local\Programs\Python\Python310\Scripts\;D:\Users\roeja\AppData\Local\Programs\Python\Python310\;C:\Python39\Scripts\;C:\Python39\;C:\Users\roeja\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\roeja\AppData\Local\Programs\Python\Python39\;C:\Users\roeja\.cargo\bin;C:\Users\roeja\AppData\Local\Microsoft\WindowsApps;D:\Users\roeja\AppData\Local\Android\android-sdk\cmdline-tools\latest\bin;C:\Users\roeja\spicetify-cli;C:\Users\roeja\AppData\Local\Microsoft\WindowsApps;C:\Users\roeja\AppData\Local\Powerline-Go;D:\Program Files\JetBrains\PyCharm Community Edition 2020.3.2\bin;D:\Qt\5.14.2\msvc2017_64\bin;D:\Users\roeja\AppData\Local\Android\android-sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\;C:\Users\roeja\AppData\Roaming\Google\AndroidStudio4.1\plugins\Kotlin\kotlinc\bin;C:\Program Files\Android\Android Studio\jre\bin;D:\Program Files\JetBrains\PyCharm 2021.1\bin;D:\Users\roeja\AppData\Local\Android\android-sdk\ndk-bundle;D:\Program Files\Docker Toolbox;C:\Users\roeja\Scripts\starship;C:\Program Files (x86)\GitHub CLI\;D:\Program Files\LLVM\bin;C:\Users\roeja\AppData\Roaming\npm;C:\Users\roeja\.dotnet\tools" "gcc -o conftest.exe -ID:/Ruby31-x64/include/ruby-3.1.0/x64-mingw-ucrt -ID:/Ruby31-x64/include/ruby-3.1.0/ruby/backward -ID:/Ruby31-x64/include/ruby-3.1.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong conftest.c  -L. -LD:/Ruby31-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed  -m64   -lx64-ucrt-ruby310 -lkernel32  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: 
+18: int t(void) { ; return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for windows.h... -------------------- yes
+
+PATH=".;D:/Ruby31-x64/lib;D:\Ruby31-x64\bin;D:\Ruby31-x64\msys64\ucrt64\bin;D:\Ruby31-x64\msys64\usr\bin;D:\Program Files\ImageMagick-7.1.0-Q16-HDRI;C:\Python310\Scripts\;C:\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\roeja\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenSSL-Win64\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;c:\Program Files\mydocker;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\Program Files\Java\jdk-11.0.14;C:\Program Files\Git\cmd;D:\Program Files\qemu;D:\Program Files\fasm;D:\Program Files\CMake\bin;D:\Program Files\Microsoft VS Code\bin;D:\Program Files\nodejs\;C:\Users\roeja\startup2;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0;D:\Users\roeja\AppData\Local\Android\Sdk\;D:\Users\roeja\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin;D:\Users\roeja\AppData\Local\Android\Sdk\platform-tools;D:\Program Files\PowerShell\7\;D:\Ruby31-x64\bin;D:\Users\roeja\AppData\Local\Programs\Python\Python310\Scripts\;D:\Users\roeja\AppData\Local\Programs\Python\Python310\;C:\Python39\Scripts\;C:\Python39\;C:\Users\roeja\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\roeja\AppData\Local\Programs\Python\Python39\;C:\Users\roeja\.cargo\bin;C:\Users\roeja\AppData\Local\Microsoft\WindowsApps;D:\Users\roeja\AppData\Local\Android\android-sdk\cmdline-tools\latest\bin;C:\Users\roeja\spicetify-cli;C:\Users\roeja\AppData\Local\Microsoft\WindowsApps;C:\Users\roeja\AppData\Local\Powerline-Go;D:\Program Files\JetBrains\PyCharm Community Edition 2020.3.2\bin;D:\Qt\5.14.2\msvc2017_64\bin;D:\Users\roeja\AppData\Local\Android\android-sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\;C:\Users\roeja\AppData\Roaming\Google\AndroidStudio4.1\plugins\Kotlin\kotlinc\bin;C:\Program Files\Android\Android Studio\jre\bin;D:\Program Files\JetBrains\PyCharm 2021.1\bin;D:\Users\roeja\AppData\Local\Android\android-sdk\ndk-bundle;D:\Program Files\Docker Toolbox;C:\Users\roeja\Scripts\starship;C:\Program Files (x86)\GitHub CLI\;D:\Program Files\LLVM\bin;C:\Users\roeja\AppData\Roaming\npm;C:\Users\roeja\.dotnet\tools" "gcc -ID:/Ruby31-x64/include/ruby-3.1.0/x64-mingw-ucrt -ID:/Ruby31-x64/include/ruby-3.1.0/ruby/backward -ID:/Ruby31-x64/include/ruby-3.1.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong -m64  -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: #include <windows.h>
+/* end */
+
+--------------------
+
+have_header: checking for ruby.h... -------------------- yes
+
+PATH=".;D:/Ruby31-x64/lib;D:\Ruby31-x64\bin;D:\Ruby31-x64\msys64\ucrt64\bin;D:\Ruby31-x64\msys64\usr\bin;D:\Program Files\ImageMagick-7.1.0-Q16-HDRI;C:\Python310\Scripts\;C:\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\roeja\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenSSL-Win64\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;c:\Program Files\mydocker;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\Program Files\Java\jdk-11.0.14;C:\Program Files\Git\cmd;D:\Program Files\qemu;D:\Program Files\fasm;D:\Program Files\CMake\bin;D:\Program Files\Microsoft VS Code\bin;D:\Program Files\nodejs\;C:\Users\roeja\startup2;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0;D:\Users\roeja\AppData\Local\Android\Sdk\;D:\Users\roeja\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin;D:\Users\roeja\AppData\Local\Android\Sdk\platform-tools;D:\Program Files\PowerShell\7\;D:\Ruby31-x64\bin;D:\Users\roeja\AppData\Local\Programs\Python\Python310\Scripts\;D:\Users\roeja\AppData\Local\Programs\Python\Python310\;C:\Python39\Scripts\;C:\Python39\;C:\Users\roeja\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\roeja\AppData\Local\Programs\Python\Python39\;C:\Users\roeja\.cargo\bin;C:\Users\roeja\AppData\Local\Microsoft\WindowsApps;D:\Users\roeja\AppData\Local\Android\android-sdk\cmdline-tools\latest\bin;C:\Users\roeja\spicetify-cli;C:\Users\roeja\AppData\Local\Microsoft\WindowsApps;C:\Users\roeja\AppData\Local\Powerline-Go;D:\Program Files\JetBrains\PyCharm Community Edition 2020.3.2\bin;D:\Qt\5.14.2\msvc2017_64\bin;D:\Users\roeja\AppData\Local\Android\android-sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\;C:\Users\roeja\AppData\Roaming\Google\AndroidStudio4.1\plugins\Kotlin\kotlinc\bin;C:\Program Files\Android\Android Studio\jre\bin;D:\Program Files\JetBrains\PyCharm 2021.1\bin;D:\Users\roeja\AppData\Local\Android\android-sdk\ndk-bundle;D:\Program Files\Docker Toolbox;C:\Users\roeja\Scripts\starship;C:\Program Files (x86)\GitHub CLI\;D:\Program Files\LLVM\bin;C:\Users\roeja\AppData\Roaming\npm;C:\Users\roeja\.dotnet\tools" "gcc -ID:/Ruby31-x64/include/ruby-3.1.0/x64-mingw-ucrt -ID:/Ruby31-x64/include/ruby-3.1.0/ruby/backward -ID:/Ruby31-x64/include/ruby-3.1.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong -m64  -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: #include <ruby.h>
+/* end */
+
+--------------------
+
+have_const: checking for HAVE_RUBY_ENCODING_H... -------------------- yes
+
+PATH=".;D:/Ruby31-x64/lib;D:\Ruby31-x64\bin;D:\Ruby31-x64\msys64\ucrt64\bin;D:\Ruby31-x64\msys64\usr\bin;D:\Program Files\ImageMagick-7.1.0-Q16-HDRI;C:\Python310\Scripts\;C:\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\roeja\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenSSL-Win64\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;c:\Program Files\mydocker;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\Program Files\Java\jdk-11.0.14;C:\Program Files\Git\cmd;D:\Program Files\qemu;D:\Program Files\fasm;D:\Program Files\CMake\bin;D:\Program Files\Microsoft VS Code\bin;D:\Program Files\nodejs\;C:\Users\roeja\startup2;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0;D:\Users\roeja\AppData\Local\Android\Sdk\;D:\Users\roeja\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin;D:\Users\roeja\AppData\Local\Android\Sdk\platform-tools;D:\Program Files\PowerShell\7\;D:\Ruby31-x64\bin;D:\Users\roeja\AppData\Local\Programs\Python\Python310\Scripts\;D:\Users\roeja\AppData\Local\Programs\Python\Python310\;C:\Python39\Scripts\;C:\Python39\;C:\Users\roeja\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\roeja\AppData\Local\Programs\Python\Python39\;C:\Users\roeja\.cargo\bin;C:\Users\roeja\AppData\Local\Microsoft\WindowsApps;D:\Users\roeja\AppData\Local\Android\android-sdk\cmdline-tools\latest\bin;C:\Users\roeja\spicetify-cli;C:\Users\roeja\AppData\Local\Microsoft\WindowsApps;C:\Users\roeja\AppData\Local\Powerline-Go;D:\Program Files\JetBrains\PyCharm Community Edition 2020.3.2\bin;D:\Qt\5.14.2\msvc2017_64\bin;D:\Users\roeja\AppData\Local\Android\android-sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\;C:\Users\roeja\AppData\Roaming\Google\AndroidStudio4.1\plugins\Kotlin\kotlinc\bin;C:\Program Files\Android\Android Studio\jre\bin;D:\Program Files\JetBrains\PyCharm 2021.1\bin;D:\Users\roeja\AppData\Local\Android\android-sdk\ndk-bundle;D:\Program Files\Docker Toolbox;C:\Users\roeja\Scripts\starship;C:\Program Files (x86)\GitHub CLI\;D:\Program Files\LLVM\bin;C:\Users\roeja\AppData\Roaming\npm;C:\Users\roeja\.dotnet\tools" "gcc -ID:/Ruby31-x64/include/ruby-3.1.0/x64-mingw-ucrt -ID:/Ruby31-x64/include/ruby-3.1.0/ruby/backward -ID:/Ruby31-x64/include/ruby-3.1.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong -m64  -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: 
+6: /*top*/
+7: typedef int conftest_type;
+8: conftest_type conftestval = (int)HAVE_RUBY_ENCODING_H;
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_call_without_gvl()... -------------------- yes
+
+PATH=".;D:/Ruby31-x64/lib;D:\Ruby31-x64\bin;D:\Ruby31-x64\msys64\ucrt64\bin;D:\Ruby31-x64\msys64\usr\bin;D:\Program Files\ImageMagick-7.1.0-Q16-HDRI;C:\Python310\Scripts\;C:\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\roeja\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenSSL-Win64\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;c:\Program Files\mydocker;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\Program Files\Java\jdk-11.0.14;C:\Program Files\Git\cmd;D:\Program Files\qemu;D:\Program Files\fasm;D:\Program Files\CMake\bin;D:\Program Files\Microsoft VS Code\bin;D:\Program Files\nodejs\;C:\Users\roeja\startup2;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0;D:\Users\roeja\AppData\Local\Android\Sdk\;D:\Users\roeja\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin;D:\Users\roeja\AppData\Local\Android\Sdk\platform-tools;D:\Program Files\PowerShell\7\;D:\Ruby31-x64\bin;D:\Users\roeja\AppData\Local\Programs\Python\Python310\Scripts\;D:\Users\roeja\AppData\Local\Programs\Python\Python310\;C:\Python39\Scripts\;C:\Python39\;C:\Users\roeja\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\roeja\AppData\Local\Programs\Python\Python39\;C:\Users\roeja\.cargo\bin;C:\Users\roeja\AppData\Local\Microsoft\WindowsApps;D:\Users\roeja\AppData\Local\Android\android-sdk\cmdline-tools\latest\bin;C:\Users\roeja\spicetify-cli;C:\Users\roeja\AppData\Local\Microsoft\WindowsApps;C:\Users\roeja\AppData\Local\Powerline-Go;D:\Program Files\JetBrains\PyCharm Community Edition 2020.3.2\bin;D:\Qt\5.14.2\msvc2017_64\bin;D:\Users\roeja\AppData\Local\Android\android-sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\;C:\Users\roeja\AppData\Roaming\Google\AndroidStudio4.1\plugins\Kotlin\kotlinc\bin;C:\Program Files\Android\Android Studio\jre\bin;D:\Program Files\JetBrains\PyCharm 2021.1\bin;D:\Users\roeja\AppData\Local\Android\android-sdk\ndk-bundle;D:\Program Files\Docker Toolbox;C:\Users\roeja\Scripts\starship;C:\Program Files (x86)\GitHub CLI\;D:\Program Files\LLVM\bin;C:\Users\roeja\AppData\Roaming\npm;C:\Users\roeja\.dotnet\tools" "gcc -o conftest.exe -ID:/Ruby31-x64/include/ruby-3.1.0/x64-mingw-ucrt -ID:/Ruby31-x64/include/ruby-3.1.0/ruby/backward -ID:/Ruby31-x64/include/ruby-3.1.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong conftest.c  -L. -LD:/Ruby31-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed  -m64  -lkernel32  -lx64-ucrt-ruby310 -lkernel32  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+conftest.c: In function 't':
+conftest.c:17:57: error: 'rb_thread_call_without_gvl' undeclared (first use in this function)
+   17 | int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_without_gvl; return !p; }
+      |                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+conftest.c:17:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_without_gvl; return !p; }
+/* end */
+
+PATH=".;D:/Ruby31-x64/lib;D:\Ruby31-x64\bin;D:\Ruby31-x64\msys64\ucrt64\bin;D:\Ruby31-x64\msys64\usr\bin;D:\Program Files\ImageMagick-7.1.0-Q16-HDRI;C:\Python310\Scripts\;C:\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Users\roeja\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenSSL-Win64\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;c:\Program Files\mydocker;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\Program Files\Java\jdk-11.0.14;C:\Program Files\Git\cmd;D:\Program Files\qemu;D:\Program Files\fasm;D:\Program Files\CMake\bin;D:\Program Files\Microsoft VS Code\bin;D:\Program Files\nodejs\;C:\Users\roeja\startup2;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0;D:\Users\roeja\AppData\Local\Android\Sdk\;D:\Users\roeja\AppData\Local\Android\Sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin;D:\Users\roeja\AppData\Local\Android\Sdk\platform-tools;D:\Program Files\PowerShell\7\;D:\Ruby31-x64\bin;D:\Users\roeja\AppData\Local\Programs\Python\Python310\Scripts\;D:\Users\roeja\AppData\Local\Programs\Python\Python310\;C:\Python39\Scripts\;C:\Python39\;C:\Users\roeja\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\roeja\AppData\Local\Programs\Python\Python39\;C:\Users\roeja\.cargo\bin;C:\Users\roeja\AppData\Local\Microsoft\WindowsApps;D:\Users\roeja\AppData\Local\Android\android-sdk\cmdline-tools\latest\bin;C:\Users\roeja\spicetify-cli;C:\Users\roeja\AppData\Local\Microsoft\WindowsApps;C:\Users\roeja\AppData\Local\Powerline-Go;D:\Program Files\JetBrains\PyCharm Community Edition 2020.3.2\bin;D:\Qt\5.14.2\msvc2017_64\bin;D:\Users\roeja\AppData\Local\Android\android-sdk\ndk-bundle\toolchains\llvm\prebuilt\windows-x86_64\bin\;C:\Users\roeja\AppData\Roaming\Google\AndroidStudio4.1\plugins\Kotlin\kotlinc\bin;C:\Program Files\Android\Android Studio\jre\bin;D:\Program Files\JetBrains\PyCharm 2021.1\bin;D:\Users\roeja\AppData\Local\Android\android-sdk\ndk-bundle;D:\Program Files\Docker Toolbox;C:\Users\roeja\Scripts\starship;C:\Program Files (x86)\GitHub CLI\;D:\Program Files\LLVM\bin;C:\Users\roeja\AppData\Roaming\npm;C:\Users\roeja\.dotnet\tools" "gcc -o conftest.exe -ID:/Ruby31-x64/include/ruby-3.1.0/x64-mingw-ucrt -ID:/Ruby31-x64/include/ruby-3.1.0/ruby/backward -ID:/Ruby31-x64/include/ruby-3.1.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong conftest.c  -L. -LD:/Ruby31-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed  -m64  -lkernel32  -lx64-ucrt-ruby310 -lkernel32  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: extern void rb_thread_call_without_gvl();
+18: int t(void) { rb_thread_call_without_gvl(); return 0; }
+/* end */
+
+--------------------
+

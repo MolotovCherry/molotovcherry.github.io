@@ -1,0 +1,13 @@
+prefix=/usr/local
+exec_prefix=/usr/local
+libdir=D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/zlib/1.2.11/lib
+sharedlibdir=D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/zlib/1.2.11/lib
+includedir=D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/zlib/1.2.11/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.11
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

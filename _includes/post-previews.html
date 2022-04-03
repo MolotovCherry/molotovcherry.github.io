@@ -1,19 +1,18 @@
-{% assign indent_tag = "tag-post" %}
 {% assign post_preview_tags = "post-preview-tags" %}
 
 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 <ul class="post-list">
     {%- for post in posts -%}
     <li>
-        <span class="post-meta {% if indent %}{{ indent_tag }}{% endif %}">{{ post.date | date: date_format }}</span>
-        {% assign author = page.author | default: site.author %}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        {% assign author = post.author %}
         {%- if author -%}
             &nbsp;• by <div class="avatar-container">
                 <a href="https://github.com/{{ author | slugify }}" target="_blank">
-                    {% avatar {{ author }} size=100 %}
+                    {% avatar {{ author | slugify }} size=100 %}
                 </a>
             </div>&nbsp;
-            <a href="/author/{{ author | slugify }}">
+            <a href="/author/{{ author | slugify }}/">
                 <span itemprop="author" itemscope itemtype="http://schema.org/Person">
                     <span class="p-author h-card" itemprop="name">
                         {{ author }}
@@ -22,25 +21,25 @@
             </a>
         {%- endif -%}
         {% if post.category and hide_category == nil %}
-            &nbsp;• <a href="/category/{{ post.category | slugify }}">{{ post.category }}</a>
+            &nbsp;• <a href="/category/{{ post.category | slugify }}/">{{ post.category }}</a>
         {% endif %}
-        <h3 {% if indent %}class="{{ indent_tag }}"{% endif %}>
+        <h3>
             <a class="post-link" href="{{ post.url | relative_url }}">
                 {{ post.title | escape }}
             </a>
         </h3>
 
         {% if post.tags %}
-        <div class="bubble-container {{ post_preview_tags }} {% if indent %}{{indent_tag}}{% endif %}">
+        <div class="bubble-container {{ post_preview_tags }}">
             {% for tag in post.tags %}
-            <a class="bubble bubble-item" href="/tag/{{ tag }}">{{ tag }}</a>
+            <a class="bubble bubble-item" href="/tag/{{ tag }}/">{{ tag }}</a>
             {% endfor %}
         </div>
         {% endif %}
 
         {%- if site.show_excerpts -%}
         <blockquote>
-            <p {% if indent %}class="{{ indent_tag }}"{% endif %}>
+            <p>
             {{ post.excerpt | strip_html }}
             <br><a href="{{ post.url | relative_url }}">Read more...</a>
             </p>
@@ -49,7 +48,3 @@
     </li>
     {% endfor %}
 </ul>
-
-{% if post_paginate %}
-
-{% endif %}

@@ -3,6 +3,60 @@
 
 @import "{{ site.theme }}";
 
+.bottom-margin {
+  margin-bottom: 20px !important;
+}
+
+div.pager {
+  margin: auto;
+  width: fit-content;
+}
+
+div.paginator {
+  transition: background var(--transition-time) var(--transition-fn), box-shadow var(--transition-time) var(--transition-fn);
+  display: inline-block;
+  text-align: center;
+  background: var(--paginator-background);
+  border-radius: 6px;
+  padding: 6px;
+  box-shadow: var(--paginator-shadow);
+
+  div {
+    transition: color var(--transition-time) var(--transition-fn);
+    display: inline-block;
+    padding: 0 6px;
+    border-radius: 6px;
+    margin: 0 2px;
+    color: var(--paginator-color);
+
+    a {
+      transition: color var(--transition-time) var(--transition-fn);;
+      color: var(--paginator-color);
+    }
+
+    &.current-page {
+      transition: all var(--transition-time) var(--transition-fn);
+      background: var(--current-page);
+      border-radius: 6px;
+      color: var(--current-page-color)
+    }
+
+    &:not(.no-hover):hover {
+      transition: none;
+      background: var(--hover-page);
+
+      a {
+        transition: color var(--transition-time) var(--transition-fn);
+        color: var(--hover-a-color)
+      }
+    }
+  }
+}
+
+.emoji {
+  vertical-align: sub;
+}
+
 .avatar-container {
   max-width: 25px;
   max-height: 25px;
@@ -49,10 +103,6 @@ kbd, .bubble {
 
 .bubble-item {
   margin: 5px 5px 0 0;
-}
-
-.tag-post {
-  margin-left: 20px;
 }
 
 .post-preview-tags {

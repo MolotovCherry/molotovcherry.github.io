@@ -30,17 +30,16 @@ html[data-preload] {
 
 html {
   transition: background-color var(--transition-time) var(--transition-fn);
-  background-color: var(--html-background-color-from);
   /*background: var(--html-background-color-from)
     linear-gradient(
       var(--html-background-color-from),
       var(--html-background-color-to)
     ) fixed;*/
 
-  background: linear-gradient(
-      var(--html-background-color-from),
-      var(--html-background-color-to)
-    ) fixed;
+  background: var(--html-background-color-from) linear-gradient(
+                  var(--html-background-color-from),
+                  var(--html-background-color-to)
+  ) fixed;
   z-index: 100;
 
   &:before {

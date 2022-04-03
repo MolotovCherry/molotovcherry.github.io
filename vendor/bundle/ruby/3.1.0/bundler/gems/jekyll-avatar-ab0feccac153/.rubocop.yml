@@ -1,0 +1,14 @@
+inherit_from: .rubocop_todo.yml
+
+require: 
+  - rubocop-jekyll
+  - rubocop-rspec
+
+inherit_gem:
+  rubocop-jekyll: .rubocop.yml
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - script/**/*
+    - vendor/**/*

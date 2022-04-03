@@ -1,6 +1,6 @@
-title: "Cherry's Digital Space"
-author: "Cherryleafroad"
-description: "When all else fails ... reboot." # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+title: "Cherry's Digital Space 🍒"
+default_author: "Cherryleafroad"
+description: "When all else fails ... reboot."
 
 google_analytics: G-QY70XMH6JE
 
@@ -41,33 +41,61 @@ modernist:
     # - username: jekyll2
     #   instance: example.com
 
-#########################################################################################
-######### Nothing below needs to be changed (unless you know what you're doing) #########
-#########################################################################################
 theme: jekyll-theme-modernist
+
+exclude: ["Gemfile", "Gemfile.lock", ".github/", ".idea/", ".gems/", "README.md", ".ruby-version", "vendor"]
 
 rss: rss
 
 show_excerpts: 1
 excerpt_separator: <!--more-->
-show_tags: 1
+show_tags: true
 
+collections_dir: collections
 collections:
   posts:
     output: true
     permalink: /:categories/:title
   authors:
-    name: true
-    username: true
+    permalink: /author/:name/
+  tags:
+    permalink: /tag/:name/
+  categories:
+    permalink: /category/:name/
+
+
+autopages:
+  enabled: true
+
+  authors:
+    layouts:
+      - author-page.html
+    enabled: true
+    # key to match against to filter posts
+    indexkey: author
+    filter_collection: true
+
+  tags:
+    layouts:
+      - tag-page.html
+    enabled: true
+
+  categories:
+    layouts:
+      - category-page.html
+    enabled: true
+
 
 sass:
   style: compressed
 
+markdown: kramdown
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jemoji
   - jekyll-avatar
+  - jekyll-paginate-v2
 
 titles_from_headings:
   strip_title: true
@@ -79,3 +107,25 @@ defaults:
       type: posts
     values:
       tags:
+
+pagination:
+  enabled: true
+
+  debug: false
+
+  collection: 'posts'
+
+  per_page: 1
+
+  permalink: '/page/:num'
+  sort_reverse: true
+
+  title: ':title'
+
+  limit: 0
+
+  sort_field: 'date'
+
+  trail:
+    before: 2
+    after: 2
