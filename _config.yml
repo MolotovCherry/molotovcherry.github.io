@@ -96,6 +96,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-avatar
   - jekyll-paginate-v2
+  - jemoji
 
 titles_from_headings:
   collections: true

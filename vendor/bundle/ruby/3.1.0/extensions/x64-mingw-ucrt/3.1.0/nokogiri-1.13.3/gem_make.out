@@ -1,5 +1,5 @@
-current directory: D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri
-D:/Ruby31-x64/bin/ruby.exe -I D:/Ruby31-x64/lib/ruby/3.1.0 -r ./siteconf20220403-9020-ynztx3.rb extconf.rb
+current directory: D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri
+D:/Ruby31-x64/bin/ruby.exe -I D:/Ruby31-x64/lib/ruby/3.1.0 -r ./siteconf20220403-17748-90e4q5.rb extconf.rb
 checking for whether -std=c99 is accepted as CFLAGS... yes
 checking for whether -Wno-declaration-after-statement is accepted as CFLAGS... yes
 checking for whether -g is accepted as CFLAGS... yes
@@ -12,7 +12,7 @@ Cross build is disabled.
 Using mini_portile version 2.8.0
 ---------- IMPORTANT NOTICE ----------
 Building Nokogiri with a packaged version of zlib-1.2.11.
-Configuration options: --host\=x86_64-w64-mingw32 --enable-static --disable-shared --libdir\=D:/Users/roeja/Desktop/cherryleafroad.github.io\ -\ Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/zlib/1.2.11/lib --disable-shared --enable-static CFLAGS\=-fPIC
+Configuration options: --host\=x86_64-w64-mingw32 --enable-static --disable-shared --libdir\=D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/zlib/1.2.11/lib --disable-shared --enable-static CFLAGS\=-fPIC
 
 The Nokogiri maintainers intend to provide timely security updates, but if
 this is a concern for you and want to use your OS/distro system library
@@ -103,11 +103,11 @@ Downloading zlib-1.2.11.tar.gz (100%)
 Extracting zlib-1.2.11.tar.gz into tmp/x86_64-w64-mingw32/ports/zlib/1.2.11... OK
 Running 'compile' for zlib 1.2.11... OK
 Running 'install' for zlib 1.2.11... OK
-Activating zlib 1.2.11 (from D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/zlib/1.2.11)...
+Activating zlib 1.2.11 (from D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/zlib/1.2.11)...
 Using mini_portile version 2.8.0
 ---------- IMPORTANT NOTICE ----------
 Building Nokogiri with a packaged version of libiconv-1.16.
-Configuration options: --host\=x86_64-w64-mingw32 --enable-static --disable-shared --libdir\=D:/Users/roeja/Desktop/cherryleafroad.github.io\ -\ Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/libiconv/1.16/lib --disable-dependency-tracking --disable-shared --enable-static CPPFLAGS\=-Wall CFLAGS\=-O2\ -U_FORTIFY_SOURCE\ -g\ -fPIC CXXFLAGS\=-O2\ -U_FORTIFY_SOURCE\ -g LDFLAGS\=
+Configuration options: --host\=x86_64-w64-mingw32 --enable-static --disable-shared --libdir\=D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/libiconv/1.16/lib --disable-dependency-tracking --disable-shared --enable-static CPPFLAGS\=-Wall CFLAGS\=-O2\ -U_FORTIFY_SOURCE\ -g\ -fPIC CXXFLAGS\=-O2\ -U_FORTIFY_SOURCE\ -g LDFLAGS\=
 
 The Nokogiri maintainers intend to provide timely security updates, but if
 this is a concern for you and want to use your OS/distro system library
@@ -438,80 +438,495 @@ Downloading libiconv-1.16.tar.gz ( 99%)
 Downloading libiconv-1.16.tar.gz (100%) 
 Extracting libiconv-1.16.tar.gz into tmp/x86_64-w64-mingw32/ports/libiconv/1.16... OK
 Running 'configure' for libiconv 1.16... OK
-Running 'compile' for libiconv 1.16... ERROR, review 'D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/compile.log' to see what happened. Last lines are:
-========================================================================
-make[2]: Leaving directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset/lib'
-make[1]: Leaving directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset'
-make[1]: Entering directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset'
-cd lib && make all
-make[2]: Entering directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset/lib'
-make[2]: Nothing to be done for 'all'.
-make[2]: Leaving directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset/lib'
-cd lib && make install-lib libdir='/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/lib' includedir='/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/lib'
-make[2]: Entering directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset/lib'
-/bin/sh ../build-aux/mkinstalldirs /d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/lib
-mkdir -p -- - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/lib
-/bin/sh ../libtool --mode=install /usr/bin/install -c libcharset.la /d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/lib/libcharset.la
-Usage: /d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset/libtool [OPTION]... [MODE-ARG]...
-Try 'libtool --help' for more information.
-libtool:   error: 'Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/lib/libcharset.la' is not a directory
-make[2]: *** [Makefile:67: install-lib] Error 1
-make[2]: Leaving directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset/lib'
-make[1]: *** [Makefile:43: install-lib] Error 2
-make[1]: Leaving directory '/d/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/tmp/x86_64-w64-mingw32/ports/libiconv/1.16/libiconv-1.16/libcharset'
-make: *** [Makefile:41: lib/localcharset.h] Error 2
-========================================================================
-*** extconf.rb failed ***
-Could not create Makefile due to some reason, probably lack of necessary
-libraries and/or headers.  Check the mkmf.log file for more details.  You may
-need configuration options.
+Running 'compile' for libiconv 1.16... OK
+Running 'install' for libiconv 1.16... OK
+Activating libiconv 1.16 (from D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/libiconv/1.16)...
+checking for whether -ID:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/zlib/1.2.11/include is accepted as CPPFLAGS... yes
+checking for gzdopen() in -lz... yes
+checking for whether -ID:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/libiconv/1.16/include is accepted as CPPFLAGS... yes
+checking for iconv_open() in -liconv... yes
+Using mini_portile version 2.8.0
+---------- IMPORTANT NOTICE ----------
+Building Nokogiri with a packaged version of libxml2-2.9.13.
+Configuration options: --host\=x86_64-w64-mingw32 --enable-static --disable-shared --libdir\=D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/libxml2/2.9.13/lib --with-zlib\=D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/zlib/1.2.11 --with-iconv\=D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/libiconv/1.16 --disable-dependency-tracking --without-python --without-readline --with-c14n --with-debug --with-threads --disable-shared --enable-static CFLAGS\=-O2\ -U_FORTIFY_SOURCE\ -g\ -ULIBXML_STATIC\ -DIN_LIBXML\ -fPIC
+The following patches are being applied:
+  - 0001-Remove-script-macro-support.patch
+  - 0002-Update-entities-to-remove-handling-of-ssi.patch
+  - 0003-libxml2.la-is-in-top_builddir.patch
+  - 0004-use-glibc-strlen.patch
+  - 0005-avoid-isnan-isinf.patch
+  - 0006-update-automake-files-for-arm64.patch
+  - 0008-htmlParseComment-handle-abruptly-closed-comments.patch
+  - 0009-allow-wildcard-namespaces.patch
+  - 0010-Revert-Different-approach-to-fix-quadratic-behavior.patch
 
-Provided configuration options:
-	--with-opt-dir
-	--without-opt-dir
-	--with-opt-include
-	--without-opt-include=${opt-dir}/include
-	--with-opt-lib
-	--without-opt-lib=${opt-dir}/lib
-	--with-make-prog
-	--without-make-prog
-	--srcdir=.
-	--curdir
-	--ruby=D:/Ruby31-x64/bin/$(RUBY_BASE_NAME)
-	--help
-	--clean
-	--prevent-strip
-	--enable-system-libraries
-	--disable-system-libraries
-	--use-system-libraries
-	--enable-system-libraries
-	--disable-system-libraries
-	--use-system-libraries
-	--enable-static
-	--disable-static
-	--enable-cross-build
-	--disable-cross-build
-	--with-zlib-dir
-	--without-zlib-dir
-	--with-zlib-include
-	--without-zlib-include=${zlib-dir}/include
-	--with-zlib-lib
-	--without-zlib-lib=${zlib-dir}/lib
-D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/mini_portile2-2.8.0/lib/mini_portile2/mini_portile.rb:460:in `block in execute': Failed to complete compile task (RuntimeError)
-	from D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/mini_portile2-2.8.0/lib/mini_portile2/mini_portile.rb:426:in `chdir'
-	from D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/mini_portile2-2.8.0/lib/mini_portile2/mini_portile.rb:426:in `execute'
-	from D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/mini_portile2-2.8.0/lib/mini_portile2/mini_portile.rb:144:in `compile'
-	from D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/gems/mini_portile2-2.8.0/lib/mini_portile2/mini_portile.rb:187:in `cook'
-	from extconf.rb:528:in `block (2 levels) in process_recipe'
-	from extconf.rb:309:in `chdir'
-	from extconf.rb:309:in `chdir_for_build'
-	from extconf.rb:528:in `block in process_recipe'
-	from <internal:kernel>:90:in `tap'
-	from extconf.rb:427:in `process_recipe'
-	from extconf.rb:731:in `<main>'
+The Nokogiri maintainers intend to provide timely security updates, but if
+this is a concern for you and want to use your OS/distro system library
+instead, then abort this installation process and install nokogiri as
+instructed at:
 
-To see why this extension failed to compile, please check the mkmf.log which can be found here:
+  https://nokogiri.org/tutorials/installing_nokogiri.html#installing-using-standard-system-libraries
 
-  D:/Users/roeja/Desktop/cherryleafroad.github.io - Copy/vendor/bundle/ruby/3.1.0/extensions/x64-mingw-ucrt/3.1.0/nokogiri-1.13.3/mkmf.log
+Note, however, that nokogiri cannot guarantee compatibility with every
+version of libxml2 that may be provided by OS/package vendors.
 
-extconf failed, exit code 1
+[{:url=>
+   "https://mirror.csclub.uwaterloo.ca/gnome/sources/libxml2/2.9/libxml2-2.9.13.tar.xz",
+  :sha256=>"276130602d12fe484ecc03447ee5e759d0465558fbc9d6bd144e3745306ebf0e"}]
+Extracting libxml2-2.9.13.tar.xz into tmp/x86_64-w64-mingw32/ports/libxml2/2.9.13... OK
+Running git apply with D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/patches/libxml2/0001-Remove-script-macro-support.patch... OK
+Running git apply with D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/patches/libxml2/0002-Update-entities-to-remove-handling-of-ssi.patch... OK
+Running git apply with D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/patches/libxml2/0003-libxml2.la-is-in-top_builddir.patch... OK
+Running git apply with D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/patches/libxml2/0004-use-glibc-strlen.patch... OK
+Running git apply with D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/patches/libxml2/0005-avoid-isnan-isinf.patch... OK
+Running git apply with D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/patches/libxml2/0006-update-automake-files-for-arm64.patch... OK
+Running git apply with D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/patches/libxml2/0008-htmlParseComment-handle-abruptly-closed-comments.patch... OK
+Running git apply with D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/patches/libxml2/0009-allow-wildcard-namespaces.patch... OK
+Running git apply with D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/patches/libxml2/0010-Revert-Different-approach-to-fix-quadratic-behavior.patch... OK
+Running 'configure' for libxml2 2.9.13... OK
+Running 'compile' for libxml2 2.9.13... OK
+Running 'install' for libxml2 2.9.13... OK
+Activating libxml2 2.9.13 (from D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/libxml2/2.9.13)...
+Using mini_portile version 2.8.0
+---------- IMPORTANT NOTICE ----------
+Building Nokogiri with a packaged version of libxslt-1.1.35.
+Configuration options: --host\=x86_64-w64-mingw32 --enable-static --disable-shared --libdir\=D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/libxslt/1.1.35/lib --disable-dependency-tracking --without-python --without-crypto --with-debug --with-libxml-prefix\=/D/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/libxml2/2.9.13 --disable-shared --enable-static CFLAGS\=-O2\ -U_FORTIFY_SOURCE\ -g\ -fPIC
+The following patches are being applied:
+  - 0001-update-automake-files-for-arm64.patch
+
+The Nokogiri maintainers intend to provide timely security updates, but if
+this is a concern for you and want to use your OS/distro system library
+instead, then abort this installation process and install nokogiri as
+instructed at:
+
+  https://nokogiri.org/tutorials/installing_nokogiri.html#installing-using-standard-system-libraries
+
+[{:url=>
+   "https://mirror.csclub.uwaterloo.ca/gnome/sources/libxslt/1.1/libxslt-1.1.35.tar.xz",
+  :sha256=>"8247f33e9a872c6ac859aa45018bc4c4d00b97e2feac9eebc10c93ce1f34dd79"}]
+Extracting libxslt-1.1.35.tar.xz into tmp/x86_64-w64-mingw32/ports/libxslt/1.1.35... OK
+Running git apply with D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/patches/libxslt/0001-update-automake-files-for-arm64.patch... OK
+Running 'configure' for libxslt 1.1.35... OK
+Running 'compile' for libxslt 1.1.35... OK
+Running 'install' for libxslt 1.1.35... OK
+Activating libxslt 1.1.35 (from D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ports/x64-mingw-ucrt/libxslt/1.1.35)...
+checking for whether -DNOKOGIRI_PACKAGED_LIBRARIES is accepted as CPPFLAGS... yes
+checking for whether -DNOKOGIRI_LIBXML2_PATCHES="\"0001-Remove-script-macro-support.patch 0002-Update-entities-to-remove-handling-of-ssi.patch 0003-libxml2.la-is-in-top_builddir.patch 0004-use-glibc-strlen.patch 0005-avoid-isnan-isinf.patch 0006-update-automake-files-for-arm64.patch 0008-htmlParseComment-handle-abruptly-closed-comments.patch 0009-allow-wildcard-namespaces.patch 0010-Revert-Different-approach-to-fix-quadratic-behavior.patch\"" is accepted as CPPFLAGS... yes
+checking for -llzma... no
+checking for -lliblzma... no
+checking for whether -DNOKOGIRI_LIBXSLT_PATCHES="\"0001-update-automake-files-for-arm64.patch\"" is accepted as CPPFLAGS... yes
+checking for xmlParseDoc() in libxml/parser.h... yes
+checking for xsltParseStylesheetDoc() in libxslt/xslt.h... yes
+checking for exsltFuncRegister() in libexslt/exslt.h... yes
+Using mini_portile version 2.8.0
+---------- IMPORTANT NOTICE ----------
+Building Nokogiri with a packaged version of libgumbo-1.0.0-nokogiri.
+Configuration options: --disable-shared --enable-static CFLAGS\=-fPIC
+[]
+Copying gumbo-parser files into tmp/x86_64-w64-mingw32/ports/libgumbo/1.0.0-nokogiri/gumbo-parser...
+Running 'compile' for libgumbo 1.0.0-nokogiri... OK
+Activating libgumbo 1.0.0-nokogiri (from ports/x64-mingw-ucrt/libgumbo/1.0.0-nokogiri)...
+checking for whether -ID:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri/ports/x64-mingw-ucrt/libgumbo/1.0.0-nokogiri/include is accepted as CPPFLAGS... yes
+checking for gumbo_parse_with_options() in gumbo.h... yes
+checking for xmlHasFeature()... yes
+checking for xmlFirstElementChild()... yes
+checking for xmlRelaxNGSetParserStructuredErrors()... yes
+checking for xmlRelaxNGSetValidStructuredErrors()... yes
+checking for xmlSchemaSetValidStructuredErrors()... yes
+checking for xmlSchemaSetParserStructuredErrors()... yes
+checking for vasprintf()... yes
+checking for whether -DNOKOGIRI_OTHER_LIBRARY_VERSIONS="\"zlib:1.2.11,libiconv:1.16,libgumbo:1.0.0-nokogiri\"" is accepted as CPPFLAGS... yes
+creating Makefile
+
+current directory: D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri
+make DESTDIR\= clean
+
+current directory: D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri
+make DESTDIR\=
+generating nokogiri-x64-mingw-ucrt.def
+compiling gumbo.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from gumbo.c:30:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling html4_document.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from html4_document.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling html4_element_description.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from html4_element_description.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling html4_entity_lookup.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from html4_entity_lookup.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling html4_sax_parser_context.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from html4_sax_parser_context.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling html4_sax_push_parser.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from html4_sax_push_parser.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling libxml2_backwards_compat.c
+compiling nokogiri.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from nokogiri.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling test_global_handlers.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from test_global_handlers.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_attr.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_attr.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_attribute_decl.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_attribute_decl.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_cdata.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_cdata.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_comment.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_comment.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_document.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_document.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_document_fragment.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_document_fragment.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_dtd.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_dtd.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_element_content.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_element_content.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_element_decl.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_element_decl.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_encoding_handler.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_encoding_handler.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_entity_decl.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_entity_decl.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_entity_reference.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_entity_reference.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_namespace.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_namespace.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_node.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_node.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+xml_node.c: In function 'rb_xml_node_pointer_id':
+xml_node.c:785:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  785 |   return INT2NUM((long)(node));
+      |                  ^
+compiling xml_node_set.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_node_set.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_processing_instruction.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_processing_instruction.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_reader.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_reader.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_relax_ng.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_relax_ng.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_sax_parser.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_sax_parser.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_sax_parser_context.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_sax_parser_context.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_sax_push_parser.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_sax_push_parser.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_schema.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_schema.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_syntax_error.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_syntax_error.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_text.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_text.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xml_xpath_context.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xml_xpath_context.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+compiling xslt_stylesheet.c
+In file included from D:/Ruby31-x64/include/ruby-3.1.0/ruby/win32.h:41,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/internal/dosish.h:38,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/defines.h:78,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby/ruby.h:25,
+                 from D:/Ruby31-x64/include/ruby-3.1.0/ruby.h:38,
+                 from ./nokogiri.h:68,
+                 from xslt_stylesheet.c:1:
+D:/Ruby31-x64/msys64/ucrt64/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+   15 | #warning Please include winsock2.h before windows.h
+      |  ^~~~~~~
+linking shared-object nokogiri/nokogiri.so
+Cleaning files only used during build.
+
+current directory: D:/Users/roeja/Desktop/cherryleafroad.github.io/vendor/bundle/ruby/3.1.0/gems/nokogiri-1.13.3/ext/nokogiri
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 nokogiri.so ./.gem.20220403-17748-gciihz/nokogiri
+installing nokogiri libraries
