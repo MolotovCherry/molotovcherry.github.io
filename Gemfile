@@ -16,5 +16,4 @@ group :jekyll_plugins do
   gem 'jekyll-paginate-v2', path: '.gems/jekyll-paginate-v2'
   gem 'jekyll-sitemap', '~> 1.4.0'
   gem 'jekyll-titles-from-headings', '~> 0.5.3'
-  gem 'jemoji', '~> 0.12.0'
 end
