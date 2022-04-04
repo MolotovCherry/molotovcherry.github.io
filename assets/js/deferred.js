@@ -43,20 +43,4 @@ cherryblog.postSetup = function () {
       time * 1000
     );
   });
-
-  // dynamically add the themed comments h-entry is used only on posts
-  let post = document.getElementsByClassName("h-entry");
-  let is_post = post.length == 1;
-  if (is_post) {
-    let script = document.createElement('script');
-    script.src = "https://utteranc.es/client.js";
-    script.setAttribute("repo", "cherryleafroad/cherryleafroad.github.io");
-    script.setAttribute("issue-term", "pathname");
-    script.setAttribute("label", "comments");
-    script.setAttribute("theme", cherryblog.getCommentsTheme(theme));
-    script.setAttribute("crossorigin", "anonymous");
-    script.async = true;
-
-    post[0].appendChild(script);
-  }
 })();
