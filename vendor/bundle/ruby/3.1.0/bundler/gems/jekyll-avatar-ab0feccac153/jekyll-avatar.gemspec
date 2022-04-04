@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Ben Balter".freeze]
-  s.date = "2022-04-03"
+  s.date = "2022-04-04"
   s.email = ["ben.balter@github.com".freeze]
   s.files = ["LICENSE.txt".freeze, "README.md".freeze, "lib/jekyll-avatar.rb".freeze, "lib/jekyll-avatar/version.rb".freeze]
   s.homepage = "https://github.com/jekyll/jekyll-avatar".freeze
