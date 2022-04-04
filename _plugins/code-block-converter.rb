@@ -24,7 +24,7 @@ module Jekyll
         i = "<i class=\"lang-icon devicon-#{language}-plain\"></i>"
         label = "<div class=\"lang-label\"> #{language.capitalize()}</div>"
         
-        button = "<button class=\"collapsible\">#{i}#{label}</button>"
+        button = "<button class=\"collapsible\" onclick=\"toggleBlock(this)\">#{i}#{label}</button>"
         
         block.wrap("<div class=\"collapse-container\">#{button}</div>")
       end
@@ -33,22 +33,15 @@ module Jekyll
 
       script = Nokogiri::HTML.fragment %q(
 <script>
-let elems = document.querySelectorAll('button.collapsible');
+function toggleBlock(event) {
+  event.classList.toggle("active");
+  let content = event.nextElementSibling;
 
-var i = 0, len = elems.length;
-while (i < len) {
-  elems[i].addEventListener("click", event => {
-    event.currentTarget.classList.toggle("active");
-    let content = event.currentTarget.nextElementSibling;
-
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
-  
-  i++;
+  if (content.style.maxHeight) {
+    content.style.maxHeight = null;
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+  }
 }
 </script>
 )
