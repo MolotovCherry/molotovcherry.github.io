@@ -122,8 +122,8 @@ pub fn kill_process(pid: u32) -> Result<(), ProcessError> {
 
 Great! Now I can scan for processes, and kill them even if they're a system process! But one thing kept bothering me. It seemed so inefficient to keep scanning for processes every x seconds. I need a better solution.
 
-After a bit of researching, I found that WMI can do this with a query such as
-`SELECT * FROM __InstanceCreationEvent WITHIN 2 WHERE TargetInstance ISA 'Win32_Process'`
+After a bit of researching, I found that WMI can do this with a query such as  
+`SELECT * FROM __InstanceCreationEvent WITHIN 2 WHERE TargetInstance ISA 'Win32_Process'`  
 but this requires `IWbemServices::ExecNotificationQueryAsync` which is not implemented in the Rust WMI crate. Sad.
 
 I came across [this](https://docs.microsoft.com/en-us/windows/win32/wmisdk/example--receiving-event-notifications-through-wmi-) Microsoft SDK code example to receive async event notifications from WMI. Looks like that's what I need. The Rust Windows API seemed clunky at best however, and I got stuck as I needed to make a custom COM interface which implemented [IWbemObjectSink](https://docs.microsoft.com/en-us/windows/win32/wmisdk/iwbemobjectsink), and there wasn't really any way to do it with windows-rs. So I turned to [com-rs](https://github.com/microsoft/com-rs) which seemed to solve this, but unfortunately this is mostly for [winapi](https://crates.io/crates/winapi), and I didn't want to use winapi compared to the official Microsoft bindings.
