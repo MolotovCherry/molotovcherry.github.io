@@ -2,66 +2,6 @@
 layout: js_minifier
 ---
 
-function collapseCodeBlocks() {
-    // top element
-    let code_blocks = document.getElementsByTagName("pre");
-
-    // cached elements are faster
-    let elemN = document.createElement("button");
-    let iconN = document.createElement("i");
-    let divN = document.createElement("div");
-    let containerN = divN.cloneNode(false);
-    iconN.classList.add("lang-icon");
-    elemN.classList.add("collapsible");
-    divN.classList.add("lang-label");
-    containerN.classList.add("collapse-container");
-
-    let len = code_blocks.length;
-    for (let x = 0; x < len; x++) {
-        // need the top level parent
-        let block = code_blocks[x].parentElement.parentElement;
-        let name = block.className.split(' ')[0];
-
-        // language- (9th)
-        let language = name.substring(9);
-        let language_upper = language.split("");
-        language_upper[0] = language[0].toUpperCase();
-        language_upper = language_upper.join("");
-
-        let elem = elemN.cloneNode(false);
-        let icon = iconN.cloneNode(false);
-        let div = divN.cloneNode(false);
-        let container = containerN.cloneNode(false);
-
-        icon.classList.add("devicon-" + language + "-plain");
-        elem.appendChild(icon);
-
-        let text = document.createTextNode(" " + language_upper);
-        div.appendChild(text);
-        elem.appendChild(div);
-
-        let parent = block.parentNode;
-        let referenceNode = block.nextElementSibling;
-
-        container.appendChild(elem);
-        container.appendChild(block);
-
-        parent.insertBefore(container, referenceNode);
-
-        // now add event listener to button
-        elem.addEventListener("click", event => {
-          event.currentTarget.classList.toggle("active");
-          let content = event.currentTarget.nextElementSibling;
-
-          if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-          } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-          }
-        });
-    }
-}
-
 var parseNum = str => +str.replace(/[^.\d]/g, '');
 
 var time, html, section, header;
@@ -78,8 +18,6 @@ cherryblog.postSetup = function () {
 };
 
 (function () {
-  collapseCodeBlocks();
-
   // set state of day/night icon
   // checked == day
   let dayNight = document.getElementById("theme-switcher");

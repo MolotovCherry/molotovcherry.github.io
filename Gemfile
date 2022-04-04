@@ -10,6 +10,9 @@ gem 'wdm', '~> 0.1.1' if Gem.win_platform?
 # error otherwise
 gem 'webrick', '~> 1.7'
 
+# ubuntu runner support
+gem 'nokogiri', '~> 1.12.5'
+
 group :jekyll_plugins do
   gem "jekyll-avatar", github: "jekyll/jekyll-avatar"
   gem 'jekyll-feed', '~> 0.15.1'
