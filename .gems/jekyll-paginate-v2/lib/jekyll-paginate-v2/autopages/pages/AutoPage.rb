@@ -91,7 +91,6 @@ module Jekyll
         end
 
         unless doc.content.nil?
-          puts "rendering content"
           # run renderer on document to render out data to get the rendered content
           doc.renderer.run
           # set content separately since it's not part of data
