@@ -96,7 +96,6 @@ kbd, .bubble {
     padding: 0.15em 0.4em 0.2em;
     border-radius: 6px;
     vertical-align: middle;
-    white-space: nowrap;
     font-family: inherit;
 }
 
@@ -215,11 +214,6 @@ div.highlighter-rouge {
 
   section {
     border-radius: 0;
-  }
-
-  // if it's too long, it'll break horizontal layout in mobile
-  p > code, kbd, .bubble {
-    white-space: normal;
   }
 
   .bubble.bubble-item {
