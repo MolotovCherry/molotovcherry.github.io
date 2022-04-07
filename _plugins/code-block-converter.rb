@@ -138,6 +138,13 @@ function createGist(gistid, filenames, context) {
     let label = element.getElementsByClassName('lang-label')[0];
     label.innerHTML = ' ' + gist.language + ' Gist | <a href="' + gistdata.html_url + '" target="_blank">' + gist.filename +'</a> hosted with <span style="color: red;">❤</span> by <a href="https://github.com" target="_blank">GitHub</a> | <a href="'+ gist.raw_url +'" target="_blank">View raw</a>';
 
+    let links = label.querySelectorAll("div.lang-label a");
+    links.forEach((elem) => {
+      elem.addEventListener("click", function(e) {
+        e.stopPropagation();
+      });
+    });
+
     context.parentNode.insertBefore(element, context.nextSibling);
   });
 }
