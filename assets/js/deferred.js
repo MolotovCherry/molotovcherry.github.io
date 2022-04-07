@@ -22,7 +22,7 @@ cherryblog.postSetup = function () {
   // checked == day
   let dayNight = document.getElementById("theme-switcher");
   let theme = cherryblog.getTheme();
-  dayNight.checked = theme == "light" ? true : false;
+  dayNight.checked = theme === "light";
 
   // set click handler for switcher
   dayNight.addEventListener('click', event => {

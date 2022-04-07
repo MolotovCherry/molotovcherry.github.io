@@ -12,6 +12,8 @@ gem 'webrick', '~> 1.7'
 
 # ubuntu runner support
 gem 'nokogiri', '~> 1.12.5'
+gem 'octokit', '~> 4.22.0'
+gem 'rouge', '~> 3.28.0'
 
 group :jekyll_plugins do
   gem "jekyll-avatar", github: "jekyll/jekyll-avatar"
