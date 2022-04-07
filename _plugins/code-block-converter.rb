@@ -192,7 +192,7 @@ module Jekyll
   class GistTag < Liquid::Tag
 
     def self.client
-      @client ||= Octokit::Client.new :access_token => ENV["GITHUB_TOKEN"]
+      @client ||= Octokit::Client.new :access_token => ENV['JEKYLL_GITHUB_TOKEN']
     end
 
     def determine_arguments(input)
@@ -251,8 +251,8 @@ module Jekyll
     def noscript_tag(gist_id, filenames)
       return if @settings && @settings['noscript'] == false
 
-      unless ENV['GITHUB_TOKEN']
-        raise 'Please define GITHUB_TOKEN'
+      unless ENV['JEKYLL_GITHUB_TOKEN']
+        raise 'Please define JEKYLL_GITHUB_TOKEN in your repo secrets'
       end
 
       gist = GistTag.client.gist gist_id
