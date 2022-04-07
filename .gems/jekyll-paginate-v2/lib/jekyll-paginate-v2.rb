@@ -9,6 +9,7 @@
 # Distributed Under The MIT License (MIT) as described in the LICENSE file
 #   - https://opensource.org/licenses/MIT
 
+require "nokogiri"
 require "jekyll-paginate-v2/version"
 # Files needed for the pagination generator
 require "jekyll-paginate-v2/generator/defaults"

@@ -8,7 +8,7 @@ pagination:
     <h1 class="page-heading">{{ page.title }}</h1>
 
     {% assign content = page.content %}
-    {% if content and paginator.page == 1 %}
+    {% if content != '' and paginator.page == 1 %}
         {{ content }}
         <h1>Posts</h1>
         <hr>
