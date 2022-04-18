@@ -62,6 +62,7 @@ In my personal time:
 ![NGINX](https://img.shields.io/badge/-NGINX-05122A?style=flat&logo=nginx)
 ![jQuery](https://img.shields.io/badge/-jQuery-05122A?style=flat&logo=jquery)
 ![AngularJS](https://img.shields.io/badge/-AngularJS-05122A?style=flat&logo=angularjs)
+![React](https://img.shields.io/badge/-React-05122A?style=flat&logo=react)
 ![Joomla](https://img.shields.io/badge/-Joomla-05122A?style=flat&logo=joomla)
 ![phpMyAdmin](https://img.shields.io/badge/-phpMyAdmin-05122A?style=flat&logo=phpmyadmin)
 ![Django](https://img.shields.io/badge/-Django-05122A?style=flat&logo=django)
