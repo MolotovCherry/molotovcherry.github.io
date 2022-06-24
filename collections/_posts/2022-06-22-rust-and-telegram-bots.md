@@ -146,7 +146,7 @@ async fn callback(callback: web::Query<MalCallback>) -> impl Responder {
 ```
 ... But what do we do with it? If you ever played with telegram bots, you'll have realized that your bot still runs locally. How will you get the code then?
 
-For this, I used the built-in actix-web-actors, which has websocket support. Some examples for it re [here](https://github.com/actix/examples/tree/master/websockets).
+For this, I used the built-in actix-web-actors, which has websocket support. Some examples for it are [here](https://github.com/actix/examples/tree/master/websockets).
 
 We can make a websocket server on a url like `/client`, but make sure you authenticate the client with a jwt or something, since you should be the only one that receives the private callback information (though technically speaking, no one else still knows the code challenge you provided, so they'd still fail if they tried to use it). Because websockets has no custom headers, we can't do something easily like pass an `Authorization` header. We have to implement our own protocol which asks for authorization, and have the client send it. If not, then disconnect the client since they're not valid. Make sure you're sending heartbeats to keep the client alive. Since this is a heroku service that only has so many hours, I decided to disconnect the client once it is done receiving the information, but you will want to make sure that the server saves and sends the info back to the client EVEN IF the client is not connected.. After all, you want to make sure it is robust. 
 
