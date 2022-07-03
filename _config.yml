@@ -5,13 +5,13 @@ description: "When all else fails ... reboot."
 google_analytics: G-QY70XMH6JE
 
 baseurl: /
-url: http://cherryleafroad.github.io
+url: http://molotovcherry.github.io
 
 # place all your links here
 modernist:
   social_links:
     #twitter: jekyllrb
-    github:  cherryleafroad
+    github:  MolotovCherry
     # devto: jekyll
     # dribbble: jekyll
     # facebook: jekyll
