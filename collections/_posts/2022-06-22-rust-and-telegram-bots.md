@@ -1,6 +1,6 @@
 ---
 title: Rust and Telegram Bots
-author: Cherryleafroad
+author: MolotovCherry
 layout: post
 category: Programming
 tags: telegram bot rust teloxide tokio

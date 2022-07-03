@@ -1,9 +1,9 @@
 ---
-name: Cherryleafroad
-author: Cherryleafroad
+name: MolotovCherry
+author: MolotovCherry
 
 layout: author-page
-title: "Author: Cherryleafroad"
+title: "Author: MolotovCherry"
 robots: noindex
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Killing Annoying Processes in Windows
-author: Cherryleafroad
+author: MolotovCherry
 layout: post
 category: Programming
 tags: rust windows-rs windows

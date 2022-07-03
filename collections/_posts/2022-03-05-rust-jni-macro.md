@@ -1,6 +1,6 @@
 ---
 title: Rust JNI Macro
-author: Cherryleafroad
+author: MolotovCherry
 layout: post
 category: Programming
 tags: rust kmagick jni kotlin proc-macro bindings

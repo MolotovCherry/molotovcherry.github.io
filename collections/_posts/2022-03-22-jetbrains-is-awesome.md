@@ -1,6 +1,6 @@
 ---
 title: JetBrains is Awesome
-author: Cherryleafroad
+author: MolotovCherry
 layout: post
 category: Programming
 tags: jetbrains kmagick
