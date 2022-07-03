@@ -72,6 +72,6 @@ In my personal time:
 ![Discord](https://img.shields.io/badge/-Discord-05122A?style=flat&logo=discord)
 
 ## Contact
-- GitHub: [Cherry](https://github.com/cherryleafroad)
+- GitHub: [Cherry](https://github.com/MolotovCherry)
 - StackOverflow: [Kobato](https://stackoverflow.com/users/9423933/kobato)
 - Discord: MolotovCherry#8392
