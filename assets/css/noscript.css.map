@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "noscript.css",
+	"sources": [
+		"noscript.scss"
+	],
+	"sourcesContent": [
+		"button.collapsible {\n  cursor: default;\n}\n\n.collapsible:after {\n  display: none;\n}\n\ndiv.highlighter-rouge {\n  max-height: none !important;\n  overflow: auto !important;\n  transition: none !important;\n}\n\n// this requries js, soo..\n#theme-switcher {\n  display: none;\n}\n"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,MAAM,AAAA,YAAY,AAAC,CACjB,MAAM,CAAE,OAAO,CAChB,AAED,AAAA,YAAY,CAAC,KAAK,AAAC,CACjB,OAAO,CAAE,IAAI,CACd,AAED,AAAA,GAAG,AAAA,kBAAkB,AAAC,CACpB,UAAU,CAAE,eAAe,CAC3B,QAAQ,CAAE,eAAe,CACzB,UAAU,CAAE,eAAe,CAC5B,AAGD,AAAA,eAAe,AAAC,CACd,OAAO,CAAE,IAAI,CACd"
+}

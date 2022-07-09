@@ -1,0 +1,306 @@
+<!doctype html><html lang="en-US" data-theme="dark" data-preload><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Killing Annoying Processes in Windows | Cherry’s Digital Space 🍒</title><meta name="generator" content="Jekyll v4.2.2"><meta property="og:title" content="Killing Annoying Processes in Windows"><meta name="author" content="MolotovCherry"><meta property="og:locale" content="en_US"><meta name="description" content="&lt;!DOCTYPE html PUBLIC “-//W3C//DTD HTML 4.0 Transitional//EN” “http://www.w3.org/TR/REC-html40/loose.dtd”&gt; Mainly 2 things have been annoying me lately while working on my computer. These being, 2 incessant processes that won’t stop running and eating 90% of the CPU. Yes, I’m looking at you CompatTelRunner.exe and Software_Reporter_Tool.exe."><meta property="og:description" content="&lt;!DOCTYPE html PUBLIC “-//W3C//DTD HTML 4.0 Transitional//EN” “http://www.w3.org/TR/REC-html40/loose.dtd”&gt; Mainly 2 things have been annoying me lately while working on my computer. These being, 2 incessant processes that won’t stop running and eating 90% of the CPU. Yes, I’m looking at you CompatTelRunner.exe and Software_Reporter_Tool.exe."><link rel="canonical" href="http://molotovcherry.github.io/programming/killing-annoying-processes-in-windows"><meta property="og:url" content="http://molotovcherry.github.io/programming/killing-annoying-processes-in-windows"><meta property="og:site_name" content="Cherry’s Digital Space 🍒"><meta property="og:type" content="article"><meta property="article:published_time" content="2022-03-01T00:00:00+00:00"><meta name="twitter:card" content="summary"><meta property="twitter:title" content="Killing Annoying Processes in Windows"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"MolotovCherry"},"dateModified":"2022-03-01T00:00:00+00:00","datePublished":"2022-03-01T00:00:00+00:00","description":"&lt;!DOCTYPE html PUBLIC “-//W3C//DTD HTML 4.0 Transitional//EN” “http://www.w3.org/TR/REC-html40/loose.dtd”&gt; Mainly 2 things have been annoying me lately while working on my computer. These being, 2 incessant processes that won’t stop running and eating 90% of the CPU. Yes, I’m looking at you CompatTelRunner.exe and Software_Reporter_Tool.exe.","headline":"Killing Annoying Processes in Windows","mainEntityOfPage":{"@type":"WebPage","@id":"http://molotovcherry.github.io/programming/killing-annoying-processes-in-windows"},"url":"http://molotovcherry.github.io/programming/killing-annoying-processes-in-windows"}</script><link rel="stylesheet" href="/assets/css/style.css?v="><link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico"><noscript><link rel="stylesheet" href="/assets/css/noscript.css?v="></noscript><script src="/assets/js/immediate.js"></script><script src="/assets/js/deferred.js" defer></script><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><script async src="https://www.googletagmanager.com/gtag/js?id=G-QY70XMH6JE"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-QY70XMH6JE');</script></head><body onload="cherryblog.postSetup()"><div class="wrapper"><header><h1><a href="http://molotovcherry.github.io">Cherry's Digital Space 🍒</a></h1><p>When all else fails ... reboot.</p><p class="view"> <a href="http://molotovcherry.github.io/archives">Archives</a> | <a href="http://molotovcherry.github.io/about">About</a> </p><input id="theme-switcher" class="theme-switcher" type="checkbox"></header><section><article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><header class="blog-title"><h1 class="post-title p-name" itemprop="name headline">Killing Annoying Processes in Windows</h1><p class="post-meta"> <time class="dt-published" datetime="2022-03-01T00:00:00+00:00" itemprop="datePublished">Mar 1, 2022 </time> • by <div class="avatar-container"> <a href="https://github.com/molotovcherry" target="_blank"> <img class="avatar" alt="molotovcherry" width="100" height="100" data-proofer-ignore="true" src="https://avatars0.githubusercontent.com/molotovcherry?v=3&s=100" srcset="https://avatars0.githubusercontent.com/molotovcherry?v=3&s=100 1x, https://avatars0.githubusercontent.com/molotovcherry?v=3&s=200 2x, https://avatars0.githubusercontent.com/molotovcherry?v=3&s=300 3x, https://avatars0.githubusercontent.com/molotovcherry?v=3&s=400 4x" /> </a> </div> <a href="/author/molotovcherry/"> <span itemprop="author" itemscope itemtype="http://schema.org/Person"> <span class="p-author h-card" itemprop="name"> MolotovCherry </span> </span> </a> • <span><a href="/category/programming/">Programming</a></span>  </p><div class="bubble-container"><a class="bubble bubble-item" href="/tag/rust/">rust</a><a class="bubble bubble-item" href="/tag/windows-rs/">windows-rs</a><a class="bubble bubble-item" href="/tag/windows/">windows</a></div></header><div class="post-content e-content" itemprop="articleBody"><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><html><body><p>Mainly 2 things have been annoying me lately while working on my computer. These being, 2 incessant processes that won’t stop running and eating 90% of the CPU.</p><p>Yes, I’m looking at you <code class="language-plaintext highlighter-rouge">CompatTelRunner.exe</code> and <code class="language-plaintext highlighter-rouge">Software_Reporter_Tool.exe</code>.</p><p>Normally such things wouldn’t be much of a worry as they’re not often, but these two specifically seem to run whenever they want without any regard to the users machine.</p><p>I’ve tried various fixes over the months, ranging from <a href="https://www.technipages.com/prevent-users-from-running-certain-programs">blocking it</a> using the registry/group policy, <a href="https://windowsreport.com/compattelrunner-exe-file-issues/">disabling</a> the running tasks in task scheduler, <a href="https://docs.microsoft.com/en-us/microsoft-desktop-optimization-pack/appv-v4/how-to-deny-access-to-an-application">fiddling</a> with file permissions to deny access to the executable, and <a href="https://wethegeek.com/how-to-disable-telemetry-and-data-collection-in-windows-10/">disabling</a> as much telemetry as possible, even <a href="https://winaero.com/winaero-tweaker-0-6-0-2-is-out-allows-to-disable-telemetry-in-windows-10-and-more/">Winaero Tweaker</a>’s disable telemetry feature.</p><p>Really, none of these worked at all! I’ve begun to think these are a serious virus (might as well be with how annoying it was). No matter what I do, <code class="language-plaintext highlighter-rouge">CompatTelRunner.exe</code> runs every time a program installs or uninstalls.</p><p>So, I decided to finally turn to Rust to solve my problem, by making something that watches processes and kills them right away. A Process Killer!</p><p>I decided to turn to the <a href="https://crates.io/crates/sysinfo">sys-info</a> crate, considering its ease of use for scanning processes and PID’s. After writing a quick loop to scan every x seconds, and kill the process, all good! .. That is, until I hit a snag. It seems that system processes can’t be killed, even if you’re running as admin, unless you use <a href="https://docs.microsoft.com/en-us/windows/win32/secauthz/enabling-and-disabling-privileges-in-c--">SeDebugPrivilege</a>. Came with a nice snippet of C++ too.</p><p>So I turned to <a href="https://github.com/microsoft/windows-rs">windows-rs</a> crate to translate it over since I couldn’t find a crate for this. After a little bit, I came up with this unsafe code to grant any privilege to a process in Rust.</p><div class="collapse-container"><button class="collapsible" onclick="toggleBlock(this)"><i class="lang-icon devicon-rust-plain"></i><div class="lang-label"> Rust</div></button><div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">fn</span> <span class="nf">set_privilege</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span> <span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span> <span class="n">Error</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+    <span class="k">unsafe</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="n">handle</span> <span class="o">=</span> <span class="nf">OpenProcess</span><span class="p">(</span><span class="n">PROCESS_QUERY_INFORMATION</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="nn">std</span><span class="p">::</span><span class="nn">process</span><span class="p">::</span><span class="nf">id</span><span class="p">());</span>
+        <span class="k">if</span> <span class="n">handle</span><span class="nf">.is_invalid</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">Err</span><span class="p">(</span><span class="nn">Box</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="nn">ProcessError</span><span class="p">::</span><span class="n">NullHandle</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="k">let</span> <span class="k">mut</span> <span class="n">token_handle</span> <span class="o">=</span> <span class="nf">HANDLE</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="k">let</span> <span class="n">res</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="nf">OpenProcessToken</span><span class="p">(</span>
+            <span class="n">handle</span><span class="p">,</span>
+            <span class="n">TOKEN_ADJUST_PRIVILEGES</span><span class="p">,</span>
+            <span class="o">&amp;</span><span class="k">mut</span> <span class="n">token_handle</span> <span class="k">as</span> <span class="o">*</span><span class="k">mut</span> <span class="n">_</span>
+        <span class="p">)</span><span class="nf">.into</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="o">!</span><span class="n">res</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">Err</span><span class="p">(</span><span class="nn">Box</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="nn">ProcessError</span><span class="p">::</span><span class="n">OpenProcessTokenFailed</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="k">let</span> <span class="k">mut</span> <span class="n">luid</span> <span class="o">=</span> <span class="nn">LUID</span><span class="p">::</span><span class="nf">default</span><span class="p">();</span>
+        <span class="k">let</span> <span class="n">privilege</span> <span class="o">=</span> <span class="nn">CString</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+        <span class="k">let</span> <span class="n">res</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="nf">LookupPrivilegeValueA</span><span class="p">(</span>
+            <span class="nn">PCSTR</span><span class="p">::</span><span class="nf">default</span><span class="p">(),</span>
+            <span class="nf">PCSTR</span><span class="p">(</span><span class="n">privilege</span><span class="nf">.as_ptr</span><span class="p">()</span> <span class="k">as</span> <span class="o">*</span><span class="k">const</span> <span class="n">_</span><span class="p">),</span>
+            <span class="o">&amp;</span><span class="k">mut</span> <span class="n">luid</span> <span class="k">as</span> <span class="o">*</span><span class="k">mut</span> <span class="n">_</span>
+        <span class="p">)</span><span class="nf">.into</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="o">!</span><span class="n">res</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">Err</span><span class="p">(</span><span class="nn">Box</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="nn">ProcessError</span><span class="p">::</span><span class="n">PrivilegeLookupFailed</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="k">let</span> <span class="k">mut</span> <span class="n">tp</span> <span class="o">=</span> <span class="nn">TOKEN_PRIVILEGES</span><span class="p">::</span><span class="nf">default</span><span class="p">();</span>
+        <span class="n">tp</span><span class="py">.PrivilegeCount</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">tp</span><span class="py">.Privileges</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="py">.Luid</span> <span class="o">=</span> <span class="n">luid</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="n">state</span> <span class="p">{</span>
+            <span class="n">tp</span><span class="py">.Privileges</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="py">.Attributes</span> <span class="o">=</span> <span class="n">SE_PRIVILEGE_ENABLED</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">tp</span><span class="py">.Privileges</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="py">.Attributes</span> <span class="o">=</span> <span class="nf">TOKEN_PRIVILEGES_ATTRIBUTES</span><span class="p">(</span><span class="mi">0u32</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">let</span> <span class="n">res</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="nf">AdjustTokenPrivileges</span><span class="p">(</span>
+            <span class="n">token_handle</span><span class="p">,</span>
+            <span class="k">false</span><span class="p">,</span>
+            <span class="o">&amp;</span><span class="n">tp</span> <span class="k">as</span> <span class="o">*</span><span class="k">const</span> <span class="n">_</span><span class="p">,</span>
+            <span class="nn">std</span><span class="p">::</span><span class="nn">mem</span><span class="p">::</span><span class="nn">size_of</span><span class="p">::</span><span class="o">&lt;</span><span class="n">TOKEN_PRIVILEGES</span><span class="o">&gt;</span><span class="p">()</span> <span class="k">as</span> <span class="nb">u32</span><span class="p">,</span>
+            <span class="nn">std</span><span class="p">::</span><span class="nn">ptr</span><span class="p">::</span><span class="nf">null_mut</span><span class="p">()</span> <span class="k">as</span> <span class="o">*</span><span class="k">mut</span> <span class="n">_</span><span class="p">,</span>
+            <span class="nn">std</span><span class="p">::</span><span class="nn">ptr</span><span class="p">::</span><span class="nf">null_mut</span><span class="p">()</span> <span class="k">as</span> <span class="o">*</span><span class="k">mut</span> <span class="n">_</span>
+        <span class="p">)</span><span class="nf">.into</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="o">!</span><span class="n">res</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">Err</span><span class="p">(</span><span class="nn">Box</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="nn">ProcessError</span><span class="p">::</span><span class="n">AdjustTokenPrivilegeFailed</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="k">let</span> <span class="n">res</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="nf">CloseHandle</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span><span class="nf">.into</span><span class="p">();</span>
+        <span class="k">if</span> <span class="o">!</span><span class="n">res</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">Err</span><span class="p">(</span><span class="nn">Box</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="nn">ProcessError</span><span class="p">::</span><span class="n">CloseHandleFailed</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="k">let</span> <span class="n">res</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="nf">CloseHandle</span><span class="p">(</span><span class="n">token_handle</span><span class="p">)</span><span class="nf">.into</span><span class="p">();</span>
+        <span class="k">if</span> <span class="o">!</span><span class="n">res</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">Err</span><span class="p">(</span><span class="nn">Box</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="nn">ProcessError</span><span class="p">::</span><span class="n">CloseHandleFailed</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="nf">Ok</span><span class="p">(())</span>
+<span class="p">}</span>
+</code></pre></div></div></div><p>Works great! So far so good! By using <code class="language-plaintext highlighter-rouge">set_privilege(SE_DEBUG_NAME, true);</code> in the main program we can grant ourselves the <code class="language-plaintext highlighter-rouge">SE_DEBUG_NAME</code> privilege when we run as admin, and now system processes can be killed!</p><p>Of course, I also needed some process killer code, and no better than to turn to the MS API!</p><div class="collapse-container"><button class="collapsible" onclick="toggleBlock(this)"><i class="lang-icon devicon-rust-plain"></i><div class="lang-label"> Rust</div></button><div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">fn</span> <span class="nf">kill_process</span><span class="p">(</span><span class="n">pid</span><span class="p">:</span> <span class="nb">u32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span> <span class="n">ProcessError</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">unsafe</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="n">handle</span> <span class="o">=</span> <span class="nf">OpenProcess</span><span class="p">(</span><span class="n">PROCESS_TERMINATE</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="n">pid</span><span class="p">);</span>
+        <span class="k">if</span> <span class="n">handle</span><span class="nf">.is_invalid</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">Err</span><span class="p">(</span><span class="nn">ProcessError</span><span class="p">::</span><span class="n">NullHandle</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">let</span> <span class="n">res</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="nf">TerminateProcess</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="nf">.into</span><span class="p">();</span>
+        <span class="k">if</span> <span class="o">!</span><span class="n">res</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">Err</span><span class="p">(</span><span class="nn">ProcessError</span><span class="p">::</span><span class="n">TerminationFailed</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">let</span> <span class="n">res</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="nf">CloseHandle</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span><span class="nf">.into</span><span class="p">();</span>
+        <span class="k">if</span> <span class="o">!</span><span class="n">res</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">Err</span><span class="p">(</span><span class="nn">ProcessError</span><span class="p">::</span><span class="n">CloseHandleFailed</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="nf">Ok</span><span class="p">(())</span>
+<span class="p">}</span>
+</code></pre></div></div></div><p>Great! Now I can scan for processes, and kill them even if they’re a system process! But one thing kept bothering me. It seemed so inefficient to keep scanning for processes every x seconds. I need a better solution.</p><p>After a bit of researching, I found that WMI can do this with a query such as<br> <code class="language-plaintext highlighter-rouge">SELECT * FROM __InstanceCreationEvent WITHIN 2 WHERE TargetInstance ISA 'Win32_Process'</code><br> but this requires <code class="language-plaintext highlighter-rouge">IWbemServices::ExecNotificationQueryAsync</code> which is not implemented in the Rust WMI crate. Sad.</p><p>I came across <a href="https://docs.microsoft.com/en-us/windows/win32/wmisdk/example--receiving-event-notifications-through-wmi-">this</a> Microsoft SDK code example to receive async event notifications from WMI. Looks like that’s what I need. The Rust Windows API seemed clunky at best however, and I got stuck as I needed to make a custom COM interface which implemented <a href="https://docs.microsoft.com/en-us/windows/win32/wmisdk/iwbemobjectsink">IWbemObjectSink</a>, and there wasn’t really any way to do it with windows-rs. So I turned to <a href="https://github.com/microsoft/com-rs">com-rs</a> which seemed to solve this, but unfortunately this is mostly for <a href="https://crates.io/crates/winapi">winapi</a>, and I didn’t want to use winapi compared to the official Microsoft bindings.</p><p>I ended up <a href="https://github.com/microsoft/com-rs/issues/237">making an issue report</a> in the <code class="language-plaintext highlighter-rouge">com-rs</code> repo, and thankfully, Kenny - the MS employee working on windows-rs - was already planning to work on the COM interface in windows-rs. I just needed to wait a little longer. So I waited about a week or 2, and sure enough, a bunch of PR’s got pulled in and we got a new release!</p><p>So, using wmi-rs’s <a href="https://github.com/ohadravid/wmi-rs/blob/main/src/query_sink.rs">COM implementation</a> as a basis, I reworked it into a windows-rs compatible COM interface.</p><div class="collapse-container"><button class="collapsible" onclick="toggleBlock(this)"><i class="lang-icon devicon-rust-plain"></i><div class="lang-label"> Rust</div></button><div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This is IWbemObjectSink</span>
+<span class="c1">// must be declared as pub: https://github.com/microsoft/windows-rs/pull/1611</span>
+<span class="nd">#[interface(</span><span class="s">"7C857801-7381-11CF-884D-00AA004B2E24"</span><span class="nd">)]</span>
+<span class="k">pub</span> <span class="k">unsafe</span> <span class="k">trait</span> <span class="n">IEventSink</span><span class="p">:</span> <span class="n">IUnknown</span> <span class="p">{</span>
+    <span class="k">unsafe</span> <span class="k">fn</span> <span class="nf">Indicate</span><span class="p">(</span>
+        <span class="o">&amp;</span><span class="k">self</span><span class="p">,</span>
+        <span class="n">lObjectCount</span><span class="p">:</span> <span class="nb">c_long</span><span class="p">,</span>
+        <span class="n">apObjArray</span><span class="p">:</span> <span class="o">*</span><span class="k">mut</span> <span class="o">*</span><span class="k">mut</span> <span class="n">IWbemClassObject</span>
+    <span class="p">)</span> <span class="k">-&gt;</span> <span class="n">HRESULT</span><span class="p">;</span>
+
+    <span class="k">unsafe</span> <span class="k">fn</span> <span class="nf">SetStatus</span><span class="p">(</span>
+        <span class="o">&amp;</span><span class="k">self</span><span class="p">,</span>
+        <span class="n">lFlags</span><span class="p">:</span> <span class="nb">c_long</span><span class="p">,</span>
+        <span class="n">_hResult</span><span class="p">:</span> <span class="n">HRESULT</span><span class="p">,</span>
+        <span class="n">_strParam</span><span class="p">:</span> <span class="n">BSTR</span><span class="p">,</span>
+        <span class="n">_pObjParam</span><span class="p">:</span> <span class="o">*</span><span class="k">mut</span> <span class="n">IWbemClassObject</span>
+    <span class="p">)</span> <span class="k">-&gt;</span> <span class="n">HRESULT</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nd">#[implement(IEventSink)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">EventSink</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="n">sender</span><span class="p">:</span> <span class="n">Sender</span><span class="o">&lt;</span><span class="nb">Result</span><span class="o">&lt;</span><span class="n">IWbemClassObjectWrapper</span><span class="p">,</span> <span class="n">WMIError</span><span class="o">&gt;&gt;</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">EventSink</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">new</span><span class="p">(</span><span class="n">sender</span><span class="p">:</span> <span class="n">Sender</span><span class="o">&lt;</span><span class="nb">Result</span><span class="o">&lt;</span><span class="n">IWbemClassObjectWrapper</span><span class="p">,</span> <span class="n">WMIError</span><span class="o">&gt;&gt;</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="k">Self</span> <span class="p">{</span>
+        <span class="k">Self</span> <span class="p">{</span>
+            <span class="n">sender</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cd">/// Implementation for [IWbemObjectSink](https://docs.microsoft.com/en-us/windows/win32/api/wbemcli/nn-wbemcli-iwbemobjectsink).</span>
+<span class="cd">/// This [Sink](https://en.wikipedia.org/wiki/Sink_(computing))</span>
+<span class="cd">/// receives asynchronously the result of the query, through Indicate calls.</span>
+<span class="cd">/// When finished,the SetStatus method is called.</span>
+<span class="cd">/// # &lt;https://docs.microsoft.com/fr-fr/windows/win32/wmisdk/example--getting-wmi-data-from-the-local-computer-asynchronously&gt;</span>
+<span class="k">impl</span> <span class="n">IEventSink_Impl</span> <span class="k">for</span> <span class="n">EventSink</span> <span class="p">{</span>
+    <span class="k">unsafe</span> <span class="k">fn</span> <span class="nf">Indicate</span><span class="p">(</span>
+        <span class="o">&amp;</span><span class="k">self</span><span class="p">,</span>
+        <span class="n">lObjectCount</span><span class="p">:</span> <span class="nb">c_long</span><span class="p">,</span>
+        <span class="n">apObjArray</span><span class="p">:</span> <span class="o">*</span><span class="k">mut</span> <span class="o">*</span><span class="k">mut</span> <span class="n">IWbemClassObject</span>
+    <span class="p">)</span> <span class="k">-&gt;</span> <span class="n">HRESULT</span> <span class="p">{</span>
+        <span class="nd">debug!</span><span class="p">(</span><span class="s">"entered indicate"</span><span class="p">);</span>
+        <span class="nd">debug!</span><span class="p">(</span><span class="s">"Indicate call with {lObjectCount} objects"</span><span class="p">);</span>
+        <span class="c1">// Case of an incorrect or too restrictive query</span>
+        <span class="k">if</span> <span class="n">lObjectCount</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">HRESULT</span><span class="p">(</span><span class="n">WBEM_S_NO_ERROR</span><span class="na">.0</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">let</span> <span class="n">lObjectCount</span> <span class="o">=</span> <span class="n">lObjectCount</span> <span class="k">as</span> <span class="nb">usize</span><span class="p">;</span>
+
+        <span class="c1">// The array memory of apObjArray is read-only</span>
+        <span class="c1">// and is owned by the caller of the Indicate method.</span>
+        <span class="c1">// IWbemClassWrapper::clone calls AddRef on each element</span>
+        <span class="c1">// of apObjArray to make sure that they are not released,</span>
+        <span class="c1">// according to COM rules.</span>
+        <span class="c1">// https://docs.microsoft.com/en-us/windows/win32/api/wbemcli/nf-wbemcli-iwbemobjectsink-indicate</span>
+        <span class="c1">// For error codes, see https://docs.microsoft.com/en-us/windows/win32/learnwin32/error-handling-in-com</span>
+
+        <span class="k">let</span> <span class="n">slice</span> <span class="o">=</span> <span class="nn">std</span><span class="p">::</span><span class="nn">slice</span><span class="p">::</span><span class="nf">from_raw_parts</span><span class="p">(</span>
+            <span class="n">apObjArray</span><span class="p">,</span>
+            <span class="n">lObjectCount</span>
+        <span class="p">);</span>
+
+        <span class="k">for</span> <span class="n">obj</span> <span class="k">in</span> <span class="n">slice</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="n">obj</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">IWbemClassObject</span> <span class="o">=</span> <span class="nn">core</span><span class="p">::</span><span class="nn">mem</span><span class="p">::</span><span class="nf">transmute</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+
+            <span class="k">let</span> <span class="n">newobj</span> <span class="o">=</span> <span class="nn">IWbemClassObjectWrapper</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="n">obj</span><span class="nf">.Clone</span><span class="p">()</span><span class="nf">.unwrap</span><span class="p">());</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nf">Err</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">=</span> <span class="k">self</span><span class="py">.sender</span><span class="nf">.try_send</span><span class="p">(</span><span class="nf">Ok</span><span class="p">(</span><span class="n">newobj</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nd">warn!</span><span class="p">(</span><span class="s">"Failed to send IWbemClassObject through channel: {:?}"</span><span class="p">,</span> <span class="n">e</span><span class="p">);</span>
+                <span class="k">return</span> <span class="n">E_POINTER</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="nf">HRESULT</span><span class="p">(</span><span class="n">WBEM_S_NO_ERROR</span><span class="na">.0</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">unsafe</span> <span class="k">fn</span> <span class="nf">SetStatus</span><span class="p">(</span>
+        <span class="o">&amp;</span><span class="k">self</span><span class="p">,</span>
+        <span class="n">lFlags</span><span class="p">:</span> <span class="nb">c_long</span><span class="p">,</span>
+        <span class="n">_hResult</span><span class="p">:</span> <span class="n">HRESULT</span><span class="p">,</span>
+        <span class="n">_strParam</span><span class="p">:</span> <span class="n">BSTR</span><span class="p">,</span>
+        <span class="n">_pObjParam</span><span class="p">:</span> <span class="o">*</span><span class="k">mut</span> <span class="n">IWbemClassObject</span>
+    <span class="p">)</span> <span class="k">-&gt;</span> <span class="n">HRESULT</span> <span class="p">{</span>
+        <span class="c1">// SetStatus is called only once as flag=WBEM_FLAG_BIDIRECTIONAL in ExecQueryAsync</span>
+        <span class="c1">// https://docs.microsoft.com/en-us/windows/win32/api/wbemcli/nf-wbemcli-iwbemobjectsink-setstatus</span>
+        <span class="c1">// If you do not specify WBEM_FLAG_SEND_STATUS when calling your provider or service method,</span>
+        <span class="c1">// you are guaranteed to receive one and only one call to SetStatus</span>
+        <span class="k">if</span> <span class="n">lFlags</span> <span class="o">==</span> <span class="n">WBEM_STATUS_COMPLETE</span><span class="na">.0</span> <span class="p">{</span>
+            <span class="nd">debug!</span><span class="p">(</span><span class="s">"End of async result, closing transmitter"</span><span class="p">);</span>
+            <span class="k">self</span><span class="py">.sender</span><span class="nf">.close</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="nf">HRESULT</span><span class="p">(</span><span class="n">WBEM_S_NO_ERROR</span><span class="na">.0</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div></div><p>Took a bit to figure out the unsafe code that windows was expecting, especially the <code class="language-plaintext highlighter-rouge">*mut *mut</code>, but after a bit in the Rust discord, it’s all good now! Now I was able to make a WMI connection AND receive async <code class="language-plaintext highlighter-rouge">IWbemClassObject</code>’s from WMI! But trouble soon popped up again as I wasn’t sure how to access a <code class="language-plaintext highlighter-rouge">Win32_Process</code> instance. After using the built-in <code class="language-plaintext highlighter-rouge">wbemtest</code> windows program, I soon discovered that <code class="language-plaintext highlighter-rouge">TargetInstance</code> was returned by the WMI query and was in fact a <code class="language-plaintext highlighter-rouge">Win32_Process</code> instance!</p><p>But after messing a bit with <a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2017/march/introducing-the-safearray-data-structure">SAFEARRAY</a> and <a href="https://docs.microsoft.com/en-us/windows/win32/api/oaidl/ns-oaidl-variant">VARIANT</a>, it seemed very difficult to extract the raw instance data. But I finally found hope after Googling a lot, and what needed to happen was it needs to be cast to an <code class="language-plaintext highlighter-rouge">IUnknown</code> interface, after which it can be casted back to <code class="language-plaintext highlighter-rouge">IWbemClassObject</code></p><div class="collapse-container"><button class="collapsible" onclick="toggleBlock(this)"><i class="lang-icon devicon-rust-plain"></i><div class="lang-label"> Rust</div></button><div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">fn</span> <span class="nf">get_embedded_object</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">Result</span><span class="o">&lt;</span><span class="n">IWbemClassObjectWrapper</span><span class="p">,</span> <span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span> <span class="n">Error</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="k">mut</span> <span class="n">variant</span> <span class="o">=</span> <span class="nn">VARIANT</span><span class="p">::</span><span class="nf">default</span><span class="p">();</span>
+    <span class="k">let</span> <span class="n">property</span> <span class="o">=</span> <span class="nn">BSTR</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+    <span class="k">let</span> <span class="n">property</span> <span class="o">=</span> <span class="n">property</span><span class="nf">.as_wide</span><span class="p">();</span>
+    <span class="k">let</span> <span class="k">mut</span> <span class="n">cim_type</span> <span class="o">=</span> <span class="mi">0i32</span><span class="p">;</span>
+
+    <span class="k">let</span> <span class="n">processObject</span> <span class="o">=</span> <span class="k">unsafe</span> <span class="p">{</span>
+        <span class="k">self</span><span class="py">.obj</span><span class="nf">.Get</span><span class="p">(</span>
+            <span class="nf">PCWSTR</span><span class="p">(</span><span class="n">property</span><span class="nf">.as_ptr</span><span class="p">()),</span>
+            <span class="mi">0</span><span class="p">,</span>
+            <span class="o">&amp;</span><span class="k">mut</span> <span class="n">variant</span> <span class="k">as</span> <span class="o">*</span><span class="k">mut</span> <span class="n">_</span><span class="p">,</span>
+            <span class="o">&amp;</span><span class="k">mut</span> <span class="n">cim_type</span> <span class="k">as</span> <span class="o">*</span><span class="k">mut</span> <span class="n">_</span><span class="p">,</span>
+            <span class="nn">std</span><span class="p">::</span><span class="nn">ptr</span><span class="p">::</span><span class="nf">null_mut</span><span class="p">()</span>
+        <span class="p">)</span><span class="o">?</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="n">cim_type</span> <span class="o">!=</span> <span class="n">CIM_OBJECT</span><span class="na">.0</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">Err</span><span class="p">(</span><span class="nn">Box</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="nn">WMIError</span><span class="p">::</span><span class="n">NotCimObject</span><span class="p">))</span>
+        <span class="p">}</span>
+
+        <span class="c1">// convert embedded object to IUnknown, then cast to IWbemClassObject</span>
+        <span class="k">let</span> <span class="n">pVal</span> <span class="o">=</span> <span class="n">variant</span><span class="py">.Anonymous.Anonymous.Anonymous.punkVal</span><span class="nf">.as_ref</span><span class="p">()</span><span class="nf">.unwrap</span><span class="p">();</span>
+        <span class="k">let</span> <span class="n">processObject</span> <span class="o">=</span> <span class="n">pVal</span><span class="py">.cast</span><span class="p">::</span><span class="o">&lt;</span><span class="n">IWbemClassObject</span><span class="o">&gt;</span><span class="p">()</span><span class="o">?</span><span class="p">;</span>
+
+        <span class="k">Self</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="n">processObject</span><span class="p">)</span>
+    <span class="p">};</span>
+
+    <span class="nf">Ok</span><span class="p">(</span><span class="n">processObject</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div></div><p>It works! Great!! Now I have an instance of <code class="language-plaintext highlighter-rouge">Win32_Process</code>. Of course, for every property that the WMI query returns we need to access the data contained.</p><p>So first we get all the property names</p><div class="collapse-container"><button class="collapsible" onclick="toggleBlock(this)"><i class="lang-icon devicon-rust-plain"></i><div class="lang-label"> Rust</div></button><div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="k">mut</span> <span class="n">arrs</span> <span class="o">=</span> <span class="nn">VecDeque</span><span class="p">::</span><span class="nf">new</span><span class="p">();</span>
+
+<span class="k">unsafe</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">_safearray</span> <span class="o">=</span> <span class="k">self</span><span class="py">.obj</span><span class="nf">.GetNames</span><span class="p">(</span>
+        <span class="nn">PCWSTR</span><span class="p">::</span><span class="nf">default</span><span class="p">(),</span>
+        <span class="n">WBEM_FLAG_ALWAYS</span><span class="na">.0</span><span class="p">,</span><span class="c1">// | WBEM_FLAG_NONSYSTEM_ONLY.0,</span>
+        <span class="o">&amp;</span><span class="nn">VARIANT</span><span class="p">::</span><span class="nf">default</span><span class="p">()</span> <span class="k">as</span> <span class="o">*</span><span class="k">const</span> <span class="n">_</span> <span class="k">as</span> <span class="o">*</span><span class="k">const</span> <span class="n">_</span>
+    <span class="p">)</span><span class="o">?</span><span class="p">;</span>
+
+    <span class="k">let</span> <span class="k">mut</span> <span class="n">ptr</span><span class="p">:</span> <span class="o">*</span><span class="k">mut</span> <span class="nb">c_void</span> <span class="o">=</span> <span class="nn">std</span><span class="p">::</span><span class="nn">mem</span><span class="p">::</span><span class="nf">zeroed</span><span class="p">();</span>
+
+    <span class="nf">SafeArrayAccessData</span><span class="p">(</span>
+        <span class="n">_safearray</span> <span class="k">as</span> <span class="o">*</span><span class="k">const</span> <span class="n">_</span><span class="p">,</span>
+        <span class="o">&amp;</span><span class="k">mut</span> <span class="n">ptr</span> <span class="k">as</span> <span class="o">*</span><span class="k">mut</span> <span class="n">_</span>
+    <span class="p">)</span><span class="o">?</span><span class="p">;</span>
+
+    <span class="k">let</span> <span class="n">safearray</span> <span class="o">=</span> <span class="o">*</span><span class="n">_safearray</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..</span><span class="n">safearray</span><span class="py">.cDims</span> <span class="k">as</span> <span class="nb">usize</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="n">slice</span> <span class="o">=</span> <span class="nn">std</span><span class="p">::</span><span class="nn">slice</span><span class="p">::</span><span class="nf">from_raw_parts</span><span class="p">(</span>
+            <span class="n">ptr</span> <span class="k">as</span> <span class="o">*</span><span class="k">mut</span> <span class="n">BSTR</span><span class="p">,</span>
+            <span class="n">safearray</span><span class="py">.rgsabound</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="py">.cElements</span> <span class="k">as</span> <span class="nb">usize</span>
+        <span class="p">);</span>
+        <span class="n">arrs</span><span class="nf">.push_back</span><span class="p">(</span><span class="n">slice</span><span class="nf">.into_iter</span><span class="p">()</span><span class="nf">.map</span><span class="p">(|</span><span class="n">f</span><span class="p">|</span> <span class="n">f</span><span class="nf">.to_string</span><span class="p">())</span><span class="py">.collect</span><span class="p">::</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;&gt;</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="nf">SafeArrayUnaccessData</span><span class="p">(</span>
+        <span class="n">_safearray</span>
+    <span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div></div><p>Then we can get the <code class="language-plaintext highlighter-rouge">VARIANT</code> after knowing the property names, and handle every single type of property by checking what data the <code class="language-plaintext highlighter-rouge">VARIANT</code> union holds at <code class="language-plaintext highlighter-rouge">variant.Anonymous.Anonymous.vt</code> using this <a href="https://docs.microsoft.com/en-us/windows/win32/api/wtypes/ne-wtypes-varenum">nice list</a> of types from Microsoft SDK.</p><div class="collapse-container"><button class="collapsible" onclick="toggleBlock(this)"><i class="lang-icon devicon-rust-plain"></i><div class="lang-label"> Rust</div></button><div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="k">mut</span> <span class="n">variant</span> <span class="o">=</span> <span class="nn">VARIANT</span><span class="p">::</span><span class="nf">default</span><span class="p">();</span>
+<span class="k">let</span> <span class="n">property</span> <span class="o">=</span> <span class="nn">BSTR</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="k">let</span> <span class="n">property</span> <span class="o">=</span> <span class="n">property</span><span class="nf">.as_wide</span><span class="p">();</span>
+<span class="k">let</span> <span class="k">mut</span> <span class="n">var_type</span> <span class="o">=</span> <span class="mi">0i32</span><span class="p">;</span>
+
+<span class="k">unsafe</span> <span class="p">{</span>
+    <span class="k">self</span><span class="py">.obj</span><span class="nf">.Get</span><span class="p">(</span>
+        <span class="nf">PCWSTR</span><span class="p">(</span><span class="n">property</span><span class="nf">.as_ptr</span><span class="p">()),</span>
+        <span class="mi">0</span><span class="p">,</span>
+        <span class="o">&amp;</span><span class="k">mut</span> <span class="n">variant</span> <span class="k">as</span> <span class="o">*</span><span class="k">mut</span> <span class="n">_</span><span class="p">,</span>
+        <span class="o">&amp;</span><span class="k">mut</span> <span class="n">var_type</span> <span class="k">as</span> <span class="o">*</span><span class="k">mut</span> <span class="n">_</span><span class="p">,</span>
+        <span class="nn">std</span><span class="p">::</span><span class="nn">ptr</span><span class="p">::</span><span class="nf">null_mut</span><span class="p">()</span>
+    <span class="p">)</span><span class="o">?</span><span class="p">;</span>
+
+    <span class="k">match</span> <span class="nf">VARENUM</span><span class="p">(</span><span class="n">variant</span><span class="py">.Anonymous.Anonymous.vt</span> <span class="k">as</span> <span class="nb">i32</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">VT_UNKNOWN</span> <span class="k">=&gt;</span> <span class="p">{</span>
+            <span class="c1">// this unknown type is generally an embedded object</span>
+            <span class="k">if</span> <span class="n">var_type</span> <span class="o">!=</span> <span class="n">CIM_OBJECT</span><span class="na">.0</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nf">Err</span><span class="p">(</span><span class="nn">Box</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="nn">WMIError</span><span class="p">::</span><span class="n">NotCimObject</span><span class="p">))</span>
+            <span class="p">}</span>
+
+            <span class="c1">// convert embedded object to IUnknown, then cast to IWbemClassObject</span>
+            <span class="k">let</span> <span class="n">pVal</span> <span class="o">=</span> <span class="n">variant</span><span class="py">.Anonymous.Anonymous.Anonymous.punkVal</span><span class="nf">.as_ref</span><span class="p">()</span><span class="nf">.unwrap</span><span class="p">();</span>
+            <span class="k">let</span> <span class="n">embeddedObject</span> <span class="o">=</span> <span class="n">pVal</span><span class="py">.cast</span><span class="p">::</span><span class="o">&lt;</span><span class="n">IWbemClassObject</span><span class="o">&gt;</span><span class="p">()</span><span class="o">?</span><span class="p">;</span>
+            <span class="nn">ValueType</span><span class="p">::</span><span class="nf">CIM_OBJECT</span><span class="p">(</span><span class="k">Self</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="n">embeddedObject</span><span class="p">))</span>
+        <span class="p">}</span>
+
+        <span class="n">VT_BSTR</span> <span class="k">=&gt;</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="n">bstring</span> <span class="o">=</span> <span class="o">&amp;*</span><span class="n">variant</span><span class="py">.Anonymous.Anonymous.Anonymous.bstrVal</span><span class="p">;</span>
+            <span class="k">let</span> <span class="n">string</span> <span class="o">=</span> <span class="n">bstring</span><span class="nf">.to_string</span><span class="p">();</span>
+            <span class="nn">ValueType</span><span class="p">::</span><span class="nf">BSTR</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="c1">// float 32</span>
+        <span class="n">VT_R4</span> <span class="k">=&gt;</span> <span class="p">{</span>
+            <span class="nn">ValueType</span><span class="p">::</span><span class="nf">R4</span><span class="p">(</span><span class="n">variant</span><span class="py">.Anonymous.Anonymous.Anonymous.fltVal</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="c1">// etc</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div></div><p>After parsing all this into an enum, we have safely parsed all the typed data from the union and know what data all the properties hold! Sweet!</p><p>In the end I ended up using <a href="https://crates.io/crates/tokio">tokio</a> so I could get some nice async with a <a href="https://crates.io/crates/ctrlc">ctrl+c handler</a>, and I ended up with this beauty!</p><div class="collapse-container"><button class="collapsible" onclick="toggleBlock(this)"><i class="lang-icon devicon-rust-plain"></i><div class="lang-label"> Rust</div></button><div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">loop</span> <span class="p">{</span>
+    <span class="nd">select!</span> <span class="p">{</span>
+        <span class="c1">// ctrl c break</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">rx</span><span class="nf">.recv</span><span class="p">()</span> <span class="k">=&gt;</span> <span class="k">break</span><span class="p">,</span>
+
+        <span class="nf">Ok</span><span class="p">(</span><span class="nf">Ok</span><span class="p">(</span><span class="n">process</span><span class="p">))</span> <span class="o">=</span> <span class="n">rx2</span><span class="nf">.recv</span><span class="p">()</span> <span class="k">=&gt;</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="n">inst</span> <span class="o">=</span> <span class="n">process</span><span class="nf">.get_embedded_object</span><span class="p">(</span><span class="s">"TargetInstance"</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+
+            <span class="k">let</span> <span class="n">res</span> <span class="o">=</span> <span class="nn">Win32_Process</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="n">inst</span><span class="p">);</span>
+            <span class="nd">println!</span><span class="p">(</span><span class="s">"Started {}, {}"</span><span class="p">,</span> <span class="n">res</span><span class="py">.Name</span><span class="p">,</span> <span class="n">res</span><span class="py">.ProcessId</span><span class="p">);</span>
+            <span class="k">if</span> <span class="n">data</span><span class="py">.processes</span><span class="nf">.contains</span><span class="p">(</span><span class="o">&amp;</span><span class="n">res</span><span class="py">.Name</span><span class="nf">.to_lowercase</span><span class="p">())</span> <span class="p">{</span>
+                <span class="nd">println!</span><span class="p">(</span><span class="s">"{} is disallowed! Killed!"</span><span class="p">,</span> <span class="n">res</span><span class="py">.Name</span><span class="p">);</span>
+                <span class="nn">utils</span><span class="p">::</span><span class="nf">kill_process</span><span class="p">(</span><span class="o">&amp;</span><span class="n">res</span><span class="py">.Name</span><span class="p">,</span> <span class="n">res</span><span class="py">.ProcessId</span> <span class="k">as</span> <span class="nb">u32</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nd">println!</span><span class="p">(</span><span class="s">"{} is allowed"</span><span class="p">,</span> <span class="n">res</span><span class="py">.Name</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="nd">println!</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div></div><p>And now, I never need to check for processes again, since Windows itself will notify my process when a new one starts, otherwise we’ll just let async let our thread sleep and do no work!</p><p>The full code for the project can be found <a href="https://github.com/cherryleafroad/AnnoyingProcessKiller/">here</a>.</p><script>function toggleBlock(event) {event.classList.toggle("active");let content = event.nextElementSibling;if (content.style.maxHeight) {content.style.maxHeight = null;} else {content.style.maxHeight = content.scrollHeight + "px";}}</script></body></html><hr><style> #share-buttons {text-align:center; } #share-buttons > div {width: 32px; display:inline-block;} #share-buttons > div > svg {height: 16px; fill: #9d9d9d;} #share-buttons > div:hover {cursor: pointer;} #share-buttons > div.facebook:hover > svg {fill: #3B5998;} #share-buttons > div.twitter:hover > svg {fill: #55ACEE;} #share-buttons > div.linkedin:hover > svg {fill: #0077b5;} #share-buttons > div.gplus:hover > svg {fill: #dd4b39;} #share-buttons > div.mail:hover > svg {fill: #7D7D7D;} #share-buttons > div.instagram:hover > svg {fill: #C73B92;} #share-buttons > div.facebook > svg {height: 18px; vertical-align: middle;} #share-buttons > div.twitter > svg {height: 20px; vertical-align: middle;} #share-buttons > div.linkedin > svg {height: 19px; vertical-align: middle;} #share-buttons > div.pinterest > svg {height: 20px; vertical-align: middle;} #share-buttons > div.gplus > svg {height: 17px; margin-top: 9px; position: relative; left: 1px;} #share-buttons > div.mail > svg {height: 14px; vertical-align: middle;} </style><div id="share-buttons"><div class="facebook" title="Share this on Facebook"    onclick="window.open('http://www.facebook.com/share.php?u=http%3A%2F%2Fmolotovcherry.github.io%2Fprogramming%2Fkilling-annoying-processes-in-windows','popup','width=600,height=600'); return false;"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+<path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div><div class="twitter"  title="Share this on Twitter"     onclick="window.open('https://twitter.com/intent/tweet?url=http%3A%2F%2Fmolotovcherry.github.io%2Fprogramming%2Fkilling-annoying-processes-in-windows&text=Killing+Annoying+Processes+in+Windows&via=','popup','width=600,height=600'); return false;"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+<path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div><div class="linkedin" title="Share this on Linkedin"    onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Fmolotovcherry.github.io%2Fprogramming%2Fkilling-annoying-processes-in-windows','popup','width=600,height=600'); return false;"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+<path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div><div class="mail"     title="Share this through Email"  onclick="window.open('mailto:?&body=http%3A%2F%2Fmolotovcherry.github.io%2Fprogramming%2Fkilling-annoying-processes-in-windows&subject=%5BBlog%5D+MolotovCherry+-+Killing+Annoying+Processes+in+Windows','popup','width=600,height=600'); return false;"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+<path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div></div><div class="post_navi"><a class="post_navi-item nav_prev" href="http://molotovcherry.github.io/archive.html" title="Blog Archive"><div class="post_navi-arrow">&lt;</div><div class="post_navi-label">Blog Archive</div><div><span>Archive of all previous blog posts</span></div></a><a class="post_navi-item nav_next" href="/programming/rust-jni-macro" title="Rust JNI Macro"><div class="post_navi-arrow">&gt;</div><div class="post_navi-label">Next Post</div><div><span>Rust JNI Macro</span></div></a></div></div><a class="u-url" href="/programming/killing-annoying-processes-in-windows" hidden></a><script>let script = document.createElement('script');script.src = "https://utteranc.es/client.js";script.setAttribute("repo", "molotovcherry/molotovcherry.github.io");script.setAttribute("issue-term", "pathname");script.setAttribute("label", "comments");script.setAttribute("theme", cherryblog.getCommentsTheme());script.setAttribute("crossorigin", "anonymous");script.async = true;document.currentScript.parentNode.appendChild(script);document.currentScript.remove();</script></article></section></div><footer><p><a rel="me" href="https://github.com/MolotovCherry" target="_blank" title="MolotovCherry"> <svg class="svg-icon grey" height="16px" width="16px"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="social-label">MolotovCherry</span></a></br></p></footer></body></html>
